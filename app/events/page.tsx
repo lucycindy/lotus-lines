@@ -12,7 +12,7 @@ export default async function EventsPage() {
         events
       </h1>
       <p className="mt-2 text-center text-[13px] md:text-[clamp(0.85rem,1vw,1rem)] text-[#737373] sm:text-base">
-        coordination & assistance for weddings / corporate / social events
+        coordination & assistance for weddings / corporate
       </p>
 
       <ul className="mt-12 w-full">
