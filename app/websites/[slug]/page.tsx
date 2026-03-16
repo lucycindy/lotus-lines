@@ -26,7 +26,7 @@ export default async function WebsitePage({
     if (!post) notFound();
 
     return (
-        <div className="min-h-screen bg-[#f0efec] px-8 py-16 flex flex-col items-center">
+        <div className="min-h-screen bg-[#f0efec] px-4 py-16 flex flex-col items-center">
             <Link
                 href="/websites"
                 className="fixed top-8 left-[calc(var(--sidebar-width)+2rem)] z-50 text-[#737373] hover:text-[#b83143] transition-colors text-[13px] whitespace-nowrap"

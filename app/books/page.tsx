@@ -19,7 +19,7 @@ export default async function BooksPage() {
       <ul className="mt-12 w-full">
         {posts.map((post, index) => (
           <li key={post.Slug || index}>
-            <div className="mx-auto max-w-[800px] px-8 md:px-0">
+            <div className="mx-auto max-w-[800px] px-4 md:px-0">
               <Link
                 href={post.Slug ? `/books/${encodeURIComponent(post.Slug)}` : "#"}
                 className="group flex items-center gap-6 py-8 text-black"
