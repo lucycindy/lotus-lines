@@ -76,7 +76,7 @@ export default async function AboutPage() {
                     </div>
 
                     {/* Element 2: Quote */}
-                    <div className="mt-10 text-center w-full max-w-[600px] mx-auto">
+                    <div className="mt-10 text-left md:text-center w-full max-w-[600px] mx-auto">
                         <p className="italic text-[clamp(1rem,1.1vw,1.15rem)] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase">
                             "i love the lotus, for it rises from the mud unstained, cleansed in<br />rippling water, appealing, yet not seductive."
                         </p>
@@ -86,7 +86,7 @@ export default async function AboutPage() {
                     </div>
 
                     {/* Element 3: Paragraph */}
-                    <div className="mt-10 text-center max-w-[600px] w-full mx-auto">
+                    <div className="mt-10 text-left md:text-center max-w-[600px] w-full mx-auto">
                         <p className="text-[clamp(1rem,1.1vw,1.15rem)] text-black leading-[1.8]">
                             I love the cultural meaning of the lotus as a symbol of the process. I've grown to appreciate the constraints and complexities of the mud for the beautiful bloom. This philosophy shapes how I approach design and everything else.
                         </p>

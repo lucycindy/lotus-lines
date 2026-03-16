@@ -35,7 +35,7 @@ export default async function Home() {
 
   return (
     <div className="w-full h-full flex flex-col items-center pb-32">
-      <div className="w-full max-w-7xl px-[clamp(2rem,6vw,8rem)] flex flex-col gap-16 mt-12 md:mt-24">
+      <div className="w-full max-w-7xl px-[clamp(2rem,6vw,8rem)] flex flex-col gap-16 mt-6 md:mt-24">
         {datedPosts.map((post, idx) => {
           const linkHref = post.category === "florals" ? "/florals" : `/${post.category}/${post.Slug}`;
 
