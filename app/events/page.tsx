@@ -15,55 +15,59 @@ export default async function EventsPage() {
         coordination & assistance for weddings / corporate / social events
       </p>
 
-      <ul className="mx-auto mt-12 w-full max-w-2xl">
+      <ul className="mt-12 w-full">
         {posts.map((post, index) => (
           <li key={post.Slug || index}>
-            <Link
-              href={post.Slug ? `/events/${encodeURIComponent(post.Slug)}` : "#"}
-              className="group flex items-center gap-6 py-8 text-black"
-            >
-              {post.CoverImage ? (
-                <div className="relative h-[144px] w-[216px] shrink-0 overflow-hidden bg-[#e8e6e2]">
-                  <Image
-                    src={post.CoverImage}
-                    alt={post.Title || "Event cover"}
-                    fill
-                    className="object-cover"
-                    sizes="216px"
-                  />
+            <div className="mx-auto max-w-[800px] px-6 md:px-0">
+              <Link
+                href={post.Slug ? `/events/${encodeURIComponent(post.Slug)}` : "#"}
+                className="group flex flex-col md:flex-row md:items-center py-8 text-black"
+              >
+                <div className="w-full md:w-[320px] shrink-0 flex justify-center">
+                  {post.CoverImage ? (
+                    <div className="relative w-full h-[280px] md:h-[144px] md:w-[216px] overflow-hidden bg-[#e8e6e2]">
+                      <Image
+                        src={post.CoverImage}
+                        alt={post.Title || "Event cover"}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 216px"
+                      />
+                    </div>
+                  ) : null}
                 </div>
-              ) : null}
-              <div className="flex items-center min-w-0 flex-1">
-                <div className="min-w-0">
-                  <h2 className="text-[clamp(1rem,1.2vw,1.3rem)] font-medium text-black group-hover:text-[#b83143] transition-colors whitespace-nowrap overflow-hidden text-ellipsis">
-                    {post.Title || "Untitled"}
-                  </h2>
-                  {post.Description ? (
-                    <div className="flex items-center mt-1">
-                      <p className="line-clamp-1 text-[clamp(0.9rem,1.1vw,1.15rem)] text-[#737373] italic">
-                        {post.Description}
-                      </p>
+                <div className="flex min-w-0 flex-1 items-center md:pl-10 mt-6 md:mt-0">
+                  <div className="min-w-0 w-full">
+                    <h2 className="text-[clamp(1rem,1.2vw,1.3rem)] font-medium text-black group-hover:text-[#b83143] transition-colors whitespace-nowrap overflow-hidden text-ellipsis">
+                      {post.Title || "Untitled"}
+                    </h2>
+                    {post.Description ? (
+                      <div className="flex items-center mt-1">
+                        <p className="line-clamp-1 text-[clamp(0.9rem,1.1vw,1.15rem)] text-[#737373] italic">
+                          {post.Description}
+                        </p>
+                        <span
+                          className="shrink-0 text-[#b83143] transition-transform group-hover:translate-x-1 ml-6"
+                          aria-hidden
+                        >
+                          →
+                        </span>
+                      </div>
+                    ) : (
                       <span
-                        className="shrink-0 text-[#b83143] transition-transform group-hover:translate-x-1 ml-6"
+                        className="shrink-0 text-[#b83143] transition-transform group-hover:translate-x-1 mt-1 block"
                         aria-hidden
                       >
                         →
                       </span>
-                    </div>
-                  ) : (
-                    <span
-                      className="shrink-0 text-[#b83143] transition-transform group-hover:translate-x-1 mt-1 block"
-                      aria-hidden
-                    >
-                      →
-                    </span>
-                  )}
+                    )}
+                  </div>
                 </div>
-              </div>
-            </Link>
-            {index < posts.length - 1 ? (
-              <div className="border-b border-[#d4d1cb]/40" aria-hidden />
-            ) : null}
+              </Link>
+              {index < posts.length - 1 ? (
+                <div className="border-b border-[#d4d1cb]/40" aria-hidden />
+              ) : null}
+            </div>
           </li>
         ))}
       </ul>

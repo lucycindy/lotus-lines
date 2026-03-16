@@ -52,7 +52,7 @@ export default async function Home() {
                     <img
                       src={post.CoverImage}
                       alt={post.Title || `${post.category} cover`}
-                      className="w-full md:w-[260px] max-h-[320px] object-contain object-left-top transition-transform duration-500 group-hover:scale-[1.02] group-hover:brightness-95"
+                      className="w-full md:w-[260px] max-h-[320px] object-contain object-center md:object-left-top transition-transform duration-500 group-hover:scale-[1.02] group-hover:brightness-95 mx-auto block"
                     />
                   ) : (
                     <div className="w-full aspect-[4/3] bg-gray-200 flex items-center justify-center">

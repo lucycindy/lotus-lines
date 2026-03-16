@@ -8,22 +8,25 @@ export default function Sidebar() {
 
     return (
         <>
-            {/* Mobile Top Bar */}
-            <div className="md:hidden flex items-center justify-between p-6 bg-[#f0efec] relative z-[60]">
-                <Link href="/" className="block w-32">
-                    <img src="/logo.png" alt="logo" className="w-full h-auto" />
+            {/* Mobile Top Bar / Logo */}
+            <div className="md:hidden flex flex-col items-center pt-4 pb-6 bg-[#f0efec] relative z-[60]">
+                <Link href="/" className="block w-32 mx-auto text-center">
+                    <img src="/logo.png" alt="logo" className="w-full h-auto mx-auto" />
                 </Link>
-                <button
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="italic text-black text-lg transition-colors hover:text-[#b83143] focus:outline-none"
-                >
-                    {isOpen ? "close" : "menu"}
-                </button>
             </div>
+
+            {/* Mobile Fixed Hamburger Button */}
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="md:hidden fixed top-4 right-12 z-[70] text-[#b83143] text-2xl focus:outline-none transition-colors hover:opacity-80"
+                aria-label={isOpen ? "Close menu" : "Open menu"}
+            >
+                {isOpen ? "✕" : "☰"}
+            </button>
 
             {/* Slide-in Mobile Overlay & Desktop Sidebar */}
             <aside
-                className={`fixed md:sticky top-0 left-0 h-screen w-full md:w-[var(--sidebar-width)] bg-[#f0efec] z-50 flex flex-col p-8 md:p-[clamp(2rem,3vw,4rem)] transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+                className={`fixed md:sticky top-0 left-0 h-screen w-full md:w-[var(--sidebar-width)] bg-[#f0efec] z-50 flex flex-col p-8 pt-20 md:p-[clamp(2rem,3vw,4rem)] transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
                     }`}
             >
                 <div className="flex flex-col h-full md:h-auto overflow-y-auto md:overflow-visible">
@@ -36,10 +39,10 @@ export default function Sidebar() {
 
                     <nav className="flex flex-col gap-0 items-center md:items-start text-center md:text-left">
                         {/* Section: About */}
-                        <div className="w-full md:w-fit py-6 md:py-0 md:mb-6">
+                        <div className="w-full md:w-fit py-4 md:py-0 md:mb-6">
                             <Link
                                 href="/about"
-                                className="block text-black text-[clamp(1.1rem,1.2vw,1.3rem)] hover:text-[#b83143] transition-colors"
+                                className="block text-[#000000] text-[clamp(1.1rem,1.2vw,1.3rem)] hover:text-[#b83143] transition-colors"
                                 onClick={() => setIsOpen(false)}
                             >
                                 about
@@ -50,22 +53,29 @@ export default function Sidebar() {
                         <div className="w-16 md:w-full border-t border-[#d4d1cb] my-2" />
 
                         {/* Section: Work */}
-                        <div className="w-full md:w-fit py-6 md:pt-6 md:pb-6">
-                            <span className="block text-black text-[clamp(1.1rem,1.2vw,1.3rem)] mb-4">work</span>
-                            <div className="flex flex-col gap-3 md:ml-4">
+                        <div className="w-full md:w-fit py-4 md:pt-6 md:pb-6">
+                            <span className="block text-[#737373] md:text-black text-[clamp(1.1rem,1.2vw,1.3rem)] mb-4">work</span>
+                            <div className="flex flex-col gap-3 ml-4">
                                 <Link
                                     href="/events"
-                                    className="italic text-black text-[clamp(1rem,1.1vw,1.15rem)] hover:text-[#b83143] transition-colors"
+                                    className="italic text-[#000000] md:text-black text-[clamp(1rem,1.1vw,1.15rem)] hover:text-[#b83143] transition-colors"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     events
                                 </Link>
                                 <Link
                                     href="/websites"
-                                    className="italic text-black text-[clamp(1rem,1.1vw,1.15rem)] hover:text-[#b83143] transition-colors"
+                                    className="italic text-[#000000] md:text-black text-[clamp(1rem,1.1vw,1.15rem)] hover:text-[#b83143] transition-colors"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     websites
+                                </Link>
+                                <Link
+                                    href="/writing"
+                                    className="italic text-[#000000] md:text-black text-[clamp(1rem,1.1vw,1.15rem)] hover:text-[#b83143] transition-colors"
+                                    onClick={() => setIsOpen(false)}
+                                >
+                                    writing
                                 </Link>
                             </div>
                         </div>
@@ -74,26 +84,19 @@ export default function Sidebar() {
                         <div className="w-16 md:w-full border-t border-[#d4d1cb] my-2" />
 
                         {/* Section: Hobbies */}
-                        <div className="w-full md:w-fit py-6 md:pt-6">
-                            <span className="block text-black text-[clamp(1.1rem,1.2vw,1.3rem)] mb-4">hobbies</span>
-                            <div className="flex flex-col gap-3 md:ml-4">
-                                <Link
-                                    href="/writing"
-                                    className="italic text-black text-[clamp(1rem,1.1vw,1.15rem)] hover:text-[#b83143] transition-colors"
-                                    onClick={() => setIsOpen(false)}
-                                >
-                                    writing
-                                </Link>
+                        <div className="w-full md:w-fit py-4 md:pt-6">
+                            <span className="block text-[#737373] md:text-black text-[clamp(1.1rem,1.2vw,1.3rem)] mb-4">hobbies</span>
+                            <div className="flex flex-col gap-3 ml-4">
                                 <Link
                                     href="/books"
-                                    className="italic text-black text-[clamp(1rem,1.1vw,1.15rem)] hover:text-[#b83143] transition-colors"
+                                    className="italic text-[#000000] md:text-black text-[clamp(1rem,1.1vw,1.15rem)] hover:text-[#b83143] transition-colors"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     books
                                 </Link>
                                 <Link
                                     href="/florals"
-                                    className="italic text-black text-[clamp(1rem,1.1vw,1.15rem)] hover:text-[#b83143] transition-colors"
+                                    className="italic text-[#000000] md:text-black text-[clamp(1rem,1.1vw,1.15rem)] hover:text-[#b83143] transition-colors"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     florals

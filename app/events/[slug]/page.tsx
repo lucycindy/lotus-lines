@@ -26,15 +26,17 @@ export default async function EventPage({
   if (!post) notFound();
 
   return (
-    <div className="min-h-screen bg-[#f0efec] px-6 py-16 flex flex-col items-center">
-      <Link
-        href="/events"
-        className="fixed top-8 left-[calc(var(--sidebar-width)+2rem)] z-50 text-[#737373] hover:text-[#b83143] transition-colors text-[13px] whitespace-nowrap"
-      >
-        ← back
-      </Link>
+    <div className="min-h-screen bg-[#f0efec] flex flex-col items-center">
+      <div className="w-full max-w-[680px] pt-4 md:pt-0 px-6 md:px-0">
+        <Link
+          href="/events"
+          className="md:fixed top-8 left-[calc(var(--sidebar-width)+2rem)] z-50 text-[#737373] hover:text-[#b83143] transition-colors text-[13px] whitespace-nowrap block"
+        >
+          ← back
+        </Link>
+      </div>
 
-      <article className="mx-auto mt-10 max-w-[680px] w-full flex flex-col items-start px-8">
+      <article className="mx-auto mt-6 md:mt-10 max-w-[680px] w-full flex flex-col items-start px-6 md:px-8 pb-16">
         {post.Gallery && post.Gallery.length > 0 ? (
           <div className="w-full">
             <div className="grid grid-cols-2 gap-3">

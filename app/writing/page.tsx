@@ -17,26 +17,26 @@ export default async function WritingPage() {
       <ul className="mt-12 w-full">
         {posts.map((post, index) => (
           <li key={post.Slug || index}>
-            <div className="mx-auto max-w-[800px]">
+            <div className="mx-auto max-w-[800px] px-6 md:px-0">
               <Link
                 href={post.Slug ? `/writing/${encodeURIComponent(post.Slug)}` : "#"}
-                className="group flex items-center py-8 text-black"
+                className="group flex flex-col md:flex-row md:items-center py-8 text-black"
               >
-                <div className="flex w-[320px] shrink-0 justify-center">
+                <div className="w-full md:w-[320px] shrink-0 flex justify-center">
                   {post.CoverImage ? (
-                    <div className="relative h-[144px] w-[144px] overflow-hidden bg-[#e8e6e2]">
+                    <div className="relative w-full h-[280px] md:h-[144px] md:w-[144px] overflow-hidden bg-[#e8e6e2]">
                       <Image
                         src={post.CoverImage}
                         alt={post.Title || "Writing cover"}
                         fill
                         className="object-cover"
-                        sizes="144px"
+                        sizes="(max-width: 768px) 100vw, 144px"
                       />
                     </div>
                   ) : null}
                 </div>
-                <div className="flex min-w-0 flex-1 items-center pl-10">
-                  <div className="min-w-0">
+                <div className="flex min-w-0 flex-1 items-center md:pl-10 mt-6 md:mt-0">
+                  <div className="min-w-0 w-full">
                     <h2 className="text-[clamp(1rem,1.2vw,1.3rem)] font-medium text-black group-hover:text-[#b83143] transition-colors">
                       {post.Title || "Untitled"}
                     </h2>
