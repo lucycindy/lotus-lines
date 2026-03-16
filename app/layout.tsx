@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
+import Lightbox from "@/components/Lightbox";
 
 export const metadata: Metadata = {
   title: "lucy cindy",
@@ -43,6 +44,7 @@ export default function RootLayout({
             </main>
           </div>
         </div>
+        <Lightbox />
       </body>
     </html>
   );

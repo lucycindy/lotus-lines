@@ -53,3 +53,33 @@ h5,
 h6 {
   font-family: "Times New Roman", Times, serif !important;
 }
+
+ol {
+  list-style-type: decimal !important;
+  counter-reset: none !important;
+  padding-left: 1.5rem !important;
+}
+
+ol li {
+  list-style: decimal !important;
+  display: list-item !important;
+}
+
+/* Lightbox support */
+.lightbox-fade-enter {
+  opacity: 0;
+}
+
+.lightbox-fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.2s ease-out;
+}
+
+.lightbox-fade-exit {
+  opacity: 1;
+}
+
+.lightbox-fade-exit-active {
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}

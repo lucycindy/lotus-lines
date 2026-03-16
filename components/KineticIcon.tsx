@@ -28,24 +28,14 @@ const KineticIcon: React.FC<KineticIconProps> = ({ type }) => {
           80.1%, 100% { opacity: 0; }
         }
 
-        /* Fanning Pages Looping */
-        @keyframes fan-1 {
-          0% { stroke-dashoffset: 25; }
-          30% { stroke-dashoffset: 0; }
-          80% { stroke-dashoffset: 0; }
-          80.1%, 100% { stroke-dashoffset: 25; }
+        /* Book Fanning (Breathing Motion) */
+        @keyframes book-page-left {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(-25deg); }
         }
-        @keyframes fan-2 {
-          0%, 15% { stroke-dashoffset: 25; }
-          45% { stroke-dashoffset: 0; }
-          80% { stroke-dashoffset: 0; }
-          80.1%, 100% { stroke-dashoffset: 25; }
-        }
-        @keyframes fan-3 {
-          0%, 30% { stroke-dashoffset: 25; }
-          60% { stroke-dashoffset: 0; }
-          80% { stroke-dashoffset: 0; }
-          80.1%, 100% { stroke-dashoffset: 25; }
+        @keyframes book-page-right {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(25deg); }
         }
 
         /* Blooming Petals Looping */
@@ -83,6 +73,8 @@ const KineticIcon: React.FC<KineticIconProps> = ({ type }) => {
             animation-duration: 2s !important;
             animation-fill-mode: forwards !important;
           }
+          .book-left { transform: rotate(-25deg) !important; animation: none !important; }
+          .book-right { transform: rotate(25deg) !important; animation: none !important; }
         }
       `}</style>
 
@@ -107,9 +99,23 @@ const KineticIcon: React.FC<KineticIconProps> = ({ type }) => {
 
       {type === "book" && (
         <svg viewBox="0 0 28 28" className="kinetic-svg" style={{ strokeWidth: "0.9px" }}>
-          <line x1="14" y1="24" x2="14" y2="4" strokeDasharray="20" strokeDashoffset="20" style={{ animation: "fan-1 1.5s ease-out infinite" }} />
-          <line x1="14" y1="24" x2="4" y2="8" strokeDasharray="25" strokeDashoffset="25" style={{ animation: "fan-2 1.5s ease-out infinite" }} />
-          <line x1="14" y1="24" x2="24" y2="8" strokeDasharray="25" strokeDashoffset="25" style={{ animation: "fan-3 1.5s ease-out infinite" }} />
+          <line x1="14" y1="24" x2="14" y2="4" />
+          <line
+            x1="14" y1="24" x2="14" y2="4"
+            className="book-left"
+            style={{
+              transformOrigin: "14px 24px",
+              animation: "book-page-left 1.8s ease-in-out infinite alternate"
+            }}
+          />
+          <line
+            x1="14" y1="24" x2="14" y2="4"
+            className="book-right"
+            style={{
+              transformOrigin: "14px 24px",
+              animation: "book-page-right 1.8s ease-in-out infinite alternate"
+            }}
+          />
         </svg>
       )}
 

@@ -11,7 +11,7 @@ export default async function FloralsPage() {
         florals
       </h1>
       <p className="mt-2 text-center text-[clamp(0.9rem,1.1vw,1.15rem)] text-[#737373] font-normal normal-case tracking-normal">
-        new design hobby
+        work in progress
       </p>
 
       {images.length > 0 ? (
