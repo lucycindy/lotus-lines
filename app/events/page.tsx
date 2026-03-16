@@ -11,7 +11,7 @@ export default async function EventsPage() {
       <h1 className="mt-8 text-center text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-[#b83143]">
         events
       </h1>
-      <p className="mt-2 text-center text-[clamp(0.85rem,1vw,1rem)] text-[#737373] sm:text-base">
+      <p className="mt-2 text-center text-[13px] md:text-[clamp(0.85rem,1vw,1rem)] text-[#737373] sm:text-base">
         coordination & assistance for weddings / corporate / social events
       </p>
 
@@ -38,12 +38,12 @@ export default async function EventsPage() {
                 </div>
                 <div className="flex min-w-0 flex-1 items-center md:pl-10 mt-6 md:mt-0">
                   <div className="min-w-0 w-full">
-                    <h2 className="text-[clamp(1rem,1.2vw,1.3rem)] font-medium text-black group-hover:text-[#b83143] transition-colors whitespace-nowrap overflow-hidden text-ellipsis">
+                    <h2 className="text-[15px] md:text-[clamp(1rem,1.2vw,1.3rem)] font-medium text-black group-hover:text-[#b83143] transition-colors whitespace-nowrap overflow-hidden text-ellipsis">
                       {post.Title || "Untitled"}
                     </h2>
                     {post.Description ? (
                       <div className="flex items-center mt-1">
-                        <p className="line-clamp-1 text-[clamp(0.9rem,1.1vw,1.15rem)] text-[#737373] italic">
+                        <p className="line-clamp-1 text-[15px] md:text-[clamp(0.9rem,1.1vw,1.15rem)] text-[#737373] italic">
                           {post.Description}
                         </p>
                         <span

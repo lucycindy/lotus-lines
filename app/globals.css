@@ -26,6 +26,13 @@ body {
   font-family: "Times New Roman", Times, serif !important;
   text-transform: lowercase;
   animation: fadeIn 0.4s ease-in;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
 }
 
 @keyframes fadeIn {

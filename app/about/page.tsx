@@ -38,7 +38,7 @@ export default async function AboutPage() {
             <div className="w-full max-w-2xl space-y-12 relative z-10 flex flex-col items-center">
                 {/* Section 1: Headline */}
                 <div className="text-center w-full">
-                    <p className="text-[#b83143] text-[clamp(1rem,1.1vw,1.15rem)] leading-relaxed">
+                    <p className="text-[#b83143] text-[15px] md:text-[clamp(1rem,1.1vw,1.15rem)] leading-relaxed">
                         passionate about experiential, visual, and web design.
                     </p>
                 </div>
@@ -77,8 +77,8 @@ export default async function AboutPage() {
 
                     {/* Element 2: Quote */}
                     <div className="mt-10 text-left md:text-center w-full max-w-full md:max-w-[600px] mx-auto px-0 md:px-0">
-                        <p className="italic text-[13px] md:text-[clamp(1rem,1.1vw,1.15rem)] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase">
-                            "i love the lotus, for it rises from the mud unstained, cleansed in<br />rippling water, appealing, yet not seductive."
+                        <p className="italic text-[12px] md:text-[clamp(1rem,1.1vw,1.15rem)] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase">
+                            "i love the lotus, for it rises from the mud&nbsp;unstained, cleansed&nbsp;in&nbsp;rippling&nbsp;water,&nbsp;appealing, yet not seductive."
                         </p>
                         <p className="text-[13px] text-black tracking-[0.04em] leading-[1.8] lowercase mt-0.5">
                             — 周敦颐, on the love of the lotus, 1073
@@ -87,7 +87,7 @@ export default async function AboutPage() {
 
                     {/* Element 3: Paragraph */}
                     <div className="mt-10 text-left md:text-center max-w-[600px] w-full mx-auto">
-                        <p className="text-[clamp(1rem,1.1vw,1.15rem)] text-black leading-[1.8]">
+                        <p className="text-[15px] md:text-[clamp(1rem,1.1vw,1.15rem)] text-black leading-[1.8]">
                             I love the cultural meaning of the lotus as a symbol of the process. I've grown to appreciate the constraints and complexities of the mud for the beautiful bloom. This philosophy shapes how I approach design and everything else.
                         </p>
                     </div>

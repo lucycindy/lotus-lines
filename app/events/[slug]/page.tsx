@@ -74,7 +74,7 @@ export default async function EventPage({
         </h1>
 
         {post.Description ? (
-          <p className="mt-4 text-left text-[clamp(1rem,1.2vw,1.3rem)] text-[#737373] italic">
+          <p className="mt-4 text-left text-[15px] md:text-[clamp(1rem,1.2vw,1.3rem)] text-[#737373] italic">
             {post.Description}
           </p>
         ) : null}

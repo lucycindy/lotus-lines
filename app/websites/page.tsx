@@ -12,7 +12,7 @@ export default async function WebsitesPage() {
             </h1>
 
             <div className="mt-20 flex justify-center">
-                <p className="text-[#737373] text-[clamp(1rem,1.1vw,1.15rem)]">
+                <p className="text-[#737373] text-[15px] md:text-[clamp(1rem,1.1vw,1.15rem)]">
                     projects to be added soon
                 </p>
             </div>
