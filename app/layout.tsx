@@ -39,7 +39,7 @@ export default function RootLayout({
             </div>
 
             {/* Actual Page Content */}
-            <main className="flex-1 w-full px-6 md:px-0">
+            <main className="flex-1 w-full px-8 md:px-0">
               {children}
             </main>
           </div>

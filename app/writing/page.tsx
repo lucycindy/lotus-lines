@@ -17,7 +17,7 @@ export default async function WritingPage() {
       <ul className="mt-12 w-full">
         {posts.map((post, index) => (
           <li key={post.Slug || index}>
-            <div className="mx-auto max-w-[800px] px-6 md:px-0">
+            <div className="mx-auto max-w-[800px] px-8 md:px-0">
               <Link
                 href={post.Slug ? `/writing/${encodeURIComponent(post.Slug)}` : "#"}
                 className="group flex flex-col md:flex-row md:items-center py-8 text-black"

@@ -33,7 +33,7 @@ export default async function AboutPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-[#f0efec] px-6 md:px-8 py-20 flex flex-col items-center relative overflow-hidden">
+        <div className="min-h-screen bg-[#f0efec] px-8 py-20 flex flex-col items-center relative overflow-hidden">
             {/* Main Content Container */}
             <div className="w-full max-w-2xl space-y-12 relative z-10 flex flex-col items-center">
                 {/* Section 1: Headline */}
@@ -77,7 +77,7 @@ export default async function AboutPage() {
 
                     {/* Element 2: Quote */}
                     <div className="mt-10 text-left md:text-center w-full max-w-[600px] mx-auto">
-                        <p className="italic text-[clamp(1rem,1.1vw,1.15rem)] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase">
+                        <p className="italic text-[12px] md:text-[clamp(1rem,1.1vw,1.15rem)] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase">
                             "i love the lotus, for it rises from the mud unstained, cleansed in<br />rippling water, appealing, yet not seductive."
                         </p>
                         <p className="text-[13px] text-black tracking-[0.04em] leading-[1.8] lowercase mt-0.5">

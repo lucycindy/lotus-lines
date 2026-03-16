@@ -70,13 +70,6 @@ export default function Sidebar() {
                                 >
                                     websites
                                 </Link>
-                                <Link
-                                    href="/writing"
-                                    className="italic text-[#000000] md:text-black text-[clamp(1rem,1.1vw,1.15rem)] hover:text-[#b83143] transition-colors"
-                                    onClick={() => setIsOpen(false)}
-                                >
-                                    writing
-                                </Link>
                             </div>
                         </div>
 
@@ -87,6 +80,13 @@ export default function Sidebar() {
                         <div className="w-full md:w-fit py-4 md:pt-6">
                             <span className="block text-[#737373] md:text-black text-[clamp(1.1rem,1.2vw,1.3rem)] mb-4">hobbies</span>
                             <div className="flex flex-col gap-3">
+                                <Link
+                                    href="/writing"
+                                    className="italic text-[#000000] md:text-black text-[clamp(1rem,1.1vw,1.15rem)] hover:text-[#b83143] transition-colors"
+                                    onClick={() => setIsOpen(false)}
+                                >
+                                    writing
+                                </Link>
                                 <Link
                                     href="/books"
                                     className="italic text-[#000000] md:text-black text-[clamp(1rem,1.1vw,1.15rem)] hover:text-[#b83143] transition-colors"

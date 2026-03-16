@@ -27,7 +27,7 @@ export default async function BookPage({
 
   return (
     <div className="min-h-screen bg-[#f0efec] flex flex-col items-center">
-      <div className="w-full max-w-[680px] pt-4 md:pt-0 px-6 md:px-0">
+      <div className="w-full max-w-[680px] pt-4 md:pt-0 px-8 md:px-0">
         <Link
           href="/books"
           className="md:fixed top-8 left-[calc(var(--sidebar-width)+2rem)] z-50 text-[#737373] hover:text-[#b83143] transition-colors text-[13px] whitespace-nowrap block"
@@ -36,7 +36,7 @@ export default async function BookPage({
         </Link>
       </div>
 
-      <article className="mx-auto mt-6 md:mt-10 max-w-[680px] w-full flex flex-col items-start px-6 md:px-8 pb-16">
+      <article className="mx-auto mt-6 md:mt-10 max-w-[680px] w-full flex flex-col items-start px-8 md:px-8 pb-16">
         {post.CoverImage ? (
           <div className="relative aspect-[2/3] w-full max-w-[240px] max-h-[480px] overflow-hidden bg-[#e8e6e2]">
             <Image
