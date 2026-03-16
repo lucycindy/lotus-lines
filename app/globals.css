@@ -56,13 +56,15 @@ h6 {
 
 ol {
   list-style-type: decimal !important;
-  counter-reset: none !important;
+  counter-reset: list-item !important;
   padding-left: 1.5rem !important;
 }
 
 ol li {
-  list-style: decimal !important;
+  list-style-type: decimal !important;
+  list-style-position: outside !important;
   display: list-item !important;
+  counter-increment: list-item !important;
 }
 
 /* Lightbox support */

@@ -18,7 +18,7 @@ export default function Sidebar() {
             {/* Mobile Fixed Hamburger Button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="md:hidden fixed top-[2.8rem] right-4 z-[70] text-[#b83143] text-2xl focus:outline-none transition-colors hover:opacity-80"
+                className="md:hidden fixed top-[3.5rem] right-4 z-[70] text-[#b83143] text-2xl focus:outline-none transition-colors hover:opacity-80"
                 aria-label={isOpen ? "Close menu" : "Open menu"}
             >
                 {isOpen ? "✕" : "☰"}
@@ -54,7 +54,7 @@ export default function Sidebar() {
 
                         {/* Section: Work */}
                         <div className="w-full md:w-fit py-4 md:pt-6 md:pb-6">
-                            <span className="block text-[#737373] md:text-black text-[clamp(1.1rem,1.2vw,1.3rem)] mb-4">work</span>
+                            <span className="block text-[#737373] text-[clamp(1.1rem,1.2vw,1.3rem)] mb-4">work</span>
                             <div className="flex flex-col gap-3">
                                 <Link
                                     href="/events"
@@ -78,7 +78,7 @@ export default function Sidebar() {
 
                         {/* Section: Hobbies */}
                         <div className="w-full md:w-fit py-4 md:pt-6">
-                            <span className="block text-[#737373] md:text-black text-[clamp(1.1rem,1.2vw,1.3rem)] mb-4">hobbies</span>
+                            <span className="block text-[#737373] text-[clamp(1.1rem,1.2vw,1.3rem)] mb-4">hobbies</span>
                             <div className="flex flex-col gap-3">
                                 <Link
                                     href="/writing"

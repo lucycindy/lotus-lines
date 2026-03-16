@@ -7,6 +7,18 @@ export default function Lightbox() {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
+        // Preload image on mouseenter (desktop) and touchstart (mobile)
+        const handlePreload = (e: MouseEvent | TouchEvent) => {
+            const target = e.target as HTMLElement;
+            if (target.tagName === "IMG") {
+                const img = target as HTMLImageElement;
+                if (img.alt === "logo") return;
+                // Preload the full-size src
+                const preload = new window.Image();
+                preload.src = img.src;
+            }
+        };
+
         const handleGlobalClick = (e: MouseEvent) => {
             const target = e.target as HTMLElement;
 
@@ -14,24 +26,27 @@ export default function Lightbox() {
             if (target.tagName === "IMG") {
                 const img = target as HTMLImageElement;
 
-                // Exclude logo (assumed to have alt="logo")
+                // Exclude logo
                 if (img.alt === "logo") return;
-
-                // Prevent navigation if it's inside a link (optional, but requested behavior implies lightbox is primary)
-                // e.preventDefault(); 
 
                 setSrc(img.src);
                 setIsVisible(true);
             }
         };
 
+        document.addEventListener("mouseover", handlePreload as EventListener);
+        document.addEventListener("touchstart", handlePreload as EventListener, { passive: true });
         document.addEventListener("click", handleGlobalClick);
-        return () => document.removeEventListener("click", handleGlobalClick);
+
+        return () => {
+            document.removeEventListener("mouseover", handlePreload as EventListener);
+            document.removeEventListener("touchstart", handlePreload as EventListener);
+            document.removeEventListener("click", handleGlobalClick);
+        };
     }, []);
 
     const close = () => {
         setIsVisible(false);
-        // Wait for fade out animation before clearing src
         setTimeout(() => setSrc(null), 200);
     };
 
