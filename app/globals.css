@@ -67,16 +67,7 @@ ol li {
   counter-increment: list-item !important;
 }
 
-/* Post body link styling */
-a {
-  color: #b83143;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
+/* Post body link styling — scoped to .post-link class only */
 .post-link {
   color: #b83143;
   text-decoration: none;

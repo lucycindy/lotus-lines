@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getWritingPosts } from "@/lib/notion";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 import BackButton from "@/components/BackButton";
 
 export async function generateStaticParams() {
@@ -60,6 +61,7 @@ export default async function WritingPostPage({
           <div className="mt-10 w-full text-black leading-relaxed">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
+              rehypePlugins={[rehypeRaw]}
               components={{
                 p: ({ node, ...props }) => <p className="mb-4" {...props} />,
                 ul: ({ node, ...props }) => <ul className="list-disc ml-6 mb-4" {...props} />,
