@@ -88,7 +88,7 @@ export default async function EventPage({
                 li: ({ node, ...props }) => <li className="mb-2" style={{ display: 'list-item', listStyleType: 'decimal', counterIncrement: 'list-item' }} {...props} />,
                 strong: ({ node, ...props }) => <strong style={{ fontWeight: 'bold', color: 'inherit', textDecoration: 'none' }} {...props} />,
                 em: ({ node, ...props }) => <em className="italic" {...props} />,
-                a: ({ node, ...props }) => <a style={{ color: '#b83143', textDecoration: 'none' }} onMouseEnter={e => (e.currentTarget.style.textDecoration = 'underline')} onMouseLeave={e => (e.currentTarget.style.textDecoration = 'none')} {...props} />,
+                a: ({ node, ...props }) => <a className="post-link" {...props} />,
                 u: ({ node, ...props }) => <u style={{ textDecoration: 'underline', color: '#000000' }} {...props} />,
               }}
             >
