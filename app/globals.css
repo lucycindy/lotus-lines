@@ -67,6 +67,23 @@ ol li {
   counter-increment: list-item !important;
 }
 
+/* Post body link styling */
+a {
+  color: #b83143;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Post body strong — plain black, no decoration */
+strong {
+  font-weight: bold;
+  color: inherit;
+  text-decoration: none;
+}
+
 /* Lightbox support */
 .lightbox-fade-enter {
   opacity: 0;

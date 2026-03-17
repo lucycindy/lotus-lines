@@ -86,9 +86,10 @@ export default async function EventPage({
                 ul: ({ node, ...props }) => <ul className="list-disc ml-6 mb-4" {...props} />,
                 ol: ({ node, ...props }) => <ol className="list-decimal ml-6 mb-4" style={{ listStyleType: 'decimal', counterReset: 'list-item' }} {...props} />,
                 li: ({ node, ...props }) => <li className="mb-2" style={{ display: 'list-item', listStyleType: 'decimal', counterIncrement: 'list-item' }} {...props} />,
-                strong: ({ node, ...props }) => <strong className="font-bold underline decoration-[#b83143]/30" {...props} />,
+                strong: ({ node, ...props }) => <strong style={{ fontWeight: 'bold', color: 'inherit', textDecoration: 'none' }} {...props} />,
                 em: ({ node, ...props }) => <em className="italic" {...props} />,
-                a: ({ node, ...props }) => <a className="underline hover:text-[#b83143] transition-colors" {...props} />,
+                a: ({ node, ...props }) => <a style={{ color: '#b83143', textDecoration: 'none' }} onMouseEnter={e => (e.currentTarget.style.textDecoration = 'underline')} onMouseLeave={e => (e.currentTarget.style.textDecoration = 'none')} {...props} />,
+                u: ({ node, ...props }) => <u style={{ textDecoration: 'underline', color: '#000000' }} {...props} />,
               }}
             >
               {post.Body}
