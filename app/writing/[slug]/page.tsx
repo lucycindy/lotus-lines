@@ -35,15 +35,22 @@ export default async function WritingPostPage({
 
       <article className="mx-auto mt-6 md:mt-10 max-w-[680px] w-full flex flex-col items-start px-4 md:px-0 pb-16">
         {post.CoverImage ? (
-          <div className="relative aspect-[4/3] w-full max-h-[480px] overflow-hidden bg-[#e8e6e2]">
-            <Image
-              src={post.CoverImage}
-              alt={post.Title || "Writing cover"}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 680px"
-              priority
-            />
+          <div className="w-full">
+            <div className="relative aspect-[4/3] w-full max-h-[480px] overflow-hidden bg-[#e8e6e2]">
+              <Image
+                src={post.CoverImage}
+                alt={post.Title || "Writing cover"}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 680px"
+                priority
+              />
+            </div>
+            {post.ImageCaption ? (
+              <p className="mt-2 text-center text-[12px] text-[#737373] not-italic">
+                {post.ImageCaption}
+              </p>
+            ) : null}
           </div>
         ) : null}
 
