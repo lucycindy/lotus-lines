@@ -2,6 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { getWritingPosts } from "@/lib/notion";
 
+export const revalidate = 30;
+
+
 export default async function WritingPage() {
   const posts = await getWritingPosts();
 

@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { getWebsitePosts } from "@/lib/notion";
 
+export const revalidate = 30;
+
 export default async function WebsitesPage() {
     const posts = await getWebsitePosts();
 

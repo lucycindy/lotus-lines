@@ -7,6 +7,9 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import BackButton from "@/components/BackButton";
 
+export const revalidate = 30;
+
+
 export async function generateStaticParams() {
   const posts = await getWritingPosts();
   return posts

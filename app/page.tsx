@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { getEventPosts, getWritingPosts, getBookPosts, getFloralPosts, getWebsitePosts } from "@/lib/notion";
 
+export const revalidate = 30;
+
+
 // Helper to reliably parse dates for sorting
 function parseDate(dateStrInput: string | null) {
   if (!dateStrInput) return 0;

@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { getAboutPost } from "@/lib/notion";
 import KineticIcon from "@/components/KineticIcon";
 
+export const revalidate = 30;
+
 export default async function AboutPage() {
     const post = await getAboutPost();
 
