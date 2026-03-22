@@ -47,8 +47,8 @@ export default async function Home() {
 
       <div className="w-full flex flex-col">
         {/* About Tagline & Icons (Now at the Top) */}
-        <section id="about" className="py-16 md:py-24 px-6 md:px-12">
-          <div className="max-w-[640px] w-full mx-auto flex flex-col items-center">
+        <section id="about" className="py-16 md:py-20 px-6 md:px-12 w-full">
+          <div className="max-w-[640px] w-full mx-auto flex flex-col items-center md:pr-[100px]">
             <p className="text-[#b83143] text-[17px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] leading-relaxed text-center mb-8">
               passionate about experiential, visual, and web design.
             </p>
@@ -153,7 +153,7 @@ export default async function Home() {
         </section>
 
         {/* Florals Section */}
-        <section id="florals" className="py-12 md:py-16 px-6 md:px-12 w-full">
+        <section id="florals" className="py-12 md:pb-12 md:pt-16 px-6 md:px-12 w-full">
           <div className="max-w-[800px] w-full mx-auto space-y-6">
             <div className="scroll-container hide-scrollbar overflow-x-auto">
               {recentFlorals.map((imgUrl, idx) => (
@@ -173,8 +173,8 @@ export default async function Home() {
         </section>
 
         {/* Decorative Footer */}
-        <footer id="footer" className="py-12 md:py-24 px-6 md:px-12 border-t border-[#d4d1cb]/20 w-full">
-          <div className="max-w-[640px] w-full mx-auto flex flex-col items-center">
+        <footer id="footer" className="py-12 md:pt-16 md:pb-24 px-6 md:px-12 w-full">
+          <div className="max-w-[640px] w-full mx-auto flex flex-col items-center md:pr-[100px]">
             {/* Red Lotus Painting */}
             <div className="w-full sm:w-[85%] md:w-[65%] flex flex-col items-center mb-10">
               <div className="relative w-full aspect-[4/3]">
@@ -204,6 +204,7 @@ export default async function Home() {
             </div>
           </div>
         </footer>
+
       </div>
     </div>
   );
