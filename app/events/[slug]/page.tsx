@@ -106,12 +106,8 @@ export default async function EventPage({
       </article>
 
       <div className="w-full px-4 md:px-0">
-        <PostNavigation currentSlug={post.Slug} />
+        <PostNavigation currentSlug={post.Slug} category="events" />
       </div>
     </div>
   );
 }
-
-
-
-

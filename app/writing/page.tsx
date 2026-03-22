@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getWritingPosts } from "@/lib/notion";
+import BackButton from "@/components/BackButton";
 
 export const revalidate = 30;
 
@@ -10,6 +11,9 @@ export default async function WritingPage() {
 
   return (
     <div className="min-h-screen bg-[#f0efec] px-6 py-16 flex flex-col items-center">
+      <div className="w-full max-w-[800px]">
+        <BackButton />
+      </div>
       <h1 className="mt-8 text-center text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-[#b83143]">
         writing
       </h1>
@@ -48,21 +52,8 @@ export default async function WritingPage() {
                         <p className="line-clamp-1 text-[15px] md:text-[clamp(0.9rem,1.1vw,1.15rem)] text-[#737373] italic">
                           {post.Description}
                         </p>
-                        <span
-                          className="shrink-0 text-[#b83143] transition-transform group-hover:translate-x-1 ml-6"
-                          aria-hidden
-                        >
-                          →
-                        </span>
                       </div>
-                    ) : (
-                      <span
-                        className="shrink-0 text-[#b83143] transition-transform group-hover:translate-x-1 mt-1 block"
-                        aria-hidden
-                      >
-                        →
-                      </span>
-                    )}
+                    ) : null}
                   </div>
                 </div>
               </Link>

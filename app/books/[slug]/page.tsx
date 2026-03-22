@@ -84,7 +84,7 @@ export default async function BookPage({
       </article>
 
       <div className="w-full px-4 md:px-0">
-        <PostNavigation currentSlug={post.Slug} />
+        <PostNavigation currentSlug={post.Slug} category="books" />
       </div>
     </div>
   );

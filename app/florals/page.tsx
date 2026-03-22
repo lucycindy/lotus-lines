@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getFloralGallery } from "@/lib/notion";
+import BackButton from "@/components/BackButton";
 
 export const revalidate = 30;
 
@@ -10,6 +11,9 @@ export default async function FloralsPage() {
 
   return (
     <div className="min-h-screen bg-[#f0efec] px-4 py-16">
+      <div className="mx-auto max-w-5xl">
+        <BackButton />
+      </div>
       <h1 className="mt-8 text-center text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-[#b83143]">
         florals
       </h1>

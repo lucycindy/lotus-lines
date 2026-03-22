@@ -3,21 +3,23 @@ import { getAllPostsSorted } from "@/lib/notion";
 
 interface PostNavigationProps {
   currentSlug: string;
+  category: string;
 }
 
-export default async function PostNavigation({ currentSlug }: PostNavigationProps) {
+export default async function PostNavigation({ currentSlug, category }: PostNavigationProps) {
   const allPosts = await getAllPostsSorted();
+  const categoryPosts = allPosts.filter(p => p.category === category);
   
   // Find current post index
-  const currentIndex = allPosts.findIndex(p => p.Slug === currentSlug);
+  const currentIndex = categoryPosts.findIndex(p => p.Slug === currentSlug);
 
   if (currentIndex === -1) return null;
 
   // Since sorted newest first:
   // Next (newer) is at index - 1
   // Previous (older) is at index + 1
-  const nextPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
-  const prevPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
+  const nextPost = currentIndex > 0 ? categoryPosts[currentIndex - 1] : null;
+  const prevPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[currentIndex + 1] : null;
 
   if (!nextPost && !prevPost) return null;
 
@@ -31,7 +33,7 @@ export default async function PostNavigation({ currentSlug }: PostNavigationProp
           >
             <span className="transition-transform group-hover:-translate-x-1">←</span>
             <div className="flex flex-col items-start">
-              <span className="text-[12px] uppercase tracking-wider text-[#a3a3a3] mb-0.5">previous</span>
+              <span className="text-[12px] tracking-wider text-[#a3a3a3] mb-0.5 lowercase">previous</span>
               <span className="line-clamp-1 italic">{prevPost.Title || "untitled"}</span>
             </div>
           </Link>
@@ -45,7 +47,7 @@ export default async function PostNavigation({ currentSlug }: PostNavigationProp
             className="group flex items-center gap-3 text-[#737373] hover:text-[#b83143] transition-colors text-right"
           >
             <div className="flex flex-col items-end">
-              <span className="text-[12px] uppercase tracking-wider text-[#a3a3a3] mb-0.5">next</span>
+              <span className="text-[12px] tracking-wider text-[#a3a3a3] mb-0.5 lowercase">next</span>
               <span className="line-clamp-1 italic">{nextPost.Title || "untitled"}</span>
             </div>
             <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -55,3 +57,4 @@ export default async function PostNavigation({ currentSlug }: PostNavigationProp
     </div>
   );
 }
+

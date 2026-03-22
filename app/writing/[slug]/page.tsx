@@ -39,8 +39,9 @@ export default async function WritingPostPage({
       </div>
 
       <article className="mx-auto mt-6 md:mt-10 max-w-[650px] w-full flex flex-col items-start px-6 md:px-8 pb-16">
+        
         {post.CoverImage ? (
-          <div className="w-full">
+          <div className="w-full mt-8">
             <div className="relative aspect-[4/3] w-full max-h-[480px] overflow-hidden bg-[#e8e6e2]">
               <Image
                 src={post.CoverImage}
@@ -59,18 +60,26 @@ export default async function WritingPostPage({
           </div>
         ) : null}
 
-        <h1 className="mt-8 text-left text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-[#b83143]">
-          {post.Title || "Untitled"}
-        </h1>
-
-        {post.Description ? (
-          <p className="mt-4 text-left text-[15px] md:text-[clamp(1rem,1.2vw,1.3rem)] text-[#737373] italic">
-            {post.Description}
-          </p>
-        ) : null}
+        <div className="mb-12 mt-8">
+          <h1 className="text-[clamp(1.75rem,3vw,2.5rem)] font-medium text-black leading-tight mb-4">
+            {post.Title}
+          </h1>
+          {post.Description && (
+            <p className="text-[clamp(1.1rem,1.25vw,1.3rem)] text-[#737373] italic leading-relaxed">
+              {post.Description}
+            </p>
+          )}
+          <div className="mt-8 pt-8 border-t border-[#d4d1cb]/40">
+            {post.DateString && (
+              <p className="text-[13px] text-[#a3a3a3] uppercase tracking-widest">
+                {new Date(post.DateString).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+              </p>
+            )}
+          </div>
+        </div>
 
         {post.Body ? (
-          <div className="mt-10 w-full text-black leading-relaxed">
+          <div className="prose prose-stone prose-lg max-w-none prose-headings:font-medium prose-headings:text-black prose-p:text-black prose-p:leading-relaxed prose-li:text-black prose-img:rounded-sm">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeRaw]}
@@ -92,7 +101,7 @@ export default async function WritingPostPage({
       </article>
 
       <div className="w-full px-4 md:px-0">
-        <PostNavigation currentSlug={post.Slug} />
+        <PostNavigation currentSlug={post.Slug} category="writing" />
       </div>
     </div>
   );

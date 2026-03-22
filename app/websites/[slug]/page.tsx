@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { getWebsitePosts } from "@/lib/notion";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import BackButton from "@/components/BackButton";
 import PostNavigation from "@/components/PostNavigation";
 
 
@@ -30,12 +31,9 @@ export default async function WebsitePage({
 
     return (
         <div className="min-h-screen bg-[#f0efec] px-4 py-16 flex flex-col items-center">
-            <Link
-                href="/websites"
-                className="fixed top-8 left-[calc(var(--sidebar-width)+2rem)] z-50 text-[#737373] hover:text-[#b83143] transition-colors text-[13px] whitespace-nowrap"
-            >
-                ← back
-            </Link>
+            <div className="w-full max-w-[640px] px-10">
+                <BackButton />
+            </div>
 
             <article className="mx-auto mt-10 max-w-[640px] w-full flex flex-col items-start px-10">
                 {post.CoverImage ? (
@@ -82,8 +80,9 @@ export default async function WebsitePage({
             </article>
 
             <div className="w-full px-4 md:px-0">
-                <PostNavigation currentSlug={post.Slug} />
+                <PostNavigation currentSlug={post.Slug} category="websites" />
             </div>
+
         </div>
     );
 }

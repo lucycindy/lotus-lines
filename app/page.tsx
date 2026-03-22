@@ -47,7 +47,7 @@ export default async function Home() {
 
       <div className="w-full flex flex-col">
         {/* About Tagline & Icons (Now at the Top) */}
-        <section id="about" className="py-16 md:py-20 px-6 md:px-12 w-full">
+        <section id="about" className="pt-24 md:pt-32 pb-8 md:pb-12 px-6 md:px-12 w-full">
           <div className="max-w-[640px] w-full mx-auto flex flex-col items-center md:pr-[100px]">
             <p className="text-[#b83143] text-[17px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] leading-relaxed text-center mb-8">
               passionate about experiential, visual, and web design.
@@ -69,7 +69,8 @@ export default async function Home() {
         </section>
 
         {/* Events Section */}
-        <section id="events" className="py-12 md:py-16 px-6 md:px-12 w-full">
+        <section id="events" className="pt-4 md:pt-8 pb-12 md:pb-16 px-6 md:px-12 w-full">
+
           <div className="max-w-[800px] w-full mx-auto space-y-8">
             <div className="space-y-12">
               {recentEvents.map((post) => (
