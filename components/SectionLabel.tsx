@@ -20,8 +20,9 @@ export default function SectionLabel({ sections }: SectionLabelProps) {
       },
       {
         threshold: 0,
-        rootMargin: "-1px 0px -99% 0px", // Trigger when the top of the element hits the top pixel of viewport
+        rootMargin: "-10% 0px -80% 0px", // Trigger earlier as section enters upper viewport
       }
+
 
     );
 
