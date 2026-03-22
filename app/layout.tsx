@@ -21,7 +21,7 @@ export default function RootLayout({
         className="antialiased lowercase text-[clamp(1rem,1.2vw,1.25rem)] min-h-screen bg-[#f0efec]"
         suppressHydrationWarning
       >
-        <div className="min-h-screen w-full relative flex flex-col">
+        <div className="min-h-screen w-full relative flex flex-col overflow-x-hidden min-w-0">
           {/* Header Layer (Scrolling) - Logo and Email Icon are independent */}
           <header className="absolute top-0 left-0 w-full flex justify-between items-start pt-12 px-6 md:px-12 z-[60] pointer-events-none">
              <div className="pointer-events-auto">
@@ -44,20 +44,21 @@ export default function RootLayout({
              </div>
           </header>
 
-          <div className="flex flex-col md:flex-row flex-1 w-full relative">
+          <div className="flex flex-col md:flex-row flex-1 w-full relative min-w-0">
             {/* Left Panel Placeholder for SectionLabel */}
             <aside className="hidden md:flex fixed top-0 left-0 w-[210px] max-w-[210px] h-screen flex-col justify-start py-12 z-50 pointer-events-none overflow-hidden">
               {/* The SectionLabel will render its content here, aligned to the right edge */}
             </aside>
 
             {/* Main Content Area */}
-            <div className="flex-1 md:ml-[210px] flex flex-col min-h-screen relative">
-              <main className="flex-1 w-full">
+            <div className="flex-1 md:ml-[210px] flex flex-col min-h-screen relative min-w-0">
+              <main className="flex-1 w-full min-w-0">
                 {children}
               </main>
             </div>
           </div>
         </div>
+
 
         <Lightbox />
       </body>
