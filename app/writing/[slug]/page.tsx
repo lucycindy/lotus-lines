@@ -33,8 +33,8 @@ export default async function WritingPostPage({
   if (!post) notFound();
 
   return (
-    <div className="min-h-screen bg-[#f0efec] flex flex-col items-center">
-      <div className="w-full max-w-[650px] pt-4 md:pt-0 px-6 md:px-8">
+    <div className="min-h-screen bg-[#f0efec] flex flex-col items-center pt-20 pb-16">
+      <div className="w-full max-w-[650px] px-6 md:px-8">
         <BackButton />
       </div>
 
@@ -69,14 +69,8 @@ export default async function WritingPostPage({
               {post.Description}
             </p>
           )}
-          <div className="mt-8 pt-8 border-t border-[#d4d1cb]/40">
-            {post.DateString && (
-              <p className="text-[13px] text-[#a3a3a3] uppercase tracking-widest">
-                {new Date(post.DateString).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-              </p>
-            )}
-          </div>
         </div>
+
 
         {post.Body ? (
           <div className="prose prose-stone prose-lg max-w-none prose-headings:font-medium prose-headings:text-black prose-p:text-black prose-p:leading-relaxed prose-li:text-black prose-img:rounded-sm">

@@ -10,7 +10,7 @@ export default async function EventsPage() {
   const posts = await getEventPosts();
 
   return (
-    <div className="min-h-screen bg-[#f0efec] px-6 py-16 flex flex-col items-center">
+    <div className="min-h-screen bg-[#f0efec] px-6 pt-20 pb-16 flex flex-col items-center">
       <div className="w-full max-w-[800px]">
         <BackButton />
       </div>

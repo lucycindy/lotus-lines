@@ -10,7 +10,7 @@ export default async function FloralsPage() {
   const images = await getFloralGallery();
 
   return (
-    <div className="min-h-screen bg-[#f0efec] px-4 py-16">
+    <div className="min-h-screen bg-[#f0efec] px-4 pt-20 pb-16">
       <div className="mx-auto max-w-5xl">
         <BackButton />
       </div>

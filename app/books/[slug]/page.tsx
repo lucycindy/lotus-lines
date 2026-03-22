@@ -32,8 +32,8 @@ export default async function BookPage({
   if (!post) notFound();
 
   return (
-    <div className="min-h-screen bg-[#f0efec] flex flex-col items-center">
-      <div className="w-full max-w-[650px] pt-4 md:pt-0 px-6 md:px-8">
+    <div className="min-h-screen bg-[#f0efec] flex flex-col items-center pt-20 pb-16">
+      <div className="w-full max-w-[650px] px-6 md:px-8">
         <BackButton />
       </div>
 

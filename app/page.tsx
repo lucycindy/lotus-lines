@@ -69,30 +69,35 @@ export default async function Home() {
         </section>
 
         {/* Events Section */}
-        <section id="events" className="pt-4 md:pt-8 pb-12 md:pb-16 px-6 md:px-12 w-full">
-
+        <section id="events" className="pt-4 md:pt-8 pb-8 md:pb-12 px-6 md:px-12 w-full">
           <div className="max-w-[800px] w-full mx-auto space-y-8">
             <div className="space-y-12">
               {recentEvents.map((post) => (
-                <div key={post.Slug} className="flex flex-row gap-6 md:gap-12 group min-w-0">
-                  <Link href={`/events/${post.Slug}`} className="w-32 sm:w-40 md:w-64 aspect-[4/3] flex-shrink-0 overflow-hidden bg-gray-100 rounded-sm">
+                <Link
+                  key={post.Slug}
+                  href={`/events/${post.Slug}`}
+                  className="group flex flex-row items-center gap-6 md:gap-10 py-6"
+                >
+                  <div className="w-[120px] md:w-[216px] h-[160px] md:h-[144px] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
                     {post.CoverImage && (
                       <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     )}
-                  </Link>
-                  <div className="flex flex-col justify-center min-w-0 flex-1">
-                    <Link href={`/events/${post.Slug}`} className="group/text block min-w-0">
-                      <h3 className="text-xl md:text-2xl font-serif text-black transition-colors group-hover/text:text-[#b83143] break-words leading-tight">{post.Title}</h3>
-                      <p className="mt-2 text-sm md:text-base text-[#737373] italic transition-colors group-hover/text:text-[#b83143] break-words line-clamp-2 md:line-clamp-none">
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-[17px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] font-medium text-black group-hover:text-[#b83143] transition-colors leading-snug line-clamp-2">
+                      {post.Title}
+                    </h3>
+                    {post.Description && (
+                      <p className="mt-2 text-[15px] md:text-[16px] text-[#737373] italic line-clamp-2">
                         {post.Description}
                       </p>
-                    </Link>
+                    )}
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
-            <div className="flex justify-start pt-4">
-              <Link href="/events" className="text-[#737373] hover:text-[#b83143] italic transition-colors text-sm flex items-center gap-1 group">
+            <div className="flex justify-start">
+              <Link href="/events" className="text-[#737373] hover:text-[#b83143] italic transition-colors text-sm font-medium flex items-center gap-1 group">
                 more <span className="text-[#b83143] not-italic">→</span>
               </Link>
             </div>
@@ -100,29 +105,35 @@ export default async function Home() {
         </section>
 
         {/* Writing Section */}
-        <section id="writing" className="py-12 md:py-16 px-6 md:px-12 w-full">
+        <section id="writing" className="pt-4 md:pt-8 pb-8 md:pb-12 px-6 md:px-12 w-full">
           <div className="max-w-[800px] w-full mx-auto space-y-8">
             <div className="space-y-12">
               {recentWriting.map((post) => (
-                <div key={post.Slug} className="flex flex-row gap-6 md:gap-12 group min-w-0">
-                  <Link href={`/writing/${post.Slug}`} className="w-32 sm:w-40 md:w-64 aspect-[4/3] flex-shrink-0 overflow-hidden bg-gray-100 rounded-sm">
+                <Link
+                  key={post.Slug}
+                  href={`/writing/${post.Slug}`}
+                  className="group flex flex-row items-center gap-6 md:gap-10 py-6"
+                >
+                  <div className="w-[120px] md:w-[144px] h-[120px] md:h-[144px] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
                     {post.CoverImage && (
                       <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     )}
-                  </Link>
-                  <div className="flex flex-col justify-center min-w-0 flex-1">
-                    <Link href={`/writing/${post.Slug}`} className="group/text block min-w-0">
-                      <h3 className="text-xl md:text-2xl font-serif text-black transition-colors group-hover/text:text-[#b83143] break-words leading-tight">{post.Title}</h3>
-                      <p className="mt-2 text-sm md:text-base text-[#737373] italic transition-colors group-hover/text:text-[#b83143] break-words line-clamp-2 md:line-clamp-none">
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-[17px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] font-medium text-black group-hover:text-[#b83143] transition-colors leading-snug line-clamp-2">
+                      {post.Title}
+                    </h3>
+                    {post.Description && (
+                      <p className="mt-2 text-[15px] md:text-[16px] text-[#737373] italic line-clamp-2">
                         {post.Description}
                       </p>
-                    </Link>
+                    )}
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
-            <div className="flex justify-start pt-4">
-              <Link href="/writing" className="text-[#737373] hover:text-[#b83143] italic transition-colors text-sm flex items-center gap-1 group">
+            <div className="flex justify-start">
+              <Link href="/writing" className="text-[#737373] hover:text-[#b83143] italic transition-colors text-sm font-medium flex items-center gap-1 group">
                 more <span className="text-[#b83143] not-italic">→</span>
               </Link>
             </div>
@@ -130,23 +141,33 @@ export default async function Home() {
         </section>
 
         {/* Books Section */}
-        <section id="books" className="py-12 md:py-16 px-6 md:px-12 w-full">
-          <div className="max-w-[800px] w-full mx-auto space-y-6">
-            <div className="scroll-container hide-scrollbar overflow-x-auto gap-10 md:gap-16">
+        <section id="books" className="pt-4 md:pt-8 pb-8 md:pb-12 px-6 md:px-12 w-full">
+          <div className="max-w-[800px] w-full mx-auto relative group-container overflow-hidden">
+            <div className="scroll-container hide-scrollbar overflow-x-auto">
               {recentBooks.map((post) => (
-                <Link key={post.Slug} href={`/books/${post.Slug}`} className="scroll-item w-[180px] group block flex-shrink-0">
-                  <div className="aspect-[2/3] w-[180px] overflow-hidden bg-gray-100 mb-4 rounded-sm">
+                <Link
+                  key={post.Slug}
+                  href={`/books/${post.Slug}`}
+                  className="scroll-item w-[180px] shrink-0 group py-6"
+                >
+                  <div className="aspect-[2/3] w-full overflow-hidden bg-[#e8e6e2] mb-4 rounded-sm shadow-sm transition-shadow group-hover:shadow-md">
                     {post.CoverImage && (
                       <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     )}
                   </div>
-                  <h4 className="text-[15px] text-black font-serif leading-tight transition-colors group-hover:text-[#b83143] mb-1 break-words">{post.Title}</h4>
-                  <p className="text-[13px] text-[#737373] italic break-words">{post.Description}</p>
+                  <h3 className="text-[17px] md:text-[18px] font-medium text-black group-hover:text-[#b83143] transition-colors line-clamp-1">
+                    {post.Title}
+                  </h3>
+                  {post.Description && (
+                    <p className="mt-1 text-sm text-[#737373] italic line-clamp-1">
+                      {post.Description}
+                    </p>
+                  )}
                 </Link>
               ))}
             </div>
             <div className="flex justify-start pt-4">
-              <Link href="/books" className="text-[#737373] hover:text-[#b83143] italic transition-colors text-sm flex items-center gap-1 group">
+              <Link href="/books" className="text-[#737373] hover:text-[#b83143] italic transition-colors text-sm font-medium flex items-center gap-1 group">
                 more <span className="text-[#b83143] not-italic">→</span>
               </Link>
             </div>
@@ -154,7 +175,7 @@ export default async function Home() {
         </section>
 
         {/* Florals Section */}
-        <section id="florals" className="py-12 md:pb-12 md:pt-16 px-6 md:px-12 w-full">
+        <section id="florals" className="pt-4 md:pt-8 pb-8 md:pb-12 px-6 md:px-12 w-full">
           <div className="max-w-[800px] w-full mx-auto space-y-6">
             <div className="scroll-container hide-scrollbar overflow-x-auto">
               {recentFlorals.map((imgUrl, idx) => (
@@ -174,7 +195,8 @@ export default async function Home() {
         </section>
 
         {/* Decorative Footer */}
-        <footer id="footer" className="py-12 md:pt-16 md:pb-24 px-6 md:px-12 w-full">
+        <footer id="footer" className="pt-4 md:pt-8 pb-12 md:pb-24 px-6 md:px-12 w-full">
+
           <div className="max-w-[640px] w-full mx-auto flex flex-col items-center md:pr-[100px]">
             {/* Red Lotus Painting */}
             <div className="w-full sm:w-[85%] md:w-[65%] flex flex-col items-center mb-10">
