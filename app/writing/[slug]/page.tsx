@@ -39,10 +39,10 @@ export default async function WritingPostPage({
       </div>
 
       <article className="mx-auto mt-6 md:mt-10 max-w-[650px] w-full flex flex-col items-start px-6 md:px-8 pb-16">
-        
         {post.CoverImage ? (
-          <div className="w-full mt-8">
+          <div className="w-full">
             <div className="relative aspect-[4/3] w-full max-h-[480px] overflow-hidden bg-[#e8e6e2]">
+
               <Image
                 src={post.CoverImage}
                 alt={post.Title || "Writing cover"}

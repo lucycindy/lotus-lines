@@ -27,19 +27,22 @@ export default async function WritingPage() {
             <div className="mx-auto max-w-[800px] px-4 md:px-0">
               <Link
                 href={post.Slug ? `/writing/${encodeURIComponent(post.Slug)}` : "#"}
-                className="group flex flex-col md:flex-row md:items-center py-8 text-black"
+                className="group flex flex-row items-center py-8 text-black gap-6 md:gap-10"
               >
-                <div className="w-full md:w-[320px] shrink-0 flex justify-center">
+                <div className="w-32 sm:w-40 md:w-64 aspect-[4/3] flex-shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
                   {post.CoverImage ? (
-                    <div className="relative w-full md:w-[240px] bg-[#e8e6e2] rounded-sm overflow-hidden">
-                      <img
+                    <div className="relative w-full h-full">
+                      <Image
                         src={post.CoverImage}
                         alt={post.Title || "Writing cover"}
-                        className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 128px, 256px"
                       />
                     </div>
                   ) : null}
                 </div>
+
 
                 <div className="flex min-w-0 flex-1 items-center md:pl-10 mt-6 md:mt-0">
                   <div className="min-w-0 w-full">

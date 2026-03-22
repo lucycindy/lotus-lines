@@ -199,9 +199,10 @@ export default async function Home() {
         {/* Decorative Footer */}
         <footer id="footer" className="pt-4 md:pt-8 pb-12 md:pb-24 px-6 md:px-12 w-full">
 
-          <div className="max-w-[1000px] w-full mx-auto flex flex-col items-center">
+          <div className="max-w-[640px] w-full mx-auto flex flex-col items-center md:pr-[100px]">
             {/* Red Lotus Painting */}
             <div className="w-full sm:w-[85%] md:w-[85%] flex flex-col items-center mb-10">
+
 
 
               <div className="relative w-full aspect-[4/3]">
@@ -214,7 +215,7 @@ export default async function Home() {
 
             {/* Quote + Paragraph */}
             <div className="space-y-10 w-full text-center">
-              <div className="text-center max-w-4xl mx-auto">
+              <div className="text-center max-w-[650px] mx-auto">
 
                 <p className="italic text-[16px] md:text-[18px] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase">
                   "i love the lotus, for it rises from the mud unstained, cleansed in rippling water, appealing, yet not seductive."
@@ -224,11 +225,12 @@ export default async function Home() {
                 </p>
               </div>
 
-              <div className="text-[16px] md:text-[17px] text-[#737373] leading-relaxed max-w-5xl mx-auto px-4">
+              <div className="text-[16px] md:text-[17px] text-black leading-relaxed max-w-[650px] mx-auto px-4">
                 <p className="lowercase">
                   I love the cultural meaning of the lotus as a symbol of the process. I've grown to appreciate the constraints and complexities of the mud for the beautiful bloom. This philosophy shapes how I approach design and everything else.
                 </p>
               </div>
+
 
             </div>
           </div>
