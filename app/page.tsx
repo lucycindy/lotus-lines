@@ -47,8 +47,9 @@ export default async function Home() {
 
       <div className="w-full flex flex-col">
         {/* About Tagline & Icons (Now at the Top) */}
-        <section id="about" className="pt-24 md:pt-32 pb-8 md:pb-12 px-6 md:px-12 w-full">
-          <div className="max-w-[640px] w-full mx-auto flex flex-col items-center md:pr-[100px]">
+        <section id="about" className="pt-44 md:pt-32 pb-8 md:pb-12 px-6 md:px-12 w-full">
+          <div className="max-w-[640px] w-full mx-auto flex flex-col items-center pr-0 md:pr-[100px]">
+
             <p className="text-[#b83143] text-[17px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] leading-relaxed text-center mb-8">
               passionate about experiential, visual, and web design.
             </p>
@@ -143,30 +144,30 @@ export default async function Home() {
         {/* Books Section */}
         <section id="books" className="pt-4 md:pt-8 pb-8 md:pb-12 px-6 md:px-12 w-full">
           <div className="max-w-[800px] w-full mx-auto relative group-container overflow-hidden">
-            <div className="scroll-container hide-scrollbar overflow-x-auto flex gap-10 md:gap-16">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-row md:overflow-x-auto md:hide-scrollbar gap-8 md:gap-16 py-6 font-serif">
               {recentBooks.map((post) => (
                 <Link
                   key={post.Slug}
                   href={`/books/${post.Slug}`}
-                  className="scroll-item w-[180px] md:w-[200px] shrink-0 group py-6"
-
+                  className="w-full md:w-[200px] shrink-0 group"
                 >
                   <div className="aspect-[2/3] w-full overflow-hidden bg-[#e8e6e2] mb-4 rounded-sm shadow-sm transition-shadow group-hover:shadow-md">
                     {post.CoverImage && (
                       <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     )}
                   </div>
-                  <h3 className="text-[17px] md:text-[18px] font-medium text-black group-hover:text-[#b83143] transition-colors line-clamp-1">
+                  <h3 className="text-[15px] md:text-[18px] font-medium text-black group-hover:text-[#b83143] transition-colors line-clamp-1">
                     {post.Title}
                   </h3>
                   {post.Description && (
-                    <p className="mt-1 text-sm text-[#737373] italic line-clamp-1">
+                    <p className="mt-1 text-[13px] text-[#737373] italic line-clamp-1">
                       {post.Description}
                     </p>
                   )}
                 </Link>
               ))}
             </div>
+
             <div className="flex justify-start pt-4">
               <Link href="/books" className="text-[#737373] hover:text-[#b83143] italic transition-colors text-sm font-medium flex items-center gap-1 group">
                 more <span className="text-[#b83143] not-italic">→</span>
@@ -179,15 +180,21 @@ export default async function Home() {
         {/* Florals Section */}
         <section id="florals" className="pt-4 md:pt-8 pb-8 md:pb-12 px-6 md:px-12 w-full">
           <div className="max-w-[800px] w-full mx-auto space-y-6">
-            <div className="scroll-container hide-scrollbar overflow-x-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:flex md:flex-row md:overflow-x-auto md:hide-scrollbar gap-6 py-6">
               {recentFlorals.map((imgUrl, idx) => (
-                <div key={idx} className="scroll-item w-[220px] md:w-[280px] flex-shrink-0">
-                  <div className="aspect-square overflow-hidden bg-gray-100 rounded-sm">
-                    <img src={imgUrl} alt="floral" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-                  </div>
+                <div 
+                  key={idx} 
+                  className="w-full md:w-[320px] shrink-0 aspect-[4/3] bg-[#e8e6e2] rounded-sm overflow-hidden shadow-sm"
+                >
+                  <img 
+                    src={imgUrl} 
+                    alt={`Floral art ${idx + 1}`} 
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
                 </div>
               ))}
             </div>
+
             <div className="flex justify-start pt-4">
               <Link href="/florals" className="text-[#737373] hover:text-[#b83143] italic transition-colors text-sm flex items-center gap-1 group">
                 more <span className="text-[#b83143] not-italic">→</span>
@@ -199,7 +206,7 @@ export default async function Home() {
         {/* Decorative Footer */}
         <footer id="footer" className="pt-4 md:pt-8 pb-12 md:pb-24 px-6 md:px-12 w-full">
 
-          <div className="max-w-[640px] w-full mx-auto flex flex-col items-center md:pr-[100px]">
+          <div className="max-w-[640px] w-full mx-auto flex flex-col items-center pr-0 md:pr-[100px]">
             {/* Red Lotus Painting */}
             <div className="w-full sm:w-[85%] md:w-[85%] flex flex-col items-center mb-10">
 

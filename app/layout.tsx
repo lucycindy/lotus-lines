@@ -24,7 +24,7 @@ export default function RootLayout({
         <div className="min-h-screen w-full relative flex flex-col overflow-x-hidden min-w-0">
           {/* Header Layer (Scrolling) - Logo and Email Icon are independent */}
           <header className="absolute top-0 left-0 w-full z-[60] pointer-events-none">
-             <div className="absolute top-[8px] left-[12px] pointer-events-auto">
+             <div className="absolute top-[24px] md:top-[8px] left-0 md:left-[12px] w-full md:w-[115px] flex justify-center md:block pointer-events-auto">
                 <Link href="/" className="block w-[115px] hover:opacity-80 transition-opacity">
                   <img src="/logo.png" alt="logo" className="w-full h-auto" />
                 </Link>
@@ -52,13 +52,14 @@ export default function RootLayout({
             </aside>
 
             {/* Main Content Area */}
-            <div className="flex-1 md:ml-[210px] flex flex-col min-h-screen relative min-w-0">
+            <div className="flex-1 ml-0 md:ml-[210px] flex flex-col min-h-screen relative min-w-0">
               <main className="flex-1 w-full min-w-0">
                 {children}
               </main>
             </div>
           </div>
         </div>
+
 
 
         <Lightbox />
