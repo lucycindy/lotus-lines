@@ -78,7 +78,7 @@ export default async function Home() {
                   href={`/events/${post.Slug}`}
                   className="group flex flex-row items-center gap-6 md:gap-10 py-6"
                 >
-                  <div className="w-[120px] md:w-[216px] h-[160px] md:h-[144px] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
+                  <div className="w-32 sm:w-40 md:w-64 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
                     {post.CoverImage && (
                       <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     )}
@@ -114,7 +114,7 @@ export default async function Home() {
                   href={`/writing/${post.Slug}`}
                   className="group flex flex-row items-center gap-6 md:gap-10 py-6"
                 >
-                  <div className="w-[120px] md:w-[144px] h-[120px] md:h-[144px] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
+                  <div className="w-32 sm:w-40 md:w-64 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
                     {post.CoverImage && (
                       <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     )}
@@ -143,12 +143,12 @@ export default async function Home() {
         {/* Books Section */}
         <section id="books" className="pt-4 md:pt-8 pb-8 md:pb-12 px-6 md:px-12 w-full">
           <div className="max-w-[800px] w-full mx-auto relative group-container overflow-hidden">
-            <div className="scroll-container hide-scrollbar overflow-x-auto">
+            <div className="scroll-container hide-scrollbar overflow-x-auto flex gap-10 md:gap-16">
               {recentBooks.map((post) => (
                 <Link
                   key={post.Slug}
                   href={`/books/${post.Slug}`}
-                  className="scroll-item w-[180px] shrink-0 group py-6"
+                  className="scroll-item w-[200px] md:w-[220px] shrink-0 group py-6"
                 >
                   <div className="aspect-[2/3] w-full overflow-hidden bg-[#e8e6e2] mb-4 rounded-sm shadow-sm transition-shadow group-hover:shadow-md">
                     {post.CoverImage && (
@@ -173,6 +173,7 @@ export default async function Home() {
             </div>
           </div>
         </section>
+
 
         {/* Florals Section */}
         <section id="florals" className="pt-4 md:pt-8 pb-8 md:pb-12 px-6 md:px-12 w-full">
@@ -199,7 +200,8 @@ export default async function Home() {
 
           <div className="max-w-[640px] w-full mx-auto flex flex-col items-center md:pr-[100px]">
             {/* Red Lotus Painting */}
-            <div className="w-full sm:w-[85%] md:w-[65%] flex flex-col items-center mb-10">
+            <div className="w-full sm:w-[85%] md:w-[85%] flex flex-col items-center mb-10">
+
               <div className="relative w-full aspect-[4/3]">
                 <img src="/red-lotus.png" alt="red lotus painting" className="w-full h-full object-cover" />
               </div>

@@ -61,9 +61,10 @@ export default async function WritingPostPage({
         ) : null}
 
         <div className="mb-12 mt-8">
-          <h1 className="text-[clamp(1.75rem,3vw,2.5rem)] font-medium text-black leading-tight mb-4">
+          <h1 className="text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-[#b83143]">
             {post.Title}
           </h1>
+
           {post.Description && (
             <p className="text-[clamp(1.1rem,1.25vw,1.3rem)] text-[#737373] italic leading-relaxed">
               {post.Description}
