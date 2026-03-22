@@ -31,17 +31,16 @@ export default async function WritingPage() {
               >
                 <div className="w-full md:w-[320px] shrink-0 flex justify-center">
                   {post.CoverImage ? (
-                    <div className="relative w-full h-[280px] md:h-[144px] md:w-[144px] overflow-hidden bg-[#e8e6e2]">
-                      <Image
+                    <div className="relative w-full md:w-[240px] bg-[#e8e6e2] rounded-sm overflow-hidden">
+                      <img
                         src={post.CoverImage}
                         alt={post.Title || "Writing cover"}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 144px"
+                        className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
                   ) : null}
                 </div>
+
                 <div className="flex min-w-0 flex-1 items-center md:pl-10 mt-6 md:mt-0">
                   <div className="min-w-0 w-full">
                     <h2 className="text-[15px] md:text-[clamp(1rem,1.2vw,1.3rem)] font-medium text-black group-hover:text-[#b83143] transition-colors">

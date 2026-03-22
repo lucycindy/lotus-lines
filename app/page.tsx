@@ -148,7 +148,8 @@ export default async function Home() {
                 <Link
                   key={post.Slug}
                   href={`/books/${post.Slug}`}
-                  className="scroll-item w-[200px] md:w-[220px] shrink-0 group py-6"
+                  className="scroll-item w-[180px] md:w-[200px] shrink-0 group py-6"
+
                 >
                   <div className="aspect-[2/3] w-full overflow-hidden bg-[#e8e6e2] mb-4 rounded-sm shadow-sm transition-shadow group-hover:shadow-md">
                     {post.CoverImage && (
@@ -198,9 +199,10 @@ export default async function Home() {
         {/* Decorative Footer */}
         <footer id="footer" className="pt-4 md:pt-8 pb-12 md:pb-24 px-6 md:px-12 w-full">
 
-          <div className="max-w-[640px] w-full mx-auto flex flex-col items-center md:pr-[100px]">
+          <div className="max-w-[1000px] w-full mx-auto flex flex-col items-center">
             {/* Red Lotus Painting */}
             <div className="w-full sm:w-[85%] md:w-[85%] flex flex-col items-center mb-10">
+
 
               <div className="relative w-full aspect-[4/3]">
                 <img src="/red-lotus.png" alt="red lotus painting" className="w-full h-full object-cover" />
@@ -212,7 +214,8 @@ export default async function Home() {
 
             {/* Quote + Paragraph */}
             <div className="space-y-10 w-full text-center">
-              <div className="text-center max-w-full md:max-w-xl mx-auto">
+              <div className="text-center max-w-4xl mx-auto">
+
                 <p className="italic text-[16px] md:text-[18px] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase">
                   "i love the lotus, for it rises from the mud unstained, cleansed in rippling water, appealing, yet not seductive."
                 </p>
@@ -221,11 +224,12 @@ export default async function Home() {
                 </p>
               </div>
 
-              <div className="text-[16px] md:text-[clamp(1rem,1.15vw,1.15rem)] text-black leading-[1.8] max-w-full mx-auto">
-                <p>
+              <div className="text-[16px] md:text-[17px] text-[#737373] leading-relaxed max-w-5xl mx-auto px-4">
+                <p className="lowercase">
                   I love the cultural meaning of the lotus as a symbol of the process. I've grown to appreciate the constraints and complexities of the mud for the beautiful bloom. This philosophy shapes how I approach design and everything else.
                 </p>
               </div>
+
             </div>
           </div>
         </footer>
