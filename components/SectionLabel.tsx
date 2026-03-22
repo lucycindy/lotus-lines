@@ -39,13 +39,14 @@ export default function SectionLabel({ sections }: SectionLabelProps) {
   if (currentLabel === "") return null;
 
   return (
-    <div className="w-full h-full flex flex-col items-end justify-start pt-[52px] pr-4 md:pr-4 pointer-events-none">
+    <div className="fixed top-[40px] left-[160px] z-[60] pointer-events-none">
       <span className="text-[clamp(1rem,1.1vw,1.1rem)] font-light text-black whitespace-nowrap lowercase pointer-events-auto">
         lucy cindy / <span className="italic">{currentLabel}</span>
       </span>
     </div>
   );
 }
+
 
 
 
