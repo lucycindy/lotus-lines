@@ -15,11 +15,12 @@ export default async function PostNavigation({ currentSlug, category }: PostNavi
 
   if (currentIndex === -1) return null;
 
-  // Since sorted newest first:
-  // Next (newer) is at index - 1
-  // Previous (older) is at index + 1
+  // Since sorted newest first in getAllPostsSorted:
+  // Newer posts (next) have smaller indices
+  // Older posts (previous) have larger indices
   const nextPost = currentIndex > 0 ? categoryPosts[currentIndex - 1] : null;
   const prevPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[currentIndex + 1] : null;
+
 
   if (!nextPost && !prevPost) return null;
 

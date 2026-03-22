@@ -12,7 +12,7 @@ export default async function FloralsPage() {
   return (
     <div className="min-h-screen bg-[#f0efec] px-4 pt-20 pb-16">
       <div className="mx-auto max-w-5xl">
-        <BackButton />
+        <BackButton href="/" />
       </div>
       <h1 className="mt-8 text-center text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-[#b83143]">
         florals
@@ -22,7 +22,7 @@ export default async function FloralsPage() {
       </p>
 
       {images.length > 0 ? (
-        <div className="mx-auto mt-12 max-w-5xl columns-1 sm:columns-2 md:columns-3 gap-4">
+        <div className="mx-auto mt-12 max-w-5xl columns-1 sm:columns-2 md:columns-3 gap-4" data-gallery="florals">
           {images.map((src, i) => (
             <div
               key={i}

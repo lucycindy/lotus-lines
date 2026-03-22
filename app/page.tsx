@@ -41,16 +41,17 @@ export default async function Home() {
   return (
     <div className="w-full flex flex-col pb-32">
       {/* Scroll Tracker - fixed left */}
-      <div className="hidden md:block fixed top-0 left-0 w-[210px] h-screen pointer-events-none z-[60]">
+      <div className="fixed top-0 left-0 w-full md:w-[210px] h-screen pointer-events-none z-[60]">
         <SectionLabel sections={sections} />
       </div>
+
 
       <div className="w-full flex flex-col">
         {/* About Tagline & Icons (Now at the Top) */}
         <section id="about" className="pt-44 md:pt-32 pb-8 md:pb-12 px-6 md:px-12 w-full">
           <div className="max-w-[640px] w-full mx-auto flex flex-col items-center pr-0 md:pr-[100px]">
 
-            <p className="text-[#b83143] text-[17px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] leading-relaxed text-center mb-8">
+            <p className="text-[#b83143] text-[15px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] leading-relaxed text-center mb-8">
               passionate about experiential, visual, and web design.
             </p>
 
@@ -59,13 +60,14 @@ export default async function Home() {
                 {aboutItems.map((item, idx) => (
                   <li key={idx} className="flex items-center space-x-4">
                     <KineticIcon type={item.type} />
-                    <span className="text-black text-[clamp(1rem,1.15vw,1.15rem)]">
+                    <span className="text-black text-[14px] md:text-[clamp(1rem,1.15vw,1.15rem)]">
                       {item.text}
                     </span>
                   </li>
                 ))}
               </ul>
             </div>
+
           </div>
         </section>
 
@@ -144,12 +146,12 @@ export default async function Home() {
         {/* Books Section */}
         <section id="books" className="pt-4 md:pt-8 pb-8 md:pb-12 px-6 md:px-12 w-full">
           <div className="max-w-[800px] w-full mx-auto relative group-container overflow-hidden">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-row md:overflow-x-auto md:hide-scrollbar gap-8 md:gap-16 py-6 font-serif">
+            <div className="scroll-container hide-scrollbar overflow-x-auto flex flex-nowrap gap-10 md:gap-16 py-6 font-serif items-start">
               {recentBooks.map((post) => (
                 <Link
                   key={post.Slug}
                   href={`/books/${post.Slug}`}
-                  className="w-full md:w-[200px] shrink-0 group"
+                  className="w-[180px] md:w-[200px] shrink-0 group py-6"
                 >
                   <div className="aspect-[2/3] w-full overflow-hidden bg-[#e8e6e2] mb-4 rounded-sm shadow-sm transition-shadow group-hover:shadow-md">
                     {post.CoverImage && (
@@ -180,11 +182,11 @@ export default async function Home() {
         {/* Florals Section */}
         <section id="florals" className="pt-4 md:pt-8 pb-8 md:pb-12 px-6 md:px-12 w-full">
           <div className="max-w-[800px] w-full mx-auto space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:flex md:flex-row md:overflow-x-auto md:hide-scrollbar gap-6 py-6">
+            <div className="scroll-container hide-scrollbar overflow-x-auto flex flex-nowrap gap-6 py-6">
               {recentFlorals.map((imgUrl, idx) => (
                 <div 
                   key={idx} 
-                  className="w-full md:w-[320px] shrink-0 aspect-[4/3] bg-[#e8e6e2] rounded-sm overflow-hidden shadow-sm"
+                  className="w-[240px] md:w-[320px] shrink-0 aspect-[4/3] bg-[#e8e6e2] rounded-sm overflow-hidden shadow-sm"
                 >
                   <img 
                     src={imgUrl} 
@@ -194,6 +196,7 @@ export default async function Home() {
                 </div>
               ))}
             </div>
+
 
             <div className="flex justify-start pt-4">
               <Link href="/florals" className="text-[#737373] hover:text-[#b83143] italic transition-colors text-sm flex items-center gap-1 group">
@@ -232,7 +235,7 @@ export default async function Home() {
                 </p>
               </div>
 
-              <div className="text-[16px] md:text-[17px] text-black leading-relaxed max-w-[650px] mx-auto px-4">
+              <div className="text-[16px] md:text-[17px] text-black leading-relaxed max-w-[650px] mx-auto px-2 md:px-0">
                 <p className="lowercase">
                   I love the cultural meaning of the lotus as a symbol of the process. I've grown to appreciate the constraints and complexities of the mud for the beautiful bloom. This philosophy shapes how I approach design and everything else.
                 </p>
