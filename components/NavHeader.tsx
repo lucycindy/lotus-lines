@@ -11,11 +11,12 @@ export default function NavHeader() {
 
   return (
     <header className="absolute top-0 left-0 w-full z-[60] pointer-events-none">
-      <div className="absolute top-[24px] md:top-[8px] left-0 md:left-[12px] w-full md:w-[115px] flex justify-center md:block pointer-events-auto">
-        <Link href="/" className="block w-[115px] hover:opacity-80 transition-opacity">
+      <div className="absolute top-[16px] md:top-[8px] left-0 md:left-[12px] w-full md:w-[115px] flex justify-center md:block pointer-events-auto text-center">
+        <Link href="/" className="block w-[90px] md:w-[115px] hover:opacity-80 transition-opacity">
           <img src="/logo.png" alt="logo" className="w-full h-auto" />
         </Link>
       </div>
+
 
       <div className="absolute top-[16px] right-[20px] pointer-events-auto">
         <a

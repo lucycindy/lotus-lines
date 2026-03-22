@@ -20,7 +20,7 @@ export default function SectionLabel({ sections }: SectionLabelProps) {
       },
       {
         threshold: 0,
-        rootMargin: "-10% 0px -80% 0px", // Trigger earlier as section enters upper viewport
+        rootMargin: "-80px 0px -90% 0px", // Trigger when section hits the top header area
       }
 
 
@@ -39,11 +39,12 @@ export default function SectionLabel({ sections }: SectionLabelProps) {
   if (currentLabel === "") return null;
 
   return (
-    <div className="fixed top-2 md:top-[40px] inset-x-0 md:left-[220px] md:right-auto z-[70] pointer-events-none flex justify-center md:justify-start">
-      <span className="text-[12px] md:text-[clamp(1rem,1.1vw,1.1rem)] font-light text-[#737373] md:text-black whitespace-nowrap lowercase pointer-events-auto">
+    <div className="fixed top-[72px] md:top-[40px] inset-x-0 md:left-[220px] md:right-auto z-[70] pointer-events-none flex justify-center md:justify-start">
+      <span className="text-[14px] md:text-[clamp(1rem,1.1vw,1.1rem)] font-light text-black whitespace-nowrap lowercase pointer-events-auto">
         lucy cindy / <span className="italic">{currentLabel}</span>
       </span>
     </div>
+
   );
 
 }
