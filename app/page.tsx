@@ -27,6 +27,7 @@ export default async function Home() {
     { id: "writing", label: "writing" },
     { id: "books", label: "books" },
     { id: "florals", label: "florals" },
+    { id: "footer", label: "" },
   ];
 
   const aboutItems = [
@@ -48,7 +49,7 @@ export default async function Home() {
         {/* About Tagline & Icons (Now at the Top) */}
         <section id="about" className="py-16 md:py-24 px-6 md:px-12">
           <div className="max-w-[640px] w-full mx-auto flex flex-col items-center">
-            <p className="text-[#b83143] text-[15px] md:text-[clamp(1rem,1.1vw,1.1rem)] leading-relaxed text-center mb-8">
+            <p className="text-[#b83143] text-[17px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] leading-relaxed text-center mb-8">
               passionate about experiential, visual, and web design.
             </p>
 
@@ -57,7 +58,7 @@ export default async function Home() {
                 {aboutItems.map((item, idx) => (
                   <li key={idx} className="flex items-center space-x-4">
                     <KineticIcon type={item.type} />
-                    <span className="text-black text-[clamp(0.9rem,1vw,1rem)]">
+                    <span className="text-black text-[clamp(1rem,1.15vw,1.15rem)]">
                       {item.text}
                     </span>
                   </li>
@@ -68,6 +69,7 @@ export default async function Home() {
         </section>
 
         {/* Events Section */}
+
         <section id="events" className="py-12 md:py-16 px-6 md:px-12">
           <div className="max-w-[800px] w-full mx-auto space-y-8">
             <div className="space-y-12">
@@ -172,14 +174,14 @@ export default async function Home() {
         </section>
 
         {/* Decorative Footer */}
-        <footer className="py-12 md:py-24 px-6 md:px-12 border-t border-[#d4d1cb]/20">
+        <footer id="footer" className="py-12 md:py-24 px-6 md:px-12 border-t border-[#d4d1cb]/20">
           <div className="max-w-[640px] w-full mx-auto flex flex-col items-center">
             {/* Red Lotus Painting */}
             <div className="w-[85%] md:w-[65%] flex flex-col items-center mb-10">
               <div className="relative w-full aspect-[4/3]">
                 <img src="/red-lotus.png" alt="red lotus painting" className="w-full h-full object-cover" />
               </div>
-              <p className="mt-3 text-center text-[11px] md:text-[12px] text-[#737373] tracking-[0.04em] font-serif">
+              <p className="mt-3 text-center text-[12px] md:text-[13px] text-[#737373] tracking-[0.04em] font-serif">
                 red lotus (1943) by 張大千
               </p>
             </div>
@@ -187,15 +189,15 @@ export default async function Home() {
             {/* Quote + Paragraph */}
             <div className="space-y-10 w-full text-center">
               <div className="text-center max-w-full md:max-w-xl mx-auto">
-                <p className="italic text-[13px] md:text-[14px] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase">
+                <p className="italic text-[14px] md:text-[15px] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase">
                   "i love the lotus, for it rises from the mud unstained, cleansed in rippling water, appealing, yet not seductive."
                 </p>
-                <p className="text-[11px] md:text-[12px] text-black tracking-[0.04em] leading-[2] lowercase mt-2 opacity-60">
+                <p className="text-[12px] md:text-[13px] text-black tracking-[0.04em] leading-[2] lowercase mt-2 opacity-60">
                   — 周敦颐, on the love of the lotus, 1073
                 </p>
               </div>
 
-              <div className="text-[15px] md:text-[clamp(0.95rem,1.1vw,1.1rem)] text-black leading-[1.8] max-w-xl mx-auto">
+              <div className="text-[16px] md:text-[clamp(1rem,1.15vw,1.15rem)] text-black leading-[1.8] max-w-xl mx-auto">
                 <p>
                   I love the cultural meaning of the lotus as a symbol of the process. I've grown to appreciate the constraints and complexities of the mud for the beautiful bloom. This philosophy shapes how I approach design and everything else.
                 </p>
