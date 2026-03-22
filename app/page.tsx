@@ -58,7 +58,7 @@ export default async function Home() {
                   </Link>
                   <div className="flex flex-col justify-center">
                     <Link href={`/events/${post.Slug}`} className="group/text">
-                      <h3 className="text-2xl md:text-3xl font-serif text-black transition-colors group-hover/text:text-[#b83143]">{post.Title}</h3>
+                      <h3 className="text-xl md:text-2xl font-serif text-black transition-colors group-hover/text:text-[#b83143]">{post.Title}</h3>
                       <p className="mt-2 text-sm md:text-base text-[#737373] italic transition-colors group-hover/text:text-[#b83143]">
                         {post.Description}
                       </p>
@@ -68,7 +68,7 @@ export default async function Home() {
               ))}
             </div>
             <div className="flex justify-start pt-4">
-              <Link href="/events" className="text-[#a3a3a3] hover:text-[#b83143] italic transition-colors text-sm flex items-center gap-1 group">
+              <Link href="/events" className="text-[#737373] hover:text-[#b83143] italic transition-colors text-sm flex items-center gap-1 group">
                 more <span className="text-[#b83143] not-italic">→</span>
               </Link>
             </div>
@@ -88,7 +88,7 @@ export default async function Home() {
                   </Link>
                   <div className="flex flex-col justify-center">
                     <Link href={`/writing/${post.Slug}`} className="group/text">
-                      <h3 className="text-2xl md:text-3xl font-serif text-black transition-colors group-hover/text:text-[#b83143]">{post.Title}</h3>
+                      <h3 className="text-xl md:text-2xl font-serif text-black transition-colors group-hover/text:text-[#b83143]">{post.Title}</h3>
                       <p className="mt-2 text-sm md:text-base text-[#737373] italic transition-colors group-hover/text:text-[#b83143] line-clamp-2">
                         {post.Description}
                       </p>
@@ -98,7 +98,7 @@ export default async function Home() {
               ))}
             </div>
             <div className="flex justify-start pt-4">
-              <Link href="/writing" className="text-[#a3a3a3] hover:text-[#b83143] italic transition-colors text-sm flex items-center gap-1 group">
+              <Link href="/writing" className="text-[#737373] hover:text-[#b83143] italic transition-colors text-sm flex items-center gap-1 group">
                 more <span className="text-[#b83143] not-italic">→</span>
               </Link>
             </div>
@@ -108,21 +108,22 @@ export default async function Home() {
         {/* Books Section */}
         <section id="books" className="py-12 md:py-16 px-6 md:px-12">
           <div className="max-w-[800px] w-full mx-auto space-y-6">
-            <div className="scroll-container hide-scrollbar overflow-x-auto">
+            <div className="scroll-container hide-scrollbar overflow-x-auto gap-10 md:gap-16">
               {recentBooks.map((post) => (
-                <Link key={post.Slug} href={`/books/${post.Slug}`} className="scroll-item w-[160px] group block">
-                  <div className="aspect-[2/3] w-[160px] overflow-hidden bg-gray-100 mb-4 rounded-sm">
+                <Link key={post.Slug} href={`/books/${post.Slug}`} className="scroll-item w-[180px] group block">
+                  <div className="aspect-[2/3] w-[180px] overflow-hidden bg-gray-100 mb-4 rounded-sm">
                     {post.CoverImage && (
                       <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     )}
                   </div>
                   <h4 className="text-[15px] text-black font-serif leading-tight transition-colors group-hover:text-[#b83143] mb-1">{post.Title}</h4>
-                  <p className="text-[13px] text-[#737373] italic">{(post as any).Author}</p>
+                  <p className="text-[13px] text-[#737373] italic">{post.Description}</p>
                 </Link>
+
               ))}
             </div>
-            <div className="flex justify-start">
-              <Link href="/books" className="text-[#a3a3a3] hover:text-[#b83143] italic transition-colors text-sm flex items-center gap-1 group">
+            <div className="flex justify-start pt-4">
+              <Link href="/books" className="text-[#737373] hover:text-[#b83143] italic transition-colors text-sm flex items-center gap-1 group">
                 more <span className="text-[#b83143] not-italic">→</span>
               </Link>
             </div>
@@ -141,24 +142,22 @@ export default async function Home() {
                 </div>
               ))}
             </div>
-            <div className="flex justify-start">
-              <Link href="/florals" className="text-[#a3a3a3] hover:text-[#b83143] italic transition-colors text-sm flex items-center gap-1 group">
+            <div className="flex justify-start pt-4">
+              <Link href="/florals" className="text-[#737373] hover:text-[#b83143] italic transition-colors text-sm flex items-center gap-1 group">
                 more <span className="text-[#b83143] not-italic">→</span>
               </Link>
             </div>
           </div>
         </section>
 
-        {/* About Section */}
-        <section id="about" className="py-16 md:py-24 px-6 md:px-12">
+        {/* About Tagline & Icons (Monitored by SectionLabel) */}
+        <section id="about" className="py-16 md:py-20 px-6 md:px-12">
           <div className="max-w-[640px] w-full mx-auto flex flex-col items-center">
-            {/* About Headline */}
             <p className="text-[#b83143] text-[15px] md:text-[clamp(1rem,1.1vw,1.1rem)] leading-relaxed text-center mb-8">
               passionate about experiential, visual, and web design.
             </p>
 
-            {/* Kinetic List */}
-            <div className="flex flex-col items-center space-y-4 w-full mb-12">
+            <div className="flex flex-col items-center space-y-4 w-full">
               <ul className="space-y-4 w-fit">
                 {aboutItems.map((item, idx) => (
                   <li key={idx} className="flex items-center space-x-4">
@@ -170,7 +169,12 @@ export default async function Home() {
                 ))}
               </ul>
             </div>
+          </div>
+        </section>
 
+        {/* Decorative Footer (Not monitored by SectionLabel) */}
+        <footer className="py-12 md:py-24 px-6 md:px-12 border-t border-[#d4d1cb]/20">
+          <div className="max-w-[640px] w-full mx-auto flex flex-col items-center">
             {/* Red Lotus Painting */}
             <div className="w-[85%] md:w-[65%] flex flex-col items-center mb-10">
               <div className="relative w-full aspect-[4/3]">
@@ -199,8 +203,9 @@ export default async function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </footer>
       </div>
+
     </div>
   );
 }

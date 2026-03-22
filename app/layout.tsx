@@ -22,22 +22,23 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <div className="flex flex-col md:flex-row min-h-screen w-full relative">
-          {/* Logo - Fixed top-left */}
-          <div className="fixed top-8 left-8 z-[70]">
-             <Link href="/" className="block w-[115px] hover:opacity-80 transition-opacity">
-                <img src="/logo.png" alt="logo" className="w-full h-auto" />
-             </Link>
-          </div>
-
           {/* Left Panel Placeholder for SectionLabel */}
-          <aside className="hidden md:flex fixed top-0 left-0 w-[210px] h-screen flex-col justify-center py-12 z-50 pointer-events-none">
+          <aside className="hidden md:flex fixed top-0 left-0 w-[210px] max-w-[210px] h-screen flex-col justify-start py-12 z-50 pointer-events-none overflow-hidden">
             {/* The SectionLabel will render its content here, aligned to the right edge */}
           </aside>
 
           {/* Main Content Area */}
           <div className="flex-1 md:ml-[210px] flex flex-col min-h-screen relative">
+            {/* Logo area - scrolls away */}
+            <div className="pt-12 pl-6 md:pl-12">
+               <Link href="/" className="block w-[115px] hover:opacity-80 transition-opacity">
+                  <img src="/logo.png" alt="logo" className="w-full h-auto" />
+               </Link>
+            </div>
+
             {/* Top Bar / Email Icon */}
             <div className="h-[var(--topbar-height)] shrink-0 w-full bg-transparent relative flex items-center justify-end px-6 md:px-12 z-[60]">
+
 
               <a
                 href="mailto:lucycindygeng@gmail.com"
