@@ -21,25 +21,24 @@ export default function RootLayout({
         className="antialiased lowercase text-[clamp(1rem,1.2vw,1.25rem)] min-h-screen bg-[#f0efec]"
         suppressHydrationWarning
       >
-        <div className="flex flex-col md:flex-row min-h-screen w-full">
-          {/* Fixed Left Panel */}
-          <aside className="hidden md:flex fixed top-0 left-0 w-[210px] h-screen border-r border-[#d4d1cb]/30 flex-col justify-between py-12 z-50">
-            <div className="pl-8">
-               <Link href="/" className="block w-[95px] hover:opacity-80 transition-opacity">
-                  <img src="/logo.png" alt="logo" className="w-full h-auto" />
-               </Link>
-            </div>
+        <div className="flex flex-col md:flex-row min-h-screen w-full relative">
+          {/* Logo - Fixed top-left */}
+          <div className="fixed top-8 left-8 z-[70]">
+             <Link href="/" className="block w-[115px] hover:opacity-80 transition-opacity">
+                <img src="/logo.png" alt="logo" className="w-full h-auto" />
+             </Link>
+          </div>
 
-            {/* Section label placeholder - will be populated by SectionLabel component on the home page */}
-            <div id="sidebar-label-container" className="flex flex-col items-end justify-center h-full">
-               {/* This space is intentionally empty, populated via portals or conditional rendering in children */}
-            </div>
+          {/* Left Panel Placeholder for SectionLabel */}
+          <aside className="hidden md:flex fixed top-0 left-0 w-[210px] h-screen flex-col justify-center py-12 z-50 pointer-events-none">
+            {/* The SectionLabel will render its content here, aligned to the right edge */}
           </aside>
 
           {/* Main Content Area */}
           <div className="flex-1 md:ml-[210px] flex flex-col min-h-screen relative">
             {/* Top Bar / Email Icon */}
             <div className="h-[var(--topbar-height)] shrink-0 w-full bg-transparent relative flex items-center justify-end px-6 md:px-12 z-[60]">
+
               <a
                 href="mailto:lucycindygeng@gmail.com"
                 className="text-gray-700 hover:text-[#b83143] transition-colors translate-y-2"

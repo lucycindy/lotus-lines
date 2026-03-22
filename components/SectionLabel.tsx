@@ -19,8 +19,8 @@ export default function SectionLabel({ sections }: SectionLabelProps) {
         });
       },
       {
-        threshold: 0.3, // Trigger when 30% of the section is visible
-        rootMargin: "-10% 0px -70% 0px", // Focus on the top/middle area
+        threshold: 0,
+        rootMargin: "-10% 0px -90% 0px", // Trigger when section is in the top 10%
       }
     );
 
@@ -35,10 +35,12 @@ export default function SectionLabel({ sections }: SectionLabelProps) {
   const currentLabel = sections.find((s) => s.id === activeSection)?.label || "";
 
   return (
-    <div className="text-right pr-6 md:pr-8">
-      <span className="text-[clamp(1rem,1.1vw,1.15rem)] font-light text-black whitespace-nowrap">
+    <div className="w-full h-full flex flex-col items-end justify-center pr-6 md:pr-10 pointer-events-none">
+      <span className="text-[clamp(1rem,1.1vw,1.1rem)] font-light text-black whitespace-nowrap lowercase pointer-events-auto">
+
         lucy cindy / <span className="italic">{currentLabel}</span>
       </span>
     </div>
   );
 }
+
