@@ -23,17 +23,17 @@ export default function RootLayout({
       >
         <div className="min-h-screen w-full relative flex flex-col overflow-x-hidden min-w-0">
           {/* Header Layer (Scrolling) - Logo and Email Icon are independent */}
-          <header className="absolute top-0 left-0 w-full flex justify-between items-start pt-12 px-6 md:px-12 z-[60] pointer-events-none">
-             <div className="pointer-events-auto">
+          <header className="absolute top-0 left-0 w-full z-[60] pointer-events-none">
+             <div className="absolute top-[8px] left-[12px] pointer-events-auto">
                 <Link href="/" className="block w-[115px] hover:opacity-80 transition-opacity">
                   <img src="/logo.png" alt="logo" className="w-full h-auto" />
                 </Link>
              </div>
 
-             <div className="pointer-events-auto">
+             <div className="absolute top-[16px] right-[20px] pointer-events-auto">
                <a
                  href="mailto:lucycindygeng@gmail.com"
-                 className="text-[#737373] hover:text-[#b83143] transition-colors translate-y-2 inline-block"
+                 className="text-[#737373] hover:text-[#b83143] transition-colors inline-block"
                  aria-label="Email lucycindygeng@gmail.com"
                >
                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -43,6 +43,7 @@ export default function RootLayout({
                </a>
              </div>
           </header>
+
 
           <div className="flex flex-col md:flex-row flex-1 w-full relative min-w-0">
             {/* Left Panel Placeholder for SectionLabel */}
