@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import { getWebsitePosts } from "@/lib/notion";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import PostNavigation from "@/components/PostNavigation";
+
 
 export async function generateStaticParams() {
     const posts = await getWebsitePosts();
@@ -35,7 +37,7 @@ export default async function WebsitePage({
                 ← back
             </Link>
 
-            <article className="mx-auto mt-10 max-w-[680px] w-full flex flex-col items-start px-8">
+            <article className="mx-auto mt-10 max-w-[640px] w-full flex flex-col items-start px-10">
                 {post.CoverImage ? (
                     <div className="relative aspect-[4/3] w-full max-h-[480px] overflow-hidden bg-[#e8e6e2]">
                         <Image
@@ -78,7 +80,12 @@ export default async function WebsitePage({
                     </div>
                 ) : null}
             </article>
+
+            <div className="w-full px-4 md:px-0">
+                <PostNavigation currentSlug={post.Slug} />
+            </div>
         </div>
     );
 }
+
 

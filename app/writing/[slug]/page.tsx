@@ -6,6 +6,8 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import BackButton from "@/components/BackButton";
+import PostNavigation from "@/components/PostNavigation";
+
 
 export const revalidate = 30;
 
@@ -32,11 +34,11 @@ export default async function WritingPostPage({
 
   return (
     <div className="min-h-screen bg-[#f0efec] flex flex-col items-center">
-      <div className="w-full max-w-[680px] pt-4 md:pt-0 px-4 md:px-0">
+      <div className="w-full max-w-[650px] pt-4 md:pt-0 px-6 md:px-8">
         <BackButton />
       </div>
 
-      <article className="mx-auto mt-6 md:mt-10 max-w-[680px] w-full flex flex-col items-start px-4 md:px-0 pb-16">
+      <article className="mx-auto mt-6 md:mt-10 max-w-[650px] w-full flex flex-col items-start px-6 md:px-8 pb-16">
         {post.CoverImage ? (
           <div className="w-full">
             <div className="relative aspect-[4/3] w-full max-h-[480px] overflow-hidden bg-[#e8e6e2]">
@@ -88,6 +90,10 @@ export default async function WritingPostPage({
           </div>
         ) : null}
       </article>
+
+      <div className="w-full px-4 md:px-0">
+        <PostNavigation currentSlug={post.Slug} />
+      </div>
     </div>
   );
 }

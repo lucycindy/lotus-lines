@@ -42,11 +42,13 @@ export default async function Home() {
         {datedPosts.map((post, idx) => {
           const linkHref = post.category === "florals" ? "/florals" : `/${post.category}/${post.Slug}`;
 
+          const isHolidayParty = post.Title?.toLowerCase()?.includes("corporate holiday party");
+
           return (
             <div key={`${post.Slug}-${idx}`} className="flex flex-col md:flex-row w-full max-w-[800px] mx-auto gap-6 md:gap-10 items-center group px-6 md:px-0">
 
               {/* Image Container (Left) */}
-              <div className="w-full md:w-[260px] flex-shrink-0 flex items-start justify-center">
+              <div className={`w-full ${isHolidayParty ? 'md:w-[240px]' : 'md:w-[260px]'} flex-shrink-0 flex items-start justify-center`}>
                 <Link
                   href={linkHref}
                   className="flex items-start justify-start overflow-hidden w-full h-fit"
@@ -55,9 +57,10 @@ export default async function Home() {
                     <img
                       src={post.CoverImage}
                       alt={post.Title || `${post.category} cover`}
-                      className="w-full md:w-[260px] max-h-[320px] object-contain object-center md:object-left-top transition-transform duration-500 group-hover:scale-[1.02] group-hover:brightness-95 mx-auto block"
+                      className={`w-full ${isHolidayParty ? 'md:w-[240px] max-h-[290px]' : 'md:w-[260px] max-h-[320px]'} object-contain object-center md:object-left-top transition-transform duration-500 group-hover:scale-[1.02] group-hover:brightness-95 mx-auto block`}
                     />
                   ) : (
+
                     <div className="w-full aspect-[4/3] bg-gray-200 flex items-center justify-center">
                       <span className="text-gray-400 italic">no image</span>
                     </div>

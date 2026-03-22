@@ -10,7 +10,7 @@ export default function Sidebar() {
         <>
             {/* Mobile Top Bar / Logo */}
             <div className="md:hidden flex flex-col items-center pt-4 pb-6 bg-[#f0efec] relative z-[60]">
-                <Link href="/" className="block w-32 mx-auto text-center">
+                <Link href="/" className="block w-[110px] mx-auto text-center">
                     <img src="/logo.png" alt="logo" className="w-full h-auto mx-auto" />
                 </Link>
             </div>
@@ -26,20 +26,20 @@ export default function Sidebar() {
 
             {/* Slide-in Mobile Overlay & Desktop Sidebar */}
             <aside
-                className={`fixed md:sticky top-0 left-0 h-screen w-full md:w-[var(--sidebar-width)] bg-[#f0efec] z-50 flex flex-col p-8 pt-[40vh] md:p-[clamp(2rem,3vw,4rem)] transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+                className={`fixed md:sticky top-0 left-0 h-screen w-full md:w-[var(--sidebar-width)] bg-[#f0efec] z-50 flex flex-col p-8 pt-[20vh] md:p-[clamp(2rem,3vw,4rem)] transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
                     }`}
             >
                 <div className="flex flex-col h-full md:h-auto overflow-y-auto md:overflow-visible">
                     {/* Desktop Logo */}
                     <div className="hidden md:block mb-10">
-                        <Link href="/" className="block w-[clamp(9rem,14vw,13rem)] hover:opacity-80 transition-opacity">
+                        <Link href="/" className="block w-[clamp(7.5rem,11vw,11rem)] hover:opacity-80 transition-opacity">
                             <img src="/logo.png" alt="logo" className="w-full h-auto" />
                         </Link>
                     </div>
 
                     <nav className="flex flex-col gap-0 items-center md:items-start text-center md:text-left">
                         {/* Section: About */}
-                        <div className="w-full md:w-fit py-4 md:py-0 md:mb-6">
+                        <div className="w-full md:w-fit py-2 md:py-0 md:mb-6">
                             <Link
                                 href="/about"
                                 className="block text-[#000000] text-[clamp(1.1rem,1.2vw,1.3rem)] hover:text-[#b83143] transition-colors"
@@ -53,7 +53,7 @@ export default function Sidebar() {
                         <div className="w-16 md:w-full border-t border-[#d4d1cb] my-2" />
 
                         {/* Section: Work */}
-                        <div className="w-full md:w-fit py-4 md:pt-6 md:pb-6">
+                        <div className="w-full md:w-fit py-2 md:pt-6 md:pb-6">
                             <span className="block text-[#737373] text-[clamp(1.1rem,1.2vw,1.3rem)] mb-4">work</span>
                             <div className="flex flex-col gap-3">
                                 <Link
@@ -77,7 +77,7 @@ export default function Sidebar() {
                         <div className="w-16 md:w-full border-t border-[#d4d1cb] my-2" />
 
                         {/* Section: Hobbies */}
-                        <div className="w-full md:w-fit py-4 md:pt-6">
+                        <div className="w-full md:w-fit py-2 md:pt-6">
                             <span className="block text-[#737373] text-[clamp(1.1rem,1.2vw,1.3rem)] mb-4">hobbies</span>
                             <div className="flex flex-col gap-3">
                                 <Link
