@@ -36,8 +36,9 @@ export default function SectionLabel({ sections }: SectionLabelProps) {
   const currentLabel = sections.find((s) => s.id === activeSection)?.label || "";
 
   return (
-    <div className="w-full h-full flex flex-col items-end justify-start pt-[160px] pr-6 md:pr-10 pointer-events-none">
+    <div className="w-full h-full flex flex-col items-end justify-start pt-[190px] pr-6 md:pr-10 pointer-events-none">
       <span className="text-[clamp(1rem,1.1vw,1.1rem)] font-light text-black whitespace-nowrap lowercase pointer-events-auto">
+
         lucy cindy / <span className="italic">{currentLabel}</span>
       </span>
     </div>

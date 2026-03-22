@@ -22,11 +22,11 @@ export default async function Home() {
   const recentFlorals = floralGallery.slice(0, 8);
 
   const sections = [
+    { id: "about", label: "about" },
     { id: "events", label: "events" },
     { id: "writing", label: "writing" },
     { id: "books", label: "books" },
     { id: "florals", label: "florals" },
-    { id: "about", label: "about" },
   ];
 
   const aboutItems = [
@@ -44,7 +44,29 @@ export default async function Home() {
         <SectionLabel sections={sections} />
       </div>
 
-      <div className="w-full flex flex-col pt-12">
+      <div className="w-full flex flex-col">
+        {/* About Tagline & Icons (Now at the Top) */}
+        <section id="about" className="py-16 md:py-24 px-6 md:px-12">
+          <div className="max-w-[640px] w-full mx-auto flex flex-col items-center">
+            <p className="text-[#b83143] text-[15px] md:text-[clamp(1rem,1.1vw,1.1rem)] leading-relaxed text-center mb-8">
+              passionate about experiential, visual, and web design.
+            </p>
+
+            <div className="flex flex-col items-center space-y-4 w-full">
+              <ul className="space-y-4 w-fit">
+                {aboutItems.map((item, idx) => (
+                  <li key={idx} className="flex items-center space-x-4">
+                    <KineticIcon type={item.type} />
+                    <span className="text-black text-[clamp(0.9rem,1vw,1rem)]">
+                      {item.text}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
         {/* Events Section */}
         <section id="events" className="py-12 md:py-16 px-6 md:px-12">
           <div className="max-w-[800px] w-full mx-auto space-y-8">
@@ -119,7 +141,6 @@ export default async function Home() {
                   <h4 className="text-[15px] text-black font-serif leading-tight transition-colors group-hover:text-[#b83143] mb-1">{post.Title}</h4>
                   <p className="text-[13px] text-[#737373] italic">{post.Description}</p>
                 </Link>
-
               ))}
             </div>
             <div className="flex justify-start pt-4">
@@ -150,29 +171,7 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* About Tagline & Icons (Monitored by SectionLabel) */}
-        <section id="about" className="py-16 md:py-20 px-6 md:px-12">
-          <div className="max-w-[640px] w-full mx-auto flex flex-col items-center">
-            <p className="text-[#b83143] text-[15px] md:text-[clamp(1rem,1.1vw,1.1rem)] leading-relaxed text-center mb-8">
-              passionate about experiential, visual, and web design.
-            </p>
-
-            <div className="flex flex-col items-center space-y-4 w-full">
-              <ul className="space-y-4 w-fit">
-                {aboutItems.map((item, idx) => (
-                  <li key={idx} className="flex items-center space-x-4">
-                    <KineticIcon type={item.type} />
-                    <span className="text-black text-[clamp(0.9rem,1vw,1rem)]">
-                      {item.text}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Decorative Footer (Not monitored by SectionLabel) */}
+        {/* Decorative Footer */}
         <footer className="py-12 md:py-24 px-6 md:px-12 border-t border-[#d4d1cb]/20">
           <div className="max-w-[640px] w-full mx-auto flex flex-col items-center">
             {/* Red Lotus Painting */}
@@ -205,7 +204,6 @@ export default async function Home() {
           </div>
         </footer>
       </div>
-
     </div>
   );
 }
