@@ -35,7 +35,7 @@ export default async function WebsitePage({
                 <BackButton href={`/websites#${post.Slug}`} />
             </div>
 
-            <article className="mx-auto mt-10 max-w-[640px] w-full flex flex-col items-start px-10">
+            <article className="mx-auto mt-10 max-w-[640px] w-full flex flex-col items-start px-10 pb-0 md:pb-16">
                 {post.CoverImage ? (
                     <div className="relative aspect-[4/3] w-full max-h-[480px] overflow-hidden bg-[#e8e6e2]">
                         <Image

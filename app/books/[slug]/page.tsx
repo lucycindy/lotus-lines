@@ -37,7 +37,7 @@ export default async function BookPage({
         <BackButton href={`/books#${post.Slug}`} />
       </div>
 
-      <article className="mx-auto mt-6 md:mt-10 max-w-[650px] w-full flex flex-col items-start px-6 md:px-8 pb-16">
+      <article className="mx-auto mt-6 md:mt-10 max-w-[650px] w-full flex flex-col items-start px-6 md:px-8 pb-0 md:pb-16">
         {post.CoverImage ? (
           <div className="relative aspect-[2/3] w-full max-w-[240px] max-h-[480px] overflow-hidden bg-[#e8e6e2]">
             <Image

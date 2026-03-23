@@ -38,7 +38,7 @@ export default async function EventPage({
         <BackButton href={`/events#${post.Slug}`} />
       </div>
 
-      <article className="mx-auto mt-6 md:mt-10 max-w-[650px] w-full flex flex-col items-start px-6 md:px-8 pb-6 md:pb-16">
+      <article className="mx-auto mt-6 md:mt-10 max-w-[650px] w-full flex flex-col items-start px-6 md:px-8 pb-0 md:pb-16">
         {post.Gallery && post.Gallery.length > 0 ? (
           <div className="w-full">
             <div className="grid grid-cols-2 gap-3" data-gallery="event">
