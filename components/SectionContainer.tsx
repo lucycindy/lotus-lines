@@ -30,7 +30,7 @@ export default function SectionContainer({ id, label, children, heightClass = "m
   );
 
   const isPlainLabel = label === "about" || label === "";
-  const labelMargin = isPlainLabel ? "mb-10 md:mb-14" : "mb-8 md:mb-10";
+  const labelMargin = isPlainLabel ? "mb-12 md:mb-16" : "mb-10 md:mb-12";
 
   return (
     <section 
@@ -41,12 +41,12 @@ export default function SectionContainer({ id, label, children, heightClass = "m
       {/* Animated Local Label - Integrated into flow to sit right above content */}
       <FadeInItem delay={0} className={`flex justify-center w-full pointer-events-auto text-center ${labelMargin}`}>
         <motion.div style={{ opacity: labelOpacity }}>
-          <span className="text-[14px] md:text-[clamp(1rem,1.15vw,1.15rem)] font-light text-black lowercase">
+          <span className="text-[14px] md:text-[clamp(1rem,1.15vw,1.15rem)] font-light lowercase">
             {isPlainLabel ? (
-              "lucy cindy /"
+              <span className="text-[#6b6b6b]">lucy cindy /</span>
             ) : (
               <>
-                lucy cindy /{" "}
+                <span className="text-[#6b6b6b]">lucy cindy /</span>{" "}
                 <Link href={`/${id}`} className="italic hover:text-[#b83143] transition-colors text-black">
                   {label}
                 </Link>

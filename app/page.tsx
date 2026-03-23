@@ -171,7 +171,7 @@ export default async function Home() {
         </SectionContainer>
 
         {/* Florals Section */}
-        <SectionContainer id="florals" label="florals" heightClass="min-h-[60vh] py-8 md:py-12">
+        <SectionContainer id="florals" label="florals" heightClass="min-h-[60vh] pt-8 pb-20 md:pt-12 md:pb-32">
           <div className="max-w-[950px] w-full mx-auto">
             <CarouselRow>
               {recentFlorals.map((imgUrl, idx) => (
@@ -196,7 +196,7 @@ export default async function Home() {
         <SectionContainer id="footer" label="" heightClass="min-h-[80vh] py-16 md:py-24">
           <div className="max-w-[640px] w-full mx-auto flex flex-col items-center">
             {/* Red Lotus Painting */}
-            <FadeInItem className="w-full sm:w-[85%] md:w-[90%] lg:w-[80%] flex flex-col items-center mb-10">
+            <FadeInItem className="w-full sm:w-[95%] md:w-[100%] lg:w-[90%] flex flex-col items-center mb-10">
               <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden shadow-sm">
                 <img src="/red-lotus.png" alt="red lotus painting" className="w-full h-full object-cover" />
               </div>
@@ -207,8 +207,8 @@ export default async function Home() {
 
             {/* Quote + Paragraph */}
             <div className="space-y-12 w-full text-center">
-              <FadeInItem delay={0.2} className="text-center max-w-[90%] md:max-w-[750px] mx-auto">
-                <p className="italic text-[18px] md:text-[22px] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase text-balance">
+              <FadeInItem delay={0.2} className="text-center max-w-[95%] md:max-w-[850px] mx-auto">
+                <p className="italic text-[20px] md:text-[24px] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase text-balance">
                   "i love the lotus, for it rises from the mud unstained, cleansed in rippling water, <br className="md:hidden" /> appealing, yet not seductive."
                 </p>
                 <p className="text-[13px] md:text-[14px] text-black tracking-[0.04em] leading-[2] lowercase mt-3 opacity-60">
@@ -216,7 +216,7 @@ export default async function Home() {
                 </p>
               </FadeInItem>
 
-              <FadeInItem delay={0.4} className="text-[17px] md:text-[20px] text-black leading-relaxed max-w-[90%] md:max-w-[750px] mx-auto px-4 md:px-0">
+              <FadeInItem delay={0.4} className="text-[18px] md:text-[22px] text-black leading-relaxed max-w-[95%] md:max-w-[850px] mx-auto px-4 md:px-0">
                 <p className="lowercase text-balance">
                   I love the cultural meaning of the lotus as a symbol of the process. <br className="md:hidden" /> I've grown to appreciate the constraints and complexities of the mud <br className="md:hidden" /> for the beautiful bloom. This philosophy shapes how <br className="md:hidden" /> I approach design and everything else.
                 </p>
