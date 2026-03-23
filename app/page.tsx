@@ -173,7 +173,7 @@ export default async function Home() {
         </SectionContainer>
 
         {/* Florals Section */}
-        <SectionContainer id="florals" label="florals" heightClass="min-h-screen pt-16 pb-32 md:pt-20 md:pb-48">
+        <SectionContainer id="florals" label="florals" heightClass="min-h-[50vh] pt-4 pb-20 md:pt-8 md:pb-32 mt-[-10vh]">
           <div className="max-w-[950px] w-full mx-auto">
             <CarouselRow>
               {recentFlorals.map((imgUrl, idx) => (
@@ -218,11 +218,9 @@ export default async function Home() {
                 </p>
               </FadeInItem>
 
-              <FadeInItem delay={0.4} className="text-[16px] md:text-[clamp(18px,1.5vw,22px)] text-black leading-relaxed max-w-[95%] md:max-w-[900px] mx-auto px-4 md:px-0">
-                <p className="lowercase text-pretty">
-                  I love the cultural meaning of the lotus as a symbol of the process. I've grown <br className="hidden md:block" />
-                  to appreciate the constraints and complexities of the mud for the beautiful bloom. <br className="hidden md:block" />
-                  This philosophy shapes how I approach design and everything else.
+              <FadeInItem delay={0.4} className="text-[16px] md:text-[clamp(18px,1.5vw,22px)] text-black leading-relaxed max-w-[95%] md:max-w-[800px] lg:max-w-[900px] mx-auto px-4 md:px-0">
+                <p className="lowercase text-balance">
+                  I love the cultural meaning of the lotus as a symbol of the process. I've grown to appreciate the constraints and complexities of the mud for the beautiful bloom. This philosophy shapes how I approach design and everything else.
                 </p>
               </FadeInItem>
             </div>
