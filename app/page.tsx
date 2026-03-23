@@ -173,7 +173,7 @@ export default async function Home() {
         </SectionContainer>
 
         {/* Florals Section */}
-        <SectionContainer id="florals" label="florals" heightClass="min-h-[50vh] pt-4 pb-20 md:pt-8 md:pb-32 mt-[-10vh]">
+        <SectionContainer id="florals" label="florals" heightClass="min-h-[85vh] py-12 md:py-24">
           <div className="max-w-[950px] w-full mx-auto">
             <CarouselRow>
               {recentFlorals.map((imgUrl, idx) => (
@@ -209,18 +209,20 @@ export default async function Home() {
 
             {/* Quote + Paragraph */}
             <div className="space-y-12 w-full text-center">
-              <FadeInItem delay={0.2} className="text-center max-w-[95%] md:max-w-[850px] mx-auto">
+              <FadeInItem delay={0.2} className="text-center max-w-[95%] md:max-w-[700px] mx-auto">
                 <p className="italic text-[18px] md:text-[clamp(20px,2vw,24px)] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase text-balance">
-                  "i love the lotus, for it rises from the mud unstained, cleansed in rippling water, <br className="md:hidden" /> appealing, yet not seductive."
+                  "i love the lotus, for it rises from the mud unstained, <br className="hidden xl:block md:hidden" /> cleansed in rippling water, <br className="md:hidden" /> appealing, yet not seductive."
                 </p>
                 <p className="text-[13px] md:text-[14px] text-black tracking-[0.04em] leading-[2] lowercase mt-3 opacity-60">
                   — 周敦颐, on the love of the lotus, 1073
                 </p>
               </FadeInItem>
 
-              <FadeInItem delay={0.4} className="text-[16px] md:text-[clamp(18px,1.5vw,22px)] text-black leading-relaxed max-w-[95%] md:max-w-[800px] lg:max-w-[900px] mx-auto px-4 md:px-0">
-                <p className="lowercase text-balance">
-                  I love the cultural meaning of the lotus as a symbol of the process. I've grown to appreciate the constraints and complexities of the mud for the beautiful bloom. This philosophy shapes how I approach design and everything else.
+              <FadeInItem delay={0.4} className="text-[16px] md:text-[clamp(18px,1.5vw,22px)] text-black leading-relaxed max-w-[95%] md:max-w-[700px] mx-auto px-4 md:px-0">
+                <p className="lowercase text-center">
+                  I love the cultural meaning of the lotus as a symbol of the process. I've grown <br className="hidden md:block" />
+                  to appreciate the constraints and complexities of the mud for the beautiful <br className="hidden md:block" />
+                  bloom. This philosophy shapes how I approach design and everything else.
                 </p>
               </FadeInItem>
             </div>

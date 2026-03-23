@@ -19,6 +19,16 @@ export default function CarouselRow({ children }: CarouselRowProps) {
     }
   };
 
+  const executeScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      scrollRef.current.scrollTo({
+        left: scrollLeft + clientWidth * 0.8,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className="relative group/carousel w-full">
       <AnimatePresence>
@@ -28,7 +38,8 @@ export default function CarouselRow({ children }: CarouselRowProps) {
             whileInView={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.3 } }}
             viewport={{ once: true, amount: 0.5 }}
-            className="absolute -right-4 md:-right-10 top-1/2 -translate-y-[60%] z-10 p-2 pointer-events-none text-[#b83143]"
+            onClick={executeScroll}
+            className="absolute -right-4 md:-right-10 top-1/2 -translate-y-[60%] z-10 p-2 cursor-pointer text-[#b83143]"
           >
             <motion.div
               animate={{ x: [0, 8, 0] }}
