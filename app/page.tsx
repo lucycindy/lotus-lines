@@ -39,18 +39,18 @@ export default async function Home() {
         <SectionContainer id="about" label="about">
           <div className="max-w-[700px] w-full mx-auto flex flex-col items-center">
             <FadeInItem delay={0.1}>
-              <p className="text-[#b83143] text-[15px] md:text-[clamp(1.1rem,1.35vw,1.4rem)] leading-relaxed text-center mb-10">
+              <p className="text-[#b83143] text-[17px] md:text-[clamp(1.2rem,1.6vw,1.6rem)] leading-relaxed text-center mb-12">
                 passionate about experiential, visual, and web design.
               </p>
             </FadeInItem>
 
             <div className="flex flex-col items-center space-y-4 w-full">
-              <ul className="space-y-5 w-fit">
+              <ul className="space-y-6 w-fit">
                 {aboutItems.map((item, idx) => (
                   <li key={idx}>
-                    <FadeInItem delay={0.2 + idx * 0.1} className="flex items-center space-x-4">
+                    <FadeInItem delay={0.2 + idx * 0.15} className="flex items-center space-x-5">
                       <KineticIcon type={item.type} />
-                      <span className="text-black text-[15px] md:text-[clamp(1rem,1.2vw,1.2rem)]">
+                      <span className="text-black text-[16px] md:text-[clamp(1.1rem,1.4vw,1.4rem)]">
                         {item.text}
                       </span>
                     </FadeInItem>
@@ -58,28 +58,30 @@ export default async function Home() {
                 ))}
               </ul>
             </div>
+
           </div>
         </SectionContainer>
 
         {/* Events Section */}
         <SectionContainer id="events" label="events">
-          <div className="max-w-[850px] w-full mx-auto space-y-12">
-            <div className="space-y-8">
+          <div className="max-w-[850px] w-full mx-auto space-y-8 md:space-y-10">
+            <div className="space-y-4 md:space-y-6">
               {recentEvents.map((post, idx) => (
-                <FadeInItem key={post.Slug} delay={idx * 0.1}>
+                <FadeInItem key={post.Slug} delay={idx * 0.15}>
                   <Link
                     href={`/events/${post.Slug}`}
-                    className="group flex flex-row items-center gap-8 md:gap-12 py-6"
+                    className="group flex flex-row items-center gap-6 md:gap-8 py-3 md:py-4"
                   >
-                    <div className="w-52 sm:w-56 md:w-80 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
+                    <div className="w-44 sm:w-48 md:w-64 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
                       {post.CoverImage && (
                         <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                       )}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-[16px] md:text-[clamp(1.1rem,1.35vw,1.4rem)] font-medium text-black group-hover:text-[#b83143] transition-colors leading-snug line-clamp-2">
+                      <h3 className="text-[15px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] font-medium text-black group-hover:text-[#b83143] transition-colors leading-snug line-clamp-2">
                         {post.Title}
                       </h3>
+
                       {post.Description && (
                         <p className="mt-2 text-[14px] md:text-[17px] text-[#6b6b6b] italic line-clamp-2 font-light">
                           {post.Description}
@@ -100,23 +102,24 @@ export default async function Home() {
 
         {/* Writing Section */}
         <SectionContainer id="writing" label="writing">
-          <div className="max-w-[850px] w-full mx-auto space-y-12">
-            <div className="space-y-8">
+          <div className="max-w-[850px] w-full mx-auto space-y-8 md:space-y-10">
+            <div className="space-y-4 md:space-y-6">
               {recentWriting.map((post, idx) => (
-                <FadeInItem key={post.Slug} delay={idx * 0.1}>
+                <FadeInItem key={post.Slug} delay={idx * 0.15}>
                   <Link
                     href={`/writing/${post.Slug}`}
-                    className="group flex flex-row items-center gap-8 md:gap-12 py-6"
+                    className="group flex flex-row items-center gap-6 md:gap-8 py-3 md:py-4"
                   >
-                    <div className="w-52 sm:w-56 md:w-80 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
+                    <div className="w-44 sm:w-48 md:w-64 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
                       {post.CoverImage && (
                         <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                       )}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-[16px] md:text-[clamp(1.1rem,1.35vw,1.4rem)] font-medium text-black group-hover:text-[#b83143] transition-colors leading-snug line-clamp-2">
+                      <h3 className="text-[15px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] font-medium text-black group-hover:text-[#b83143] transition-colors leading-snug line-clamp-2">
                         {post.Title}
                       </h3>
+
                       {post.Description && (
                         <p className="mt-2 text-[14px] md:text-[17px] text-[#6b6b6b] italic line-clamp-2 font-light">
                           {post.Description}
@@ -140,7 +143,7 @@ export default async function Home() {
           <div className="max-w-[900px] w-full mx-auto">
             <CarouselRow>
               {recentBooks.map((post, idx) => (
-                <FadeInItem key={post.Slug} delay={idx * 0.1} className="w-[180px] md:w-[240px] shrink-0 group py-6">
+                <FadeInItem key={post.Slug} delay={idx * 0.15} className="w-[180px] md:w-[240px] shrink-0 group py-6">
                   <Link href={`/books/${post.Slug}`}>
                     <div className="aspect-[2/3] w-full overflow-hidden bg-[#e8e6e2] mb-4 rounded-sm shadow-sm transition-shadow group-hover:shadow-md">
                       {post.CoverImage && (
@@ -172,7 +175,7 @@ export default async function Home() {
           <div className="max-w-[950px] w-full mx-auto">
             <CarouselRow>
               {recentFlorals.map((imgUrl, idx) => (
-                <FadeInItem key={idx} delay={idx * 0.1} className="w-[280px] md:w-[380px] shrink-0 aspect-square bg-[#e8e6e2] rounded-sm overflow-hidden shadow-sm">
+                <FadeInItem key={idx} delay={idx * 0.15} className="w-[280px] md:w-[380px] shrink-0 aspect-square bg-[#e8e6e2] rounded-sm overflow-hidden shadow-sm">
                   <img 
                     src={imgUrl} 
                     alt={`Floral art ${idx + 1}`} 
@@ -193,7 +196,7 @@ export default async function Home() {
         <SectionContainer id="footer" label="">
           <div className="max-w-[640px] w-full mx-auto flex flex-col items-center">
             {/* Red Lotus Painting */}
-            <FadeInItem className="w-full sm:w-[90%] md:w-[95%] flex flex-col items-center mb-12">
+            <FadeInItem className="w-full sm:w-[75%] md:w-[80%] lg:w-[70%] flex flex-col items-center mb-10">
               <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden shadow-sm">
                 <img src="/red-lotus.png" alt="red lotus painting" className="w-full h-full object-cover" />
               </div>

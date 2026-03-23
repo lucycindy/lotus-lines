@@ -12,12 +12,15 @@ interface FadeInItemProps {
 export default function FadeInItem({ children, className = "", delay = 0 }: FadeInItemProps) {
   return (
     <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
       variants={{
         hidden: { opacity: 0, y: 20 },
         visible: { 
           opacity: 1, 
           y: 0,
-          transition: { duration: 0.4, ease: "easeOut", delay } 
+          transition: { duration: 0.5, ease: "easeOut", delay } 
         },
       }}
       className={className}

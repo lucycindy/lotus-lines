@@ -35,13 +35,12 @@ export default function SectionContainer({ id, label, children }: SectionContain
       ref={sectionRef}
       className="min-h-screen relative flex flex-col items-center justify-center py-16 md:py-24 px-6 md:px-12 w-full"
     >
-      {/* Animated Local Label - Sticky within bounds to not affect layout centering */}
-      <div className="absolute inset-0 pointer-events-none z-50">
-        <motion.div 
-          style={{ opacity: labelOpacity }}
-          className="sticky top-6 md:top-8 flex justify-center w-full pointer-events-auto"
-        >
-          <span className="text-[14px] md:text-[clamp(1rem,1.15vw,1.15rem)] font-light text-black lowercase">
+      {/* Animated Local Label - Integrated into flow to sit right above content */}
+      <motion.div 
+        style={{ opacity: labelOpacity }}
+        className="flex justify-center w-full pointer-events-auto mb-8 md:mb-10 text-center"
+      >
+        <span className="text-[14px] md:text-[clamp(1rem,1.15vw,1.15rem)] font-light text-black lowercase">
             {isPlainLabel ? (
               "lucy cindy /"
             ) : (
@@ -54,27 +53,14 @@ export default function SectionContainer({ id, label, children }: SectionContain
             )}
           </span>
         </motion.div>
-      </div>
 
-      {/* Content with Staggered Entrance */}
-      <motion.div
+      {/* Content wrapper */}
+      <div
         ref={contentRef}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={{
-          hidden: { opacity: 0 },
-          visible: {
-            opacity: 1,
-            transition: {
-              staggerChildren: 0.15,
-            },
-          },
-        }}
-        className="w-full relative pointer-events-auto"
+        className="w-full relative pointer-events-auto flex flex-col items-center"
       >
         {children}
-      </motion.div>
+      </div>
     </section>
   );
 }
