@@ -39,7 +39,7 @@ export default function CarouselRow({ children }: CarouselRowProps) {
             exit={{ opacity: 0, transition: { duration: 0.3 } }}
             viewport={{ once: true, amount: 0.5 }}
             onClick={executeScroll}
-            className="absolute -right-4 md:-right-10 top-1/2 -translate-y-[60%] z-10 p-2 cursor-pointer text-[#b83143]"
+            className="absolute -right-4 md:-right-10 top-1/2 -translate-y-[60%] z-10 p-2 cursor-pointer pointer-events-auto text-[#b83143]"
           >
             <motion.div
               animate={{ x: [0, 8, 0] }}
