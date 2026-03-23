@@ -38,23 +38,19 @@ export default function SectionContainer({ id, label, children, heightClass = "m
       ref={sectionRef}
       className={`${heightClass} relative flex flex-col items-center justify-center px-6 md:px-12 w-full`}
     >
-      {/* Animated Local Label - Integrated into flow to sit right above content */}
-      <FadeInItem delay={0} className={`flex justify-center w-full pointer-events-auto text-center ${labelMargin}`}>
-        <motion.div style={{ opacity: labelOpacity }}>
-          <span className="text-[14px] md:text-[clamp(1rem,1.15vw,1.15rem)] font-light lowercase">
-            {isPlainLabel ? (
-              <span className="text-[#6b6b6b]">lucy cindy /</span>
-            ) : (
-              <>
-                <span className="text-[#6b6b6b]">lucy cindy /</span>{" "}
-                <Link href={`/${id}`} className="italic hover:text-[#b83143] transition-colors text-black">
-                  {label}
-                </Link>
-              </>
-            )}
-          </span>
-        </motion.div>
-      </FadeInItem>
+      {/* Animated Local Label - Hidden on Plain Labels (About/Footer) */}
+      {!isPlainLabel && (
+        <FadeInItem delay={0} className={`flex justify-center w-full pointer-events-auto text-center ${labelMargin}`}>
+          <motion.div style={{ opacity: labelOpacity }}>
+            <span className="text-[14px] md:text-[clamp(1rem,1.15vw,1.15rem)] font-light lowercase">
+              <span className="text-[#6b6b6b]">lucy cindy /</span>{" "}
+              <Link href={`/${id}`} className="italic hover:text-[#b83143] transition-colors text-black">
+                {label}
+              </Link>
+            </span>
+          </motion.div>
+        </FadeInItem>
+      )}
 
       {/* Content wrapper */}
       <div

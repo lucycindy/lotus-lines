@@ -60,7 +60,7 @@ export default async function WritingPostPage({
           </div>
         ) : null}
 
-        <div className="mb-12 mt-8">
+        <div className="mb-6 md:mb-8 mt-8 md:mt-10">
           <h1 className="text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-[#b83143]">
             {post.Title}
           </h1>
