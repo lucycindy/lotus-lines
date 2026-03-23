@@ -81,22 +81,23 @@ export default async function Home() {
                   href={`/events/${post.Slug}`}
                   className="group flex flex-row items-center gap-6 md:gap-10 py-6"
                 >
-                  <div className="w-36 sm:w-40 md:w-64 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
+                  <div className="w-44 sm:w-48 md:w-64 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
                     {post.CoverImage && (
                       <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     )}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-[17px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] font-medium text-black group-hover:text-[#b83143] transition-colors leading-snug line-clamp-2">
+                    <h3 className="text-[15px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] font-medium text-black group-hover:text-[#b83143] transition-colors leading-snug line-clamp-2">
                       {post.Title}
                     </h3>
                     {post.Description && (
-                      <p className="mt-2 text-[15px] md:text-[16px] text-[#737373] italic line-clamp-2">
+                      <p className="mt-2 text-[13px] md:text-[16px] text-[#737373] italic line-clamp-2">
                         {post.Description}
                       </p>
                     )}
                   </div>
                 </Link>
+
               ))}
             </div>
             <div className="flex justify-start pt-2">
@@ -117,22 +118,23 @@ export default async function Home() {
                   href={`/writing/${post.Slug}`}
                   className="group flex flex-row items-center gap-6 md:gap-10 py-6"
                 >
-                  <div className="w-36 sm:w-40 md:w-64 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
+                  <div className="w-44 sm:w-48 md:w-64 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
                     {post.CoverImage && (
                       <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     )}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-[17px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] font-medium text-black group-hover:text-[#b83143] transition-colors leading-snug line-clamp-2">
+                    <h3 className="text-[15px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] font-medium text-black group-hover:text-[#b83143] transition-colors leading-snug line-clamp-2">
                       {post.Title}
                     </h3>
                     {post.Description && (
-                      <p className="mt-2 text-[15px] md:text-[16px] text-[#737373] italic line-clamp-2">
+                      <p className="mt-2 text-[13px] md:text-[16px] text-[#737373] italic line-clamp-2">
                         {post.Description}
                       </p>
                     )}
                   </div>
                 </Link>
+
               ))}
             </div>
             <div className="flex justify-start pt-2">
@@ -209,7 +211,7 @@ export default async function Home() {
         {/* Decorative Footer */}
         <footer id="footer" className="pt-4 md:pt-8 pb-12 md:pb-24 px-6 md:px-12 w-full">
 
-          <div className="max-w-[640px] w-full mx-auto flex flex-col items-center pr-0 md:pr-[100px]">
+          <div className="max-w-none md:max-w-[640px] w-full mx-auto flex flex-col items-center pr-0 md:pr-[100px]">
             {/* Red Lotus Painting */}
             <div className="w-full sm:w-[85%] md:w-[85%] flex flex-col items-center mb-10">
 
@@ -225,7 +227,7 @@ export default async function Home() {
 
             {/* Quote + Paragraph */}
             <div className="space-y-10 w-full text-center">
-              <div className="text-center max-w-[650px] mx-auto">
+              <div className="text-center max-w-none md:max-w-[650px] mx-auto">
 
                 <p className="italic text-[14px] md:text-[18px] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase">
                   "i love the lotus, for it rises from the mud unstained, cleansed in rippling water, appealing, yet not seductive."
@@ -235,7 +237,7 @@ export default async function Home() {
                 </p>
               </div>
 
-              <div className="text-[14px] md:text-[17px] text-black leading-relaxed max-w-[650px] mx-auto px-2 md:px-0">
+              <div className="text-[14px] md:text-[17px] text-black leading-relaxed max-w-none md:max-w-[650px] mx-auto px-2 md:px-0">
                 <p className="lowercase">
                   I love the cultural meaning of the lotus as a symbol of the process. I've grown to appreciate the constraints and complexities of the mud for the beautiful bloom. This philosophy shapes how I approach design and everything else.
                 </p>

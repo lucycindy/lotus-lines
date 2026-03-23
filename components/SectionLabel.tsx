@@ -7,7 +7,7 @@ interface SectionLabelProps {
 }
 
 export default function SectionLabel({ sections }: SectionLabelProps) {
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState("about");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -20,7 +20,7 @@ export default function SectionLabel({ sections }: SectionLabelProps) {
       },
       {
         threshold: 0,
-        rootMargin: "-80px 0px -90% 0px", // Trigger when section hits the top header area
+        rootMargin: "-80px 0px -70% 0px", // Trigger when section hits the top header area
       }
 
 
