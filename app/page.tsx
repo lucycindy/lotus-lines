@@ -5,6 +5,7 @@ import KineticIcon from "@/components/KineticIcon";
 import SectionContainer from "@/components/SectionContainer";
 import CarouselRow from "@/components/CarouselRow";
 import FadeInItem from "@/components/FadeInItem";
+import ScrollChevron from "@/components/ScrollChevron";
 
 export const revalidate = 30;
 
@@ -59,11 +60,12 @@ export default async function Home() {
               </ul>
             </div>
 
+            <ScrollChevron />
           </div>
         </SectionContainer>
 
         {/* Events Section */}
-        <SectionContainer id="events" label="events">
+        <SectionContainer id="events" label="events" heightClass="min-h-screen pt-12 pb-24 md:pt-16 md:pb-36">
           <div className="max-w-[850px] w-full mx-auto space-y-8 md:space-y-10">
             <div className="space-y-4 md:space-y-6">
               {recentEvents.map((post, idx) => (
@@ -171,7 +173,7 @@ export default async function Home() {
         </SectionContainer>
 
         {/* Florals Section */}
-        <SectionContainer id="florals" label="florals" heightClass="min-h-screen py-24 md:py-36">
+        <SectionContainer id="florals" label="florals" heightClass="min-h-screen pt-16 pb-32 md:pt-20 md:pb-48">
           <div className="max-w-[950px] w-full mx-auto">
             <CarouselRow>
               {recentFlorals.map((imgUrl, idx) => (
@@ -216,9 +218,11 @@ export default async function Home() {
                 </p>
               </FadeInItem>
 
-              <FadeInItem delay={0.4} className="text-[16px] md:text-[clamp(18px,1.5vw,22px)] text-black leading-relaxed max-w-[95%] md:max-w-[850px] mx-auto px-4 md:px-0">
-                <p className="lowercase">
-                  I love the cultural meaning of the lotus as a symbol of the process. <br className="md:hidden" /> I've grown to appreciate the constraints and complexities of the mud <br className="md:hidden" /> for the beautiful bloom. This philosophy shapes how <br className="md:hidden" /> I approach design and everything else.
+              <FadeInItem delay={0.4} className="text-[16px] md:text-[clamp(18px,1.5vw,22px)] text-black leading-relaxed max-w-[95%] md:max-w-[900px] mx-auto px-4 md:px-0">
+                <p className="lowercase text-pretty">
+                  I love the cultural meaning of the lotus as a symbol of the process. I've grown <br className="hidden md:block" />
+                  to appreciate the constraints and complexities of the mud for the beautiful bloom. <br className="hidden md:block" />
+                  This philosophy shapes how I approach design and everything else.
                 </p>
               </FadeInItem>
             </div>
