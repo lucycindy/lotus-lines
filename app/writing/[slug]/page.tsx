@@ -35,7 +35,7 @@ export default async function WritingPostPage({
   return (
     <div className="min-h-screen bg-[#f0efec] flex flex-col items-center pt-20 pb-16">
       <div className="w-full max-w-[650px] px-6 md:px-8">
-        <BackButton />
+        <BackButton href={`/writing#${post.Slug}`} />
       </div>
 
       <article className="mx-auto mt-6 md:mt-10 max-w-[650px] w-full flex flex-col items-start px-6 md:px-8 pb-6 md:pb-16">
@@ -74,7 +74,7 @@ export default async function WritingPostPage({
 
 
         {post.Body ? (
-          <div className="prose prose-stone prose-lg max-w-none prose-headings:font-medium prose-headings:text-black prose-p:text-black prose-p:leading-relaxed prose-li:text-black prose-img:rounded-sm">
+          <div className="mt-4 prose prose-stone prose-lg max-w-none prose-headings:font-medium prose-headings:text-black prose-p:text-black prose-p:leading-relaxed prose-li:text-black prose-img:rounded-sm">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeRaw]}

@@ -32,7 +32,7 @@ export default async function WebsitePage({
     return (
         <div className="min-h-screen bg-[#f0efec] pt-20 pb-16 flex flex-col items-center">
             <div className="w-full max-w-[640px] px-10">
-                <BackButton />
+                <BackButton href={`/websites#${post.Slug}`} />
             </div>
 
             <article className="mx-auto mt-10 max-w-[640px] w-full flex flex-col items-start px-10">
@@ -60,7 +60,7 @@ export default async function WebsitePage({
                 ) : null}
 
                 {post.Body ? (
-                    <div className="mx-auto mt-10 max-w-prose w-full text-black leading-relaxed">
+                    <div className="mx-auto mt-4 max-w-prose w-full text-black leading-relaxed">
                         <ReactMarkdown
                             remarkPlugins={[remarkGfm]}
                             components={{

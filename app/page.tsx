@@ -230,7 +230,7 @@ export default async function Home() {
               <div className="text-center max-w-none md:max-w-[650px] mx-auto">
 
                 <p className="italic text-[14px] md:text-[18px] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase">
-                  "i love the lotus, for it rises from the mud unstained, cleansed in rippling water, appealing, yet not seductive."
+                  "i love the lotus, for it rises from the mud unstained, cleansed in rippling water, appealing, <br className="md:hidden" /> yet not seductive."
                 </p>
                 <p className="text-[12px] md:text-[13px] text-black tracking-[0.04em] leading-[2] lowercase mt-2 opacity-60">
                   — 周敦颐, on the love of the lotus, 1073
@@ -239,7 +239,7 @@ export default async function Home() {
 
               <div className="text-[14px] md:text-[17px] text-black leading-relaxed max-w-none md:max-w-[650px] mx-auto px-2 md:px-0">
                 <p className="lowercase">
-                  I love the cultural meaning of the lotus as a symbol of the process. I've grown to appreciate the constraints and complexities of the mud for the beautiful bloom. This philosophy shapes how I approach design and everything else.
+                  I love the cultural meaning of the lotus as a symbol of the process. I've grown to appreciate the constraints and complexities of the mud for the beautiful bloom. <br className="md:hidden" /> This philosophy shapes how I approach design <br className="md:hidden" /> and everything else.
                 </p>
               </div>
 

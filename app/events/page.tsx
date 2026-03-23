@@ -12,7 +12,7 @@ export default async function EventsPage() {
   return (
     <div className="min-h-screen bg-[#f0efec] px-6 pt-20 pb-16 flex flex-col items-center">
       <div className="w-full max-w-[800px]">
-        <BackButton href="/" />
+        <BackButton href="/#events" />
       </div>
 
       <h1 className="mt-8 text-center text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-[#b83143]">
@@ -24,7 +24,7 @@ export default async function EventsPage() {
 
       <ul className="mt-12 w-full">
         {posts.map((post, index) => (
-          <li key={post.Slug || index}>
+          <li key={post.Slug || index} id={post.Slug || undefined}>
             <div className="mx-auto max-w-[800px] px-4 md:px-0">
               <Link
                 href={post.Slug ? `/events/${encodeURIComponent(post.Slug)}` : "#"}

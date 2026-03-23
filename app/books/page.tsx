@@ -12,7 +12,7 @@ export default async function BooksPage() {
   return (
     <div className="min-h-screen bg-[#f0efec] px-6 pt-20 pb-16 flex flex-col items-center">
       <div className="w-full max-w-[800px]">
-        <BackButton href="/" />
+        <BackButton href="/#books" />
       </div>
       <div className="w-full max-w-2xl">
       </div>
@@ -25,7 +25,7 @@ export default async function BooksPage() {
 
       <ul className="mt-12 w-full">
         {posts.map((post, index) => (
-          <li key={post.Slug || index}>
+          <li key={post.Slug || index} id={post.Slug || undefined}>
             <div className="mx-auto max-w-[800px] px-4 md:px-0">
               <Link
                 href={post.Slug ? `/books/${encodeURIComponent(post.Slug)}` : "#"}

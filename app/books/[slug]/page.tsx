@@ -34,7 +34,7 @@ export default async function BookPage({
   return (
     <div className="min-h-screen bg-[#f0efec] flex flex-col items-center pt-20 pb-16">
       <div className="w-full max-w-[650px] px-6 md:px-8">
-        <BackButton />
+        <BackButton href={`/books#${post.Slug}`} />
       </div>
 
       <article className="mx-auto mt-6 md:mt-10 max-w-[650px] w-full flex flex-col items-start px-6 md:px-8 pb-16">
@@ -62,7 +62,7 @@ export default async function BookPage({
         ) : null}
 
         {post.Body ? (
-          <div className="mt-10 w-full text-black leading-relaxed">
+          <div className="mt-4 w-full text-black leading-relaxed">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeRaw]}
