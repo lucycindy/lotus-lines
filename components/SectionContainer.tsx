@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ReactNode, useRef } from "react";
+import Link from "next/link";
 
 interface SectionContainerProps {
   id: string;
@@ -16,33 +17,42 @@ export default function SectionContainer({ id, label, children }: SectionContain
   // Scroll-based fade for the label
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start start", "end start"],
+    offset: ["start 90%", "start 10%"],
   });
 
-  // Fade in at the top (0 to 0.05), fade out as content reaches top (roughly 0.1 to 0.15)
+  // Fade in at the top (0 to 0.3), fade out as content reaches top (0.7 to 1)
   const labelOpacity = useTransform(
     scrollYProgress,
-    [0, 0.05, 0.1, 0.15],
+    [0, 0.3, 0.7, 1],
     [0, 1, 1, 0]
   );
+
+  const isPlainLabel = label === "about" || label === "";
 
   return (
     <section 
       id={id} 
       ref={sectionRef}
-      className="min-h-screen relative flex flex-col justify-center py-10 md:py-16 px-6 md:px-12 w-full overflow-hidden"
+      className="relative flex flex-col py-16 md:py-24 px-6 md:px-12 w-full overflow-hidden"
     >
-      {/* Animated Centered Label */}
-      {label && (
-        <motion.div 
-          style={{ opacity: labelOpacity }}
-          className="fixed top-12 left-0 right-0 z-50 flex justify-center pointer-events-none"
-        >
-          <span className="text-[14px] md:text-[clamp(1rem,1.15vw,1.15rem)] font-light text-[#6b6b6b] lowercase">
-            lucy cindy / <span className="italic">{label}</span>
-          </span>
-        </motion.div>
-      )}
+      {/* Animated Local Label */}
+      <motion.div 
+        style={{ opacity: labelOpacity }}
+        className="absolute top-6 md:top-8 left-0 right-0 z-50 flex justify-center pointer-events-none"
+      >
+        <span className="text-[14px] md:text-[clamp(1rem,1.15vw,1.15rem)] font-light text-[#6b6b6b] lowercase pointer-events-auto">
+          {isPlainLabel ? (
+            "lucy cindy /"
+          ) : (
+            <>
+              lucy cindy /{" "}
+              <Link href={`/${id}`} className="italic hover:text-[#b83143] transition-colors">
+                {label}
+              </Link>
+            </>
+          )}
+        </span>
+      </motion.div>
 
       {/* Content with Staggered Entrance */}
       <motion.div
@@ -66,3 +76,4 @@ export default function SectionContainer({ id, label, children }: SectionContain
     </section>
   );
 }
+

@@ -64,7 +64,7 @@ export default async function Home() {
         {/* Events Section */}
         <SectionContainer id="events" label="events">
           <div className="max-w-[850px] w-full mx-auto space-y-12">
-            <div className="space-y-12">
+            <div className="space-y-8">
               {recentEvents.map((post, idx) => (
                 <FadeInItem key={post.Slug} delay={idx * 0.1}>
                   <Link
@@ -101,7 +101,7 @@ export default async function Home() {
         {/* Writing Section */}
         <SectionContainer id="writing" label="writing">
           <div className="max-w-[850px] w-full mx-auto space-y-12">
-            <div className="space-y-12">
+            <div className="space-y-8">
               {recentWriting.map((post, idx) => (
                 <FadeInItem key={post.Slug} delay={idx * 0.1}>
                   <Link
