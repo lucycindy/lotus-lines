@@ -3,14 +3,16 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ReactNode, useRef } from "react";
 import Link from "next/link";
+import FadeInItem from "./FadeInItem";
 
 interface SectionContainerProps {
   id: string;
   label: string;
   children: ReactNode;
+  heightClass?: string;
 }
 
-export default function SectionContainer({ id, label, children }: SectionContainerProps) {
+export default function SectionContainer({ id, label, children, heightClass = "min-h-screen py-16 md:py-24" }: SectionContainerProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -28,19 +30,18 @@ export default function SectionContainer({ id, label, children }: SectionContain
   );
 
   const isPlainLabel = label === "about" || label === "";
+  const labelMargin = isPlainLabel ? "mb-10 md:mb-14" : "mb-8 md:mb-10";
 
   return (
     <section 
       id={id} 
       ref={sectionRef}
-      className="min-h-screen relative flex flex-col items-center justify-center py-16 md:py-24 px-6 md:px-12 w-full"
+      className={`${heightClass} relative flex flex-col items-center justify-center px-6 md:px-12 w-full`}
     >
       {/* Animated Local Label - Integrated into flow to sit right above content */}
-      <motion.div 
-        style={{ opacity: labelOpacity }}
-        className="flex justify-center w-full pointer-events-auto mb-8 md:mb-10 text-center"
-      >
-        <span className="text-[14px] md:text-[clamp(1rem,1.15vw,1.15rem)] font-light text-black lowercase">
+      <FadeInItem delay={0} className={`flex justify-center w-full pointer-events-auto text-center ${labelMargin}`}>
+        <motion.div style={{ opacity: labelOpacity }}>
+          <span className="text-[14px] md:text-[clamp(1rem,1.15vw,1.15rem)] font-light text-black lowercase">
             {isPlainLabel ? (
               "lucy cindy /"
             ) : (
@@ -53,6 +54,7 @@ export default function SectionContainer({ id, label, children }: SectionContain
             )}
           </span>
         </motion.div>
+      </FadeInItem>
 
       {/* Content wrapper */}
       <div

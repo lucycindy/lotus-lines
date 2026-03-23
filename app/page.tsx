@@ -139,11 +139,11 @@ export default async function Home() {
         </SectionContainer>
 
         {/* Books Section */}
-        <SectionContainer id="books" label="books">
+        <SectionContainer id="books" label="books" heightClass="min-h-[85vh] py-12 md:py-16">
           <div className="max-w-[900px] w-full mx-auto">
             <CarouselRow>
               {recentBooks.map((post, idx) => (
-                <FadeInItem key={post.Slug} delay={idx * 0.15} className="w-[180px] md:w-[240px] shrink-0 group py-6">
+                <FadeInItem key={post.Slug} delay={idx * 0.15} className="w-[160px] md:w-[200px] shrink-0 group py-6">
                   <Link href={`/books/${post.Slug}`}>
                     <div className="aspect-[2/3] w-full overflow-hidden bg-[#e8e6e2] mb-4 rounded-sm shadow-sm transition-shadow group-hover:shadow-md">
                       {post.CoverImage && (
@@ -171,11 +171,11 @@ export default async function Home() {
         </SectionContainer>
 
         {/* Florals Section */}
-        <SectionContainer id="florals" label="florals">
+        <SectionContainer id="florals" label="florals" heightClass="min-h-[60vh] py-8 md:py-12">
           <div className="max-w-[950px] w-full mx-auto">
             <CarouselRow>
               {recentFlorals.map((imgUrl, idx) => (
-                <FadeInItem key={idx} delay={idx * 0.15} className="w-[280px] md:w-[380px] shrink-0 aspect-square bg-[#e8e6e2] rounded-sm overflow-hidden shadow-sm">
+                <FadeInItem key={idx} delay={idx * 0.15} className="w-[240px] md:w-[320px] shrink-0 aspect-square bg-[#e8e6e2] rounded-sm overflow-hidden shadow-sm">
                   <img 
                     src={imgUrl} 
                     alt={`Floral art ${idx + 1}`} 
@@ -193,10 +193,10 @@ export default async function Home() {
         </SectionContainer>
 
         {/* Decorative Footer */}
-        <SectionContainer id="footer" label="">
+        <SectionContainer id="footer" label="" heightClass="min-h-[80vh] py-16 md:py-24">
           <div className="max-w-[640px] w-full mx-auto flex flex-col items-center">
             {/* Red Lotus Painting */}
-            <FadeInItem className="w-full sm:w-[75%] md:w-[80%] lg:w-[70%] flex flex-col items-center mb-10">
+            <FadeInItem className="w-full sm:w-[85%] md:w-[90%] lg:w-[80%] flex flex-col items-center mb-10">
               <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden shadow-sm">
                 <img src="/red-lotus.png" alt="red lotus painting" className="w-full h-full object-cover" />
               </div>
@@ -207,8 +207,8 @@ export default async function Home() {
 
             {/* Quote + Paragraph */}
             <div className="space-y-12 w-full text-center">
-              <FadeInItem delay={0.2} className="text-center max-w-none md:max-w-[650px] mx-auto">
-                <p className="italic text-[16px] md:text-[20px] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase text-balance">
+              <FadeInItem delay={0.2} className="text-center max-w-[90%] md:max-w-[750px] mx-auto">
+                <p className="italic text-[18px] md:text-[22px] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase text-balance">
                   "i love the lotus, for it rises from the mud unstained, cleansed in rippling water, <br className="md:hidden" /> appealing, yet not seductive."
                 </p>
                 <p className="text-[13px] md:text-[14px] text-black tracking-[0.04em] leading-[2] lowercase mt-3 opacity-60">
@@ -216,7 +216,7 @@ export default async function Home() {
                 </p>
               </FadeInItem>
 
-              <FadeInItem delay={0.4} className="text-[16px] md:text-[18px] text-black leading-relaxed max-w-none md:max-w-[650px] mx-auto px-4 md:px-0">
+              <FadeInItem delay={0.4} className="text-[17px] md:text-[20px] text-black leading-relaxed max-w-[90%] md:max-w-[750px] mx-auto px-4 md:px-0">
                 <p className="lowercase text-balance">
                   I love the cultural meaning of the lotus as a symbol of the process. <br className="md:hidden" /> I've grown to appreciate the constraints and complexities of the mud <br className="md:hidden" /> for the beautiful bloom. This philosophy shapes how <br className="md:hidden" /> I approach design and everything else.
                 </p>
