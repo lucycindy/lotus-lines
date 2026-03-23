@@ -39,7 +39,7 @@ export default async function Home() {
   ];
 
   return (
-    <div className="w-full flex flex-col pb-32">
+    <div className="w-full flex flex-col">
       {/* Scroll Tracker - fixed left */}
       <div className="fixed top-0 left-0 w-full md:w-[210px] h-screen pointer-events-none z-[60]">
         <SectionLabel sections={sections} />
@@ -48,7 +48,7 @@ export default async function Home() {
 
       <div className="w-full flex flex-col">
         {/* About Tagline & Icons (Now at the Top) */}
-        <section id="about" className="pt-44 md:pt-32 pb-8 md:pb-12 px-6 md:px-12 w-full">
+        <section id="about" className="min-h-screen flex flex-col justify-center py-14 md:py-24 px-6 md:px-12 w-full">
           <div className="max-w-[640px] w-full mx-auto flex flex-col items-center pr-0 md:pr-[100px]">
 
             <p className="text-[#b83143] text-[15px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] leading-relaxed text-center mb-8">
@@ -72,7 +72,7 @@ export default async function Home() {
         </section>
 
         {/* Events Section */}
-        <section id="events" className="pt-4 md:pt-8 pb-16 md:pb-12 px-6 md:px-12 w-full">
+        <section id="events" className="min-h-screen flex flex-col justify-center py-14 md:py-24 px-6 md:px-12 w-full">
           <div className="max-w-[800px] w-full mx-auto space-y-8">
             <div className="space-y-12">
               {recentEvents.map((post) => (
@@ -109,7 +109,7 @@ export default async function Home() {
         </section>
 
         {/* Writing Section */}
-        <section id="writing" className="pt-4 md:pt-8 pb-16 md:pb-12 px-6 md:px-12 w-full">
+        <section id="writing" className="min-h-screen flex flex-col justify-center py-14 md:py-24 px-6 md:px-12 w-full">
           <div className="max-w-[800px] w-full mx-auto space-y-8">
             <div className="space-y-12">
               {recentWriting.map((post) => (
@@ -146,7 +146,7 @@ export default async function Home() {
         </section>
 
         {/* Books Section */}
-        <section id="books" className="pt-4 md:pt-8 pb-16 md:pb-12 px-6 md:px-12 w-full">
+        <section id="books" className="min-h-screen flex flex-col justify-center py-14 md:py-24 px-6 md:px-12 w-full">
           <div className="max-w-[800px] w-full mx-auto relative group-container overflow-hidden">
             <div className="scroll-container hide-scrollbar overflow-x-auto flex flex-nowrap gap-10 md:gap-16 py-6 font-serif items-start">
               {recentBooks.map((post) => (
@@ -182,7 +182,7 @@ export default async function Home() {
 
 
         {/* Florals Section */}
-        <section id="florals" className="pt-4 md:pt-8 pb-16 md:pb-12 px-6 md:px-12 w-full">
+        <section id="florals" className="min-h-screen flex flex-col justify-center py-14 md:py-24 px-6 md:px-12 w-full">
           <div className="max-w-[800px] w-full mx-auto space-y-6">
             <div className="scroll-container hide-scrollbar overflow-x-auto flex flex-nowrap gap-6 py-6">
               {recentFlorals.map((imgUrl, idx) => (
@@ -209,7 +209,7 @@ export default async function Home() {
         </section>
 
         {/* Decorative Footer */}
-        <footer id="footer" className="pt-4 md:pt-8 pb-12 md:pb-24 px-6 md:px-12 w-full">
+        <footer id="footer" className="min-h-screen flex flex-col justify-center py-14 md:py-24 px-6 md:px-12 w-full">
 
           <div className="max-w-none md:max-w-[640px] w-full mx-auto flex flex-col items-center pr-0 md:pr-[100px]">
             {/* Red Lotus Painting */}
