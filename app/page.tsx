@@ -139,7 +139,7 @@ export default async function Home() {
         </SectionContainer>
 
         {/* Books Section */}
-        <SectionContainer id="books" label="books" heightClass="min-h-[85vh] py-12 md:py-16">
+        <SectionContainer id="books" label="books" heightClass="min-h-[85vh] pt-12 pb-24 md:pt-16 md:pb-32">
           <div className="max-w-[900px] w-full mx-auto">
             <CarouselRow>
               {recentBooks.map((post, idx) => (
@@ -217,7 +217,7 @@ export default async function Home() {
               </FadeInItem>
 
               <FadeInItem delay={0.4} className="text-[18px] md:text-[22px] text-black leading-relaxed max-w-[95%] md:max-w-[850px] mx-auto px-4 md:px-0">
-                <p className="lowercase text-balance">
+                <p className="lowercase">
                   I love the cultural meaning of the lotus as a symbol of the process. <br className="md:hidden" /> I've grown to appreciate the constraints and complexities of the mud <br className="md:hidden" /> for the beautiful bloom. This philosophy shapes how <br className="md:hidden" /> I approach design and everything else.
                 </p>
               </FadeInItem>
