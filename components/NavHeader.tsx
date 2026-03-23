@@ -12,7 +12,7 @@ export default function NavHeader() {
   return (
     <header className="absolute top-0 left-0 w-full z-[60] pointer-events-none">
       <div className="absolute top-[16px] md:top-[8px] left-0 md:left-[12px] w-full md:w-[115px] flex justify-center md:block pointer-events-auto text-center">
-        <Link href="/" className="block w-[90px] md:w-[115px] hover:opacity-80 transition-opacity">
+        <Link href="/" className="block w-[110px] md:w-[130px] hover:opacity-80 transition-opacity">
           <img src="/logo.png" alt="logo" className="w-full h-auto" />
         </Link>
       </div>
@@ -24,7 +24,7 @@ export default function NavHeader() {
           className="text-[#737373] hover:text-[#b83143] transition-colors inline-block"
           aria-label="Email lucycindygeng@gmail.com"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <rect width="20" height="16" x="2" y="4" rx="2" />
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
           </svg>

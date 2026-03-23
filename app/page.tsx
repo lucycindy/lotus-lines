@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { getEventPosts, getWritingPosts, getBookPosts, getFloralPosts, getAboutPost, getFloralGallery } from "@/lib/notion";
 
-import SectionLabel from "@/components/SectionLabel";
 import KineticIcon from "@/components/KineticIcon";
+import SectionContainer from "@/components/SectionContainer";
+import CarouselRow from "@/components/CarouselRow";
+import FadeInItem from "@/components/FadeInItem";
 
 export const revalidate = 30;
 
@@ -18,17 +20,8 @@ export default async function Home() {
 
   const recentEvents = events.slice(0, 3);
   const recentWriting = writing.slice(0, 3);
-  const recentBooks = books.slice(0, 8); // Fetch more for better scroll experience
+  const recentBooks = books.slice(0, 8); 
   const recentFlorals = floralGallery.slice(0, 8);
-
-  const sections = [
-    { id: "about", label: "about" },
-    { id: "events", label: "events" },
-    { id: "writing", label: "writing" },
-    { id: "books", label: "books" },
-    { id: "florals", label: "florals" },
-    { id: "footer", label: "" },
-  ];
 
   const aboutItems = [
     { type: "vine" as const, text: "planning weddings across ottawa & toronto" },
@@ -40,214 +33,194 @@ export default async function Home() {
 
   return (
     <div className="w-full flex flex-col">
-      {/* Scroll Tracker - fixed left */}
-      <div className="fixed top-0 left-0 w-full md:w-[210px] h-screen pointer-events-none z-[60]">
-        <SectionLabel sections={sections} />
-      </div>
-
-
       <div className="w-full flex flex-col">
-        {/* About Tagline & Icons (Now at the Top) */}
-        <section id="about" className="min-h-screen flex flex-col justify-center py-14 md:py-24 px-6 md:px-12 w-full">
-          <div className="max-w-[640px] w-full mx-auto flex flex-col items-center pr-0 md:pr-[100px]">
-
-            <p className="text-[#b83143] text-[15px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] leading-relaxed text-center mb-8">
-              passionate about experiential, visual, and web design.
-            </p>
+        
+        {/* About Section */}
+        <SectionContainer id="about" label="about">
+          <div className="max-w-[700px] w-full mx-auto flex flex-col items-center">
+            <FadeInItem delay={0.1}>
+              <p className="text-[#b83143] text-[15px] md:text-[clamp(1.1rem,1.35vw,1.4rem)] leading-relaxed text-center mb-10">
+                passionate about experiential, visual, and web design.
+              </p>
+            </FadeInItem>
 
             <div className="flex flex-col items-center space-y-4 w-full">
-              <ul className="space-y-4 w-fit">
+              <ul className="space-y-5 w-fit">
                 {aboutItems.map((item, idx) => (
-                  <li key={idx} className="flex items-center space-x-4">
-                    <KineticIcon type={item.type} />
-                    <span className="text-black text-[14px] md:text-[clamp(1rem,1.15vw,1.15rem)]">
-                      {item.text}
-                    </span>
+                  <li key={idx}>
+                    <FadeInItem delay={0.2 + idx * 0.1} className="flex items-center space-x-4">
+                      <KineticIcon type={item.type} />
+                      <span className="text-black text-[15px] md:text-[clamp(1rem,1.2vw,1.2rem)]">
+                        {item.text}
+                      </span>
+                    </FadeInItem>
                   </li>
                 ))}
               </ul>
             </div>
-
           </div>
-        </section>
+        </SectionContainer>
 
         {/* Events Section */}
-        <section id="events" className="min-h-screen flex flex-col justify-center py-14 md:py-24 px-6 md:px-12 w-full">
-          <div className="max-w-[800px] w-full mx-auto space-y-8">
+        <SectionContainer id="events" label="events">
+          <div className="max-w-[850px] w-full mx-auto space-y-12">
             <div className="space-y-12">
-              {recentEvents.map((post) => (
-                <Link
-                  key={post.Slug}
-                  href={`/events/${post.Slug}`}
-                  className="group flex flex-row items-center gap-6 md:gap-10 py-6"
-                >
-                  <div className="w-44 sm:w-48 md:w-64 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
-                    {post.CoverImage && (
-                      <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                    )}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-[15px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] font-medium text-black group-hover:text-[#b83143] transition-colors leading-snug line-clamp-2">
-                      {post.Title}
-                    </h3>
-                    {post.Description && (
-                      <p className="mt-2 text-[13px] md:text-[16px] text-[#737373] italic line-clamp-2">
-                        {post.Description}
-                      </p>
-                    )}
-                  </div>
-                </Link>
-
+              {recentEvents.map((post, idx) => (
+                <FadeInItem key={post.Slug} delay={idx * 0.1}>
+                  <Link
+                    href={`/events/${post.Slug}`}
+                    className="group flex flex-row items-center gap-8 md:gap-12 py-6"
+                  >
+                    <div className="w-52 sm:w-56 md:w-80 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
+                      {post.CoverImage && (
+                        <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                      )}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-[16px] md:text-[clamp(1.1rem,1.35vw,1.4rem)] font-medium text-black group-hover:text-[#b83143] transition-colors leading-snug line-clamp-2">
+                        {post.Title}
+                      </h3>
+                      {post.Description && (
+                        <p className="mt-2 text-[14px] md:text-[17px] text-[#6b6b6b] italic line-clamp-2 font-light">
+                          {post.Description}
+                        </p>
+                      )}
+                    </div>
+                  </Link>
+                </FadeInItem>
               ))}
             </div>
-            <div className="flex justify-start pt-2">
-              <Link href="/events" className="text-[#737373] hover:text-[#b83143] italic transition-colors text-sm font-medium flex items-center gap-1 group">
+            <FadeInItem delay={0.4} className="flex justify-start">
+              <Link href="/events" className="text-[#6b6b6b] hover:text-[#b83143] italic transition-colors text-sm font-medium flex items-center gap-1 group">
                 more <span className="text-[#b83143] not-italic">→</span>
               </Link>
-            </div>
+            </FadeInItem>
           </div>
-        </section>
+        </SectionContainer>
 
         {/* Writing Section */}
-        <section id="writing" className="min-h-screen flex flex-col justify-center py-14 md:py-24 px-6 md:px-12 w-full">
-          <div className="max-w-[800px] w-full mx-auto space-y-8">
+        <SectionContainer id="writing" label="writing">
+          <div className="max-w-[850px] w-full mx-auto space-y-12">
             <div className="space-y-12">
-              {recentWriting.map((post) => (
-                <Link
-                  key={post.Slug}
-                  href={`/writing/${post.Slug}`}
-                  className="group flex flex-row items-center gap-6 md:gap-10 py-6"
-                >
-                  <div className="w-44 sm:w-48 md:w-64 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
-                    {post.CoverImage && (
-                      <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                    )}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-[15px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] font-medium text-black group-hover:text-[#b83143] transition-colors leading-snug line-clamp-2">
+              {recentWriting.map((post, idx) => (
+                <FadeInItem key={post.Slug} delay={idx * 0.1}>
+                  <Link
+                    href={`/writing/${post.Slug}`}
+                    className="group flex flex-row items-center gap-8 md:gap-12 py-6"
+                  >
+                    <div className="w-52 sm:w-56 md:w-80 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
+                      {post.CoverImage && (
+                        <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                      )}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-[16px] md:text-[clamp(1.1rem,1.35vw,1.4rem)] font-medium text-black group-hover:text-[#b83143] transition-colors leading-snug line-clamp-2">
+                        {post.Title}
+                      </h3>
+                      {post.Description && (
+                        <p className="mt-2 text-[14px] md:text-[17px] text-[#6b6b6b] italic line-clamp-2 font-light">
+                          {post.Description}
+                        </p>
+                      )}
+                    </div>
+                  </Link>
+                </FadeInItem>
+              ))}
+            </div>
+            <FadeInItem delay={0.4} className="flex justify-start">
+              <Link href="/writing" className="text-[#6b6b6b] hover:text-[#b83143] italic transition-colors text-sm font-medium flex items-center gap-1 group">
+                more <span className="text-[#b83143] not-italic">→</span>
+              </Link>
+            </FadeInItem>
+          </div>
+        </SectionContainer>
+
+        {/* Books Section */}
+        <SectionContainer id="books" label="books">
+          <div className="max-w-[900px] w-full mx-auto">
+            <CarouselRow>
+              {recentBooks.map((post, idx) => (
+                <FadeInItem key={post.Slug} delay={idx * 0.1} className="w-[180px] md:w-[240px] shrink-0 group py-6">
+                  <Link href={`/books/${post.Slug}`}>
+                    <div className="aspect-[2/3] w-full overflow-hidden bg-[#e8e6e2] mb-4 rounded-sm shadow-sm transition-shadow group-hover:shadow-md">
+                      {post.CoverImage && (
+                        <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                      )}
+                    </div>
+                    <h3 className="text-[16px] md:text-[18px] font-medium text-black group-hover:text-[#b83143] transition-colors line-clamp-1">
                       {post.Title}
                     </h3>
                     {post.Description && (
-                      <p className="mt-2 text-[13px] md:text-[16px] text-[#737373] italic line-clamp-2">
+                      <p className="mt-1 text-[13px] text-[#6b6b6b] italic line-clamp-1">
                         {post.Description}
                       </p>
                     )}
-                  </div>
-                </Link>
-
+                  </Link>
+                </FadeInItem>
               ))}
-            </div>
-            <div className="flex justify-start pt-2">
-              <Link href="/writing" className="text-[#737373] hover:text-[#b83143] italic transition-colors text-sm font-medium flex items-center gap-1 group">
+            </CarouselRow>
+            <FadeInItem delay={0.4} className="flex justify-start pt-4">
+              <Link href="/books" className="text-[#6b6b6b] hover:text-[#b83143] italic transition-colors text-sm font-medium flex items-center gap-1 group">
                 more <span className="text-[#b83143] not-italic">→</span>
               </Link>
-            </div>
+            </FadeInItem>
           </div>
-        </section>
-
-        {/* Books Section */}
-        <section id="books" className="min-h-screen flex flex-col justify-center py-14 md:py-24 px-6 md:px-12 w-full">
-          <div className="max-w-[800px] w-full mx-auto relative group-container overflow-hidden">
-            <div className="scroll-container hide-scrollbar overflow-x-auto flex flex-nowrap gap-10 md:gap-16 py-6 font-serif items-start">
-              {recentBooks.map((post) => (
-                <Link
-                  key={post.Slug}
-                  href={`/books/${post.Slug}`}
-                  className="w-[160px] md:w-[200px] shrink-0 group py-6"
-                >
-                  <div className="aspect-[2/3] w-full overflow-hidden bg-[#e8e6e2] mb-4 rounded-sm shadow-sm transition-shadow group-hover:shadow-md">
-                    {post.CoverImage && (
-                      <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                    )}
-                  </div>
-                  <h3 className="text-[15px] md:text-[18px] font-medium text-black group-hover:text-[#b83143] transition-colors line-clamp-1">
-                    {post.Title}
-                  </h3>
-                  {post.Description && (
-                    <p className="mt-1 text-[13px] text-[#737373] italic line-clamp-1">
-                      {post.Description}
-                    </p>
-                  )}
-                </Link>
-              ))}
-            </div>
-
-            <div className="flex justify-start pt-4">
-              <Link href="/books" className="text-[#737373] hover:text-[#b83143] italic transition-colors text-sm font-medium flex items-center gap-1 group">
-                more <span className="text-[#b83143] not-italic">→</span>
-              </Link>
-            </div>
-          </div>
-        </section>
-
+        </SectionContainer>
 
         {/* Florals Section */}
-        <section id="florals" className="min-h-screen flex flex-col justify-center py-14 md:py-24 px-6 md:px-12 w-full">
-          <div className="max-w-[800px] w-full mx-auto space-y-6">
-            <div className="scroll-container hide-scrollbar overflow-x-auto flex flex-nowrap gap-6 py-6">
+        <SectionContainer id="florals" label="florals">
+          <div className="max-w-[950px] w-full mx-auto">
+            <CarouselRow>
               {recentFlorals.map((imgUrl, idx) => (
-                <div 
-                  key={idx} 
-                  className="w-[240px] md:w-[320px] shrink-0 aspect-square bg-[#e8e6e2] rounded-sm overflow-hidden shadow-sm"
-                >
+                <FadeInItem key={idx} delay={idx * 0.1} className="w-[280px] md:w-[380px] shrink-0 aspect-square bg-[#e8e6e2] rounded-sm overflow-hidden shadow-sm">
                   <img 
                     src={imgUrl} 
                     alt={`Floral art ${idx + 1}`} 
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
-                </div>
+                </FadeInItem>
               ))}
-            </div>
-
-
-            <div className="flex justify-start pt-4">
-              <Link href="/florals" className="text-[#737373] hover:text-[#b83143] italic transition-colors text-sm flex items-center gap-1 group">
+            </CarouselRow>
+            <FadeInItem delay={0.4} className="flex justify-start pt-6">
+              <Link href="/florals" className="text-[#6b6b6b] hover:text-[#b83143] italic transition-colors text-sm flex items-center gap-1 group">
                 more <span className="text-[#b83143] not-italic">→</span>
               </Link>
-            </div>
+            </FadeInItem>
           </div>
-        </section>
+        </SectionContainer>
 
         {/* Decorative Footer */}
-        <footer id="footer" className="min-h-screen flex flex-col justify-center py-14 md:py-24 px-6 md:px-12 w-full">
-
-          <div className="max-w-none md:max-w-[640px] w-full mx-auto flex flex-col items-center pr-0 md:pr-[100px]">
+        <SectionContainer id="footer" label="">
+          <div className="max-w-[640px] w-full mx-auto flex flex-col items-center">
             {/* Red Lotus Painting */}
-            <div className="w-full sm:w-[85%] md:w-[85%] flex flex-col items-center mb-10">
-
-
-
-              <div className="relative w-full aspect-[4/3]">
+            <FadeInItem className="w-full sm:w-[90%] md:w-[95%] flex flex-col items-center mb-12">
+              <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden shadow-sm">
                 <img src="/red-lotus.png" alt="red lotus painting" className="w-full h-full object-cover" />
               </div>
-              <p className="mt-3 text-center text-[12px] md:text-[13px] text-[#737373] tracking-[0.04em] font-serif">
+              <p className="mt-4 text-center text-[13px] md:text-[14px] text-[#6b6b6b] tracking-[0.04em] font-serif">
                 red lotus (1943) by 張大千
               </p>
-            </div>
+            </FadeInItem>
 
             {/* Quote + Paragraph */}
-            <div className="space-y-10 w-full text-center">
-              <div className="text-center max-w-none md:max-w-[650px] mx-auto">
-
-                <p className="italic text-[14px] md:text-[18px] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase text-balance">
+            <div className="space-y-12 w-full text-center">
+              <FadeInItem delay={0.2} className="text-center max-w-none md:max-w-[650px] mx-auto">
+                <p className="italic text-[16px] md:text-[20px] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase text-balance">
                   "i love the lotus, for it rises from the mud unstained, cleansed in rippling water, <br className="md:hidden" /> appealing, yet not seductive."
                 </p>
-                <p className="text-[12px] md:text-[13px] text-black tracking-[0.04em] leading-[2] lowercase mt-2 opacity-60">
+                <p className="text-[13px] md:text-[14px] text-black tracking-[0.04em] leading-[2] lowercase mt-3 opacity-60">
                   — 周敦颐, on the love of the lotus, 1073
                 </p>
-              </div>
+              </FadeInItem>
 
-              <div className="text-[14px] md:text-[17px] text-black leading-relaxed max-w-none md:max-w-[650px] mx-auto px-2 md:px-0">
+              <FadeInItem delay={0.4} className="text-[16px] md:text-[18px] text-black leading-relaxed max-w-none md:max-w-[650px] mx-auto px-4 md:px-0">
                 <p className="lowercase text-balance">
                   I love the cultural meaning of the lotus as a symbol of the process. <br className="md:hidden" /> I've grown to appreciate the constraints and complexities of the mud <br className="md:hidden" /> for the beautiful bloom. This philosophy shapes how <br className="md:hidden" /> I approach design and everything else.
                 </p>
-              </div>
-
-
+              </FadeInItem>
             </div>
           </div>
-        </footer>
-
+        </SectionContainer>
       </div>
     </div>
   );

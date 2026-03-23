@@ -26,14 +26,10 @@ export default function RootLayout({
 
 
 
-          <div className="flex flex-col md:flex-row flex-1 w-full relative min-w-0">
-            {/* Left Panel Placeholder for SectionLabel */}
-            <aside className="hidden md:flex fixed top-0 left-0 w-[210px] max-w-[210px] h-screen flex-col justify-start py-12 z-50 pointer-events-none overflow-hidden">
-              {/* The SectionLabel will render its content here, aligned to the right edge */}
-            </aside>
+          <div className="flex flex-col flex-1 w-full relative min-w-0">
 
             {/* Main Content Area */}
-            <div className="flex-1 ml-0 md:ml-[210px] flex flex-col min-h-screen relative min-w-0">
+            <div className="flex-1 flex flex-col min-h-screen relative min-w-0">
               <main className="flex-1 w-full min-w-0">
                 {children}
               </main>
