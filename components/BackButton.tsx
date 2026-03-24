@@ -13,9 +13,9 @@ export default function BackButton({}: BackButtonProps) {
     return (
         <button
             onClick={() => router.back()}
-            className="relative top-0 left-0 z-50 text-[#737373] hover:text-[#b83143] transition-colors text-[13px] whitespace-nowrap block bg-transparent border-none cursor-pointer p-0 mb-8"
+            className="flex items-center gap-1 group relative z-50 text-[#6b6b6b] hover:text-[#b83143] italic transition-colors text-[14px] md:text-[17px] font-medium bg-transparent border-none cursor-pointer p-0 mb-8"
         >
-            ← back
+            <span className="text-[#b83143] not-italic transition-transform group-hover:-translate-x-1">←</span> back
         </button>
     );
 }
