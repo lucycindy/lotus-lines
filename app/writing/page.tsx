@@ -61,9 +61,6 @@ export default async function WritingPage() {
                   </div>
                 </div>
               </Link>
-              {index < posts.length - 1 ? (
-                <div className="border-b border-[#d4d1cb]/40" aria-hidden />
-              ) : null}
             </div>
           </li>
         ))}

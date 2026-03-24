@@ -15,11 +15,11 @@ export default function Breadcrumb({ section, sectionHref, title }: BreadcrumbPr
         </Link>
         <span className="text-[#9b9b9b] mx-1.5">/</span>
         {sectionHref ? (
-          <Link href={sectionHref} className="text-[#9b9b9b] hover:text-[#b83143] transition-colors">
+          <Link href={sectionHref} className="text-[#000000] hover:text-[#b83143] transition-colors">
             {section}
           </Link>
         ) : (
-          <span className="text-[#4a4a4a]">{section}</span>
+          <span className="text-[#9b9b9b]">{section}</span>
         )}
         {title && (
           <>
