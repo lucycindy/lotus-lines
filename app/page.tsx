@@ -95,7 +95,7 @@ export default async function Home() {
               ))}
             </div>
             <FadeInItem delay={0.4} className="flex justify-start">
-              <Link href="/events" className="text-[#6b6b6b] hover:text-[#b83143] italic transition-colors text-sm font-medium flex items-center gap-1 group">
+              <Link href="/events" className="text-[#6b6b6b] hover:text-[#b83143] italic transition-colors text-[14px] md:text-[17px] font-medium flex items-center gap-1 group">
                 more <span className="text-[#b83143] not-italic">→</span>
               </Link>
             </FadeInItem>
@@ -133,7 +133,7 @@ export default async function Home() {
               ))}
             </div>
             <FadeInItem delay={0.4} className="flex justify-start">
-              <Link href="/writing" className="text-[#6b6b6b] hover:text-[#b83143] italic transition-colors text-sm font-medium flex items-center gap-1 group">
+              <Link href="/writing" className="text-[#6b6b6b] hover:text-[#b83143] italic transition-colors text-[14px] md:text-[17px] font-medium flex items-center gap-1 group">
                 more <span className="text-[#b83143] not-italic">→</span>
               </Link>
             </FadeInItem>
@@ -156,7 +156,7 @@ export default async function Home() {
                       {post.Title}
                     </h3>
                     {post.Description && (
-                      <p className="mt-1 text-[13px] text-[#6b6b6b] italic line-clamp-1">
+                      <p className="mt-1 text-[14px] md:text-[17px] text-[#6b6b6b] italic line-clamp-1">
                         {post.Description}
                       </p>
                     )}
@@ -165,7 +165,7 @@ export default async function Home() {
               ))}
             </CarouselRow>
             <FadeInItem delay={0.4} className="flex justify-start pt-4">
-              <Link href="/books" className="text-[#6b6b6b] hover:text-[#b83143] italic transition-colors text-sm font-medium flex items-center gap-1 group">
+              <Link href="/books" className="text-[#6b6b6b] hover:text-[#b83143] italic transition-colors text-[14px] md:text-[17px] font-medium flex items-center gap-1 group">
                 more <span className="text-[#b83143] not-italic">→</span>
               </Link>
             </FadeInItem>
@@ -173,7 +173,7 @@ export default async function Home() {
         </SectionContainer>
 
         {/* Florals Section */}
-        <SectionContainer id="florals" label="florals" heightClass="min-h-[85vh] pt-8 pb-16 md:pt-12 md:pb-32">
+        <SectionContainer id="florals" label="florals" heightClass="min-h-[85vh] pt-4 pb-20 md:pt-4 md:pb-40">
           <div className="max-w-[950px] w-full mx-auto">
             <CarouselRow>
               {recentFlorals.map((imgUrl, idx) => (
@@ -187,7 +187,7 @@ export default async function Home() {
               ))}
             </CarouselRow>
             <FadeInItem delay={0.4} className="flex justify-start pt-6">
-              <Link href="/florals" className="text-[#6b6b6b] hover:text-[#b83143] italic transition-colors text-sm flex items-center gap-1 group">
+              <Link href="/florals" className="text-[#6b6b6b] hover:text-[#b83143] italic transition-colors text-[14px] md:text-[17px] flex items-center gap-1 group">
                 more <span className="text-[#b83143] not-italic">→</span>
               </Link>
             </FadeInItem>
