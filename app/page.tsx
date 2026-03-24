@@ -37,21 +37,21 @@ export default async function Home() {
       <div className="w-full flex flex-col">
         
         {/* About Section */}
-        <SectionContainer id="about" label="about" heightClass="min-h-screen pt-24 pb-24 md:pt-16 md:pb-36">
-          <div className="max-w-[700px] w-full mx-auto flex flex-col items-center">
+        <SectionContainer id="about" label="about" heightClass="min-h-screen pt-36 pb-16 md:pt-16 md:pb-36">
+          <div className="max-w-[700px] w-full mx-auto flex flex-col items-center px-4 md:px-0">
             <FadeInItem delay={0.1}>
-              <p className="text-[#b83143] text-[14px] md:text-[clamp(1.2rem,1.6vw,1.6rem)] leading-relaxed text-center mb-12">
+              <p className="text-[#b83143] text-[15px] md:text-[clamp(1.2rem,1.6vw,1.6rem)] leading-relaxed text-center mb-12 whitespace-nowrap">
                 passionate about experiential, visual, and web design.
               </p>
             </FadeInItem>
 
             <div className="flex flex-col items-center space-y-4 w-full">
-              <ul className="space-y-6 w-fit">
+              <ul className="space-y-6 w-full max-w-[360px] md:w-fit">
                 {aboutItems.map((item, idx) => (
                   <li key={idx}>
                     <FadeInItem delay={0.2 + idx * 0.15} className="flex items-center space-x-5">
                       <KineticIcon type={item.type} />
-                      <span className="text-black text-[13px] md:text-[clamp(1.1rem,1.4vw,1.4rem)]">
+                      <span className="text-black text-[15px] md:text-[clamp(1.1rem,1.4vw,1.4rem)] whitespace-nowrap">
                         {item.text}
                       </span>
                     </FadeInItem>
@@ -209,7 +209,7 @@ export default async function Home() {
 
             {/* Quote + Paragraph */}
             <div className="space-y-12 w-full text-center">
-              <FadeInItem delay={0.2} className="text-center max-w-[92%] md:max-w-[700px] mx-auto">
+              <FadeInItem delay={0.2} className="text-center w-full mx-auto px-2 md:max-w-[700px]">
                 <p className="italic text-[15px] md:text-[clamp(20px,2vw,24px)] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase">
                   "i love the lotus, for it rises from the mud unstained, cleansed in rippling water, appealing, yet not seductive."
                 </p>
@@ -218,7 +218,7 @@ export default async function Home() {
                 </p>
               </FadeInItem>
 
-              <FadeInItem delay={0.4} className="text-[14px] md:text-[clamp(16px,1.4vw,20px)] text-black leading-relaxed max-w-[92%] md:max-w-[950px] mx-auto px-2 md:px-0">
+              <FadeInItem delay={0.4} className="text-[14px] md:text-[clamp(16px,1.4vw,20px)] text-black leading-relaxed w-full mx-auto px-2 md:max-w-[950px] md:px-0">
                 <p className="lowercase text-center text-balance">
                   I love the cultural meaning of the lotus as a symbol of the process. I've grown to appreciate the constraints and complexities of the mud for the beautiful bloom. This philosophy shapes how I approach design and everything else.
                 </p>
