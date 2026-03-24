@@ -40,7 +40,7 @@ export default async function Home() {
         <SectionContainer id="about" label="about" heightClass="min-h-screen pt-12 pb-24 md:pt-16 md:pb-36">
           <div className="max-w-[700px] w-full mx-auto flex flex-col items-center">
             <FadeInItem delay={0.1}>
-              <p className="text-[#b83143] text-[17px] md:text-[clamp(1.2rem,1.6vw,1.6rem)] leading-relaxed text-center mb-12">
+              <p className="text-[#b83143] text-[14px] md:text-[clamp(1.2rem,1.6vw,1.6rem)] leading-relaxed text-center mb-12">
                 passionate about experiential, visual, and web design.
               </p>
             </FadeInItem>
@@ -51,7 +51,7 @@ export default async function Home() {
                   <li key={idx}>
                     <FadeInItem delay={0.2 + idx * 0.15} className="flex items-center space-x-5">
                       <KineticIcon type={item.type} />
-                      <span className="text-black text-[16px] md:text-[clamp(1.1rem,1.4vw,1.4rem)]">
+                      <span className="text-black text-[13px] md:text-[clamp(1.1rem,1.4vw,1.4rem)]">
                         {item.text}
                       </span>
                     </FadeInItem>
@@ -65,7 +65,7 @@ export default async function Home() {
         </SectionContainer>
 
         {/* Events Section */}
-        <SectionContainer id="events" label="events" heightClass="min-h-screen pt-12 pb-24 md:pt-16 md:pb-36">
+        <SectionContainer id="events" label="events" heightClass="min-h-screen pt-6 pb-24 md:pt-16 md:pb-36">
           <div className="max-w-[850px] w-full mx-auto space-y-8 md:space-y-10">
             <div className="space-y-4 md:space-y-6">
               {recentEvents.map((post, idx) => (
@@ -209,20 +209,18 @@ export default async function Home() {
 
             {/* Quote + Paragraph */}
             <div className="space-y-12 w-full text-center">
-              <FadeInItem delay={0.2} className="text-center max-w-[95%] md:max-w-[700px] mx-auto">
-                <p className="italic text-[18px] md:text-[clamp(20px,2vw,24px)] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase text-balance">
-                  "i love the lotus, for it rises from the mud unstained, <br className="hidden xl:block md:hidden" /> cleansed in rippling water, <br className="md:hidden" /> appealing, yet not seductive."
+              <FadeInItem delay={0.2} className="text-center max-w-[92%] md:max-w-[700px] mx-auto">
+                <p className="italic text-[15px] md:text-[clamp(20px,2vw,24px)] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase">
+                  "i love the lotus, for it rises from the mud unstained, cleansed in rippling water, appealing, yet not seductive."
                 </p>
                 <p className="text-[13px] md:text-[14px] text-black tracking-[0.04em] leading-[2] lowercase mt-3 opacity-60">
                   — 周敦颐, on the love of the lotus, 1073
                 </p>
               </FadeInItem>
 
-              <FadeInItem delay={0.4} className="text-[16px] md:text-[clamp(16px,1.4vw,20px)] text-black leading-relaxed max-w-[95%] md:max-w-[950px] mx-auto px-4 md:px-0">
-                <p className="lowercase text-center">
-                  I love the cultural meaning of the lotus as a symbol of the process. I've grown <br className="hidden md:inline" />
-                  to appreciate the constraints and complexities of the mud for the beautiful <br className="hidden md:inline" />
-                  bloom. This philosophy shapes how I approach design and everything else.
+              <FadeInItem delay={0.4} className="text-[14px] md:text-[clamp(16px,1.4vw,20px)] text-black leading-relaxed max-w-[92%] md:max-w-[950px] mx-auto px-2 md:px-0">
+                <p className="lowercase text-center text-balance">
+                  I love the cultural meaning of the lotus as a symbol of the process. I've grown to appreciate the constraints and complexities of the mud for the beautiful bloom. This philosophy shapes how I approach design and everything else.
                 </p>
               </FadeInItem>
             </div>
