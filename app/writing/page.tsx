@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getWritingPosts } from "@/lib/notion";
 import BackButton from "@/components/BackButton";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const revalidate = 30;
 
@@ -10,8 +11,9 @@ export default async function WritingPage() {
   const posts = await getWritingPosts();
 
   return (
-    <div className="min-h-screen bg-[#f0efec] px-6 pt-20 pb-16 flex flex-col items-center">
-      <div className="w-full max-w-[800px]">
+    <div className="min-h-screen bg-[#f0efec] px-6 pb-16 flex flex-col items-center">
+      <Breadcrumb section="writing" />
+      <div className="w-full max-w-[800px] mt-6">
         <BackButton href="/#writing" />
       </div>
       <h1 className="mt-8 text-center text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-[#b83143]">

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getBookPosts } from "@/lib/notion";
 import BackButton from "@/components/BackButton";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const revalidate = 30;
 
@@ -10,11 +11,10 @@ export default async function BooksPage() {
   const posts = await getBookPosts();
 
   return (
-    <div className="min-h-screen bg-[#f0efec] px-6 pt-20 pb-16 flex flex-col items-center">
-      <div className="w-full max-w-[800px]">
+    <div className="min-h-screen bg-[#f0efec] px-6 pb-16 flex flex-col items-center">
+      <Breadcrumb section="books" />
+      <div className="w-full max-w-[800px] mt-6">
         <BackButton href="/#books" />
-      </div>
-      <div className="w-full max-w-2xl">
       </div>
       <h1 className="mt-8 text-center text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-[#b83143]">
         books

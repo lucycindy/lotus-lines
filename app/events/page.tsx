@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getEventPosts } from "@/lib/notion";
 import BackButton from "@/components/BackButton";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const revalidate = 30;
 
@@ -10,8 +11,9 @@ export default async function EventsPage() {
   const posts = await getEventPosts();
 
   return (
-    <div className="min-h-screen bg-[#f0efec] px-6 pt-20 pb-16 flex flex-col items-center">
-      <div className="w-full max-w-[800px]">
+    <div className="min-h-screen bg-[#f0efec] px-6 pb-16 flex flex-col items-center">
+      <Breadcrumb section="events" />
+      <div className="w-full max-w-[800px] mt-6">
         <BackButton href="/#events" />
       </div>
 

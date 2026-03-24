@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAboutPost } from "@/lib/notion";
 import KineticIcon from "@/components/KineticIcon";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const revalidate = 30;
 
@@ -35,7 +36,8 @@ export default async function AboutPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-[#f0efec] px-6 py-20 flex flex-col items-center relative overflow-hidden">
+        <div className="min-h-screen bg-[#f0efec] px-6 pb-20 flex flex-col items-center relative overflow-hidden">
+      <Breadcrumb section="about" />
             {/* Main Content Container */}
             <div className="w-full max-w-[640px] space-y-12 relative z-10 flex flex-col items-center">
                 {/* Section 1: Headline */}

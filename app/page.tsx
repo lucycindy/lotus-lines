@@ -37,7 +37,7 @@ export default async function Home() {
       <div className="w-full flex flex-col">
         
         {/* About Section */}
-        <SectionContainer id="about" label="about" heightClass="min-h-screen pt-12 pb-24 md:pt-16 md:pb-36">
+        <SectionContainer id="about" label="about" heightClass="min-h-screen pt-24 pb-24 md:pt-16 md:pb-36">
           <div className="max-w-[700px] w-full mx-auto flex flex-col items-center">
             <FadeInItem delay={0.1}>
               <p className="text-[#b83143] text-[14px] md:text-[clamp(1.2rem,1.6vw,1.6rem)] leading-relaxed text-center mb-12">

@@ -7,6 +7,7 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import BackButton from "@/components/BackButton";
 import PostNavigation from "@/components/PostNavigation";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export const revalidate = 30;
 
@@ -32,8 +33,9 @@ export default async function BookPage({
   if (!post) notFound();
 
   return (
-    <div className="min-h-screen bg-[#f0efec] flex flex-col items-center pt-20 pb-16">
-      <div className="w-full max-w-[650px] px-6 md:px-8">
+    <div className="min-h-screen bg-[#f0efec] flex flex-col items-center pb-16">
+      <Breadcrumb section="books" sectionHref="/books" title={post.Title || "untitled"} />
+      <div className="w-full max-w-[650px] px-6 md:px-8 mt-6">
         <BackButton href={`/books#${post.Slug}`} />
       </div>
 
