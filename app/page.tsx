@@ -37,21 +37,25 @@ export default async function Home() {
       <div className="w-full flex flex-col">
         
         {/* About Section */}
-        <SectionContainer id="about" label="about" heightClass="min-h-screen pt-36 pb-16 md:pt-16 md:pb-36">
-          <div className="max-w-[700px] w-full mx-auto flex flex-col items-center px-4 md:px-0">
+        <SectionContainer id="about" label="about" heightClass="min-h-screen py-[var(--sp-3xl)]">
+          <div className="max-w-[700px] w-full mx-auto flex flex-col items-center bg-[#2E2D2B] text-[#F0EDE8] rounded-[var(--radius-md)] py-[var(--sp-3xl)] px-[var(--sp-md)]">
             <FadeInItem delay={0.1}>
-              <p className="text-[#b83143] text-[15px] md:text-[clamp(1.2rem,1.6vw,1.6rem)] leading-relaxed text-center mb-12 whitespace-nowrap">
+              <p className="text-center mb-12 whitespace-nowrap tracking-[0.1em]" style={{ 
+                fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+                fontSize: '11px',
+                color: '#9A9694'
+              }}>
                 passionate about experiential, visual, and web design.
               </p>
             </FadeInItem>
 
-            <div className="flex flex-col items-center space-y-4 w-full">
-              <ul className="space-y-6 w-full max-w-[360px] md:w-fit">
+            <div className="flex flex-col items-center space-y-[var(--sp-md)] w-full text-[#F0EDE8]">
+              <ul className="space-y-[var(--sp-md)] w-full max-w-[360px] md:w-fit">
                 {aboutItems.map((item, idx) => (
                   <li key={idx}>
-                    <FadeInItem delay={0.2 + idx * 0.15} className="flex items-center space-x-5">
+                    <FadeInItem delay={0.2 + idx * 0.15} className="flex items-center space-x-[var(--sp-md)]">
                       <KineticIcon type={item.type} />
-                      <span className="text-black text-[15px] md:text-[clamp(1.1rem,1.4vw,1.4rem)] whitespace-nowrap">
+                      <span className="text-[15px] md:text-[clamp(1.1rem,1.4vw,1.4rem)] whitespace-nowrap">
                         {item.text}
                       </span>
                     </FadeInItem>
@@ -65,27 +69,27 @@ export default async function Home() {
         </SectionContainer>
 
         {/* Events Section */}
-        <SectionContainer id="events" label="events" heightClass="min-h-screen pt-6 pb-24 md:pt-16 md:pb-36">
-          <div className="max-w-[850px] w-full mx-auto space-y-8 md:space-y-10">
-            <div className="space-y-4 md:space-y-6">
+        <SectionContainer id="events" label="events" heightClass="min-h-screen py-[var(--sp-3xl)]">
+          <div className="max-w-[850px] w-full mx-auto space-y-[var(--sp-md)]">
+            <div className="space-y-[var(--sp-md)]">
               {recentEvents.map((post, idx) => (
                 <FadeInItem key={post.Slug} delay={idx * 0.15}>
                   <Link
                     href={`/events/${post.Slug}`}
-                    className="group flex flex-row items-center gap-6 md:gap-8 py-3 md:py-4"
+                    className="group flex flex-row items-center gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 overflow-hidden"
                   >
-                    <div className="w-44 sm:w-48 md:w-64 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
+                    <div className="w-44 sm:w-48 md:w-64 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2]">
                       {post.CoverImage && (
                         <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                       )}
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-[15px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] font-medium text-black group-hover:text-[#b83143] transition-colors leading-snug line-clamp-2">
+                    <div className="flex-1 min-w-0 py-[var(--sp-md)] px-[var(--sp-sm)]">
+                      <h3 className="group-hover:text-[#b83143] transition-colors leading-snug line-clamp-2">
                         {post.Title}
                       </h3>
 
                       {post.Description && (
-                        <p className="mt-2 text-[14px] md:text-[17px] text-[#6b6b6b] italic line-clamp-2 font-light">
+                        <p className="mt-[var(--sp-xs)] text-[#6b6b6b] italic line-clamp-2 font-light">
                           {post.Description}
                         </p>
                       )}
@@ -95,8 +99,8 @@ export default async function Home() {
               ))}
             </div>
             <FadeInItem delay={0.4} className="flex justify-start">
-              <Link href="/events" className="text-[#6b6b6b] hover:text-[#b83143] italic transition-colors text-[14px] md:text-[17px] font-medium flex items-center gap-1 group">
-                more <span className="text-[#b83143] not-italic">→</span>
+              <Link href="/events" className="btn-solid-red">
+                more →
               </Link>
             </FadeInItem>
           </div>
@@ -104,26 +108,26 @@ export default async function Home() {
 
         {/* Writing Section */}
         <SectionContainer id="writing" label="writing">
-          <div className="max-w-[850px] w-full mx-auto space-y-8 md:space-y-10">
-            <div className="space-y-4 md:space-y-6">
+          <div className="max-w-[850px] w-full mx-auto space-y-[var(--sp-md)]">
+            <div className="space-y-[var(--sp-md)]">
               {recentWriting.map((post, idx) => (
                 <FadeInItem key={post.Slug} delay={idx * 0.15}>
                   <Link
                     href={`/writing/${post.Slug}`}
-                    className="group flex flex-row items-center gap-6 md:gap-8 py-3 md:py-4"
+                    className="group flex flex-row items-center gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 overflow-hidden"
                   >
-                    <div className="w-44 sm:w-48 md:w-64 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-sm">
+                    <div className="w-44 sm:w-48 md:w-64 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2]">
                       {post.CoverImage && (
                         <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                       )}
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-[15px] md:text-[clamp(1.1rem,1.25vw,1.3rem)] font-medium text-black group-hover:text-[#b83143] transition-colors leading-snug line-clamp-2">
+                    <div className="flex-1 min-w-0 py-[var(--sp-md)] px-[var(--sp-sm)]">
+                      <h3 className="group-hover:text-[#b83143] transition-colors leading-snug line-clamp-2">
                         {post.Title}
                       </h3>
 
                       {post.Description && (
-                        <p className="mt-2 text-[14px] md:text-[17px] text-[#6b6b6b] italic line-clamp-2 font-light">
+                        <p className="mt-[var(--sp-xs)] text-[#6b6b6b] italic line-clamp-2 font-light">
                           {post.Description}
                         </p>
                       )}
@@ -133,51 +137,53 @@ export default async function Home() {
               ))}
             </div>
             <FadeInItem delay={0.4} className="flex justify-start">
-              <Link href="/writing" className="text-[#6b6b6b] hover:text-[#b83143] italic transition-colors text-[14px] md:text-[17px] font-medium flex items-center gap-1 group">
-                more <span className="text-[#b83143] not-italic">→</span>
+              <Link href="/writing" className="btn-solid-red">
+                more →
               </Link>
             </FadeInItem>
           </div>
         </SectionContainer>
 
         {/* Books Section */}
-        <SectionContainer id="books" label="books" heightClass="min-h-[85vh] pt-12 pb-24 md:pt-16 md:pb-32">
+        <SectionContainer id="books" label="books" heightClass="min-h-[85vh] py-[var(--sp-3xl)]">
           <div className="max-w-[900px] w-full mx-auto">
             <CarouselRow>
               {recentBooks.map((post, idx) => (
                 <FadeInItem key={post.Slug} delay={idx * 0.15} className="w-[160px] md:w-[200px] shrink-0 group py-6">
-                  <Link href={`/books/${post.Slug}`}>
-                    <div className="aspect-[2/3] w-full overflow-hidden bg-[#e8e6e2] mb-4 rounded-sm shadow-sm transition-shadow group-hover:shadow-md">
+                  <Link href={`/books/${post.Slug}`} className="block bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 overflow-hidden">
+                    <div className="aspect-[2/3] w-full overflow-hidden bg-[#e8e6e2]">
                       {post.CoverImage && (
                         <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                       )}
                     </div>
-                    <h3 className="text-[16px] md:text-[18px] font-medium text-black group-hover:text-[#b83143] transition-colors line-clamp-1">
-                      {post.Title}
-                    </h3>
-                    {post.Description && (
-                      <p className="mt-1 text-[14px] md:text-[17px] text-[#6b6b6b] italic line-clamp-1">
-                        {post.Description}
-                      </p>
-                    )}
+                    <div className="py-[var(--sp-md)] px-[var(--sp-sm)]">
+                      <h3 className="group-hover:text-[#b83143] transition-colors line-clamp-1">
+                        {post.Title}
+                      </h3>
+                      {post.Description && (
+                        <p className="mt-[var(--sp-xs)] text-[#6b6b6b] italic line-clamp-1">
+                          {post.Description}
+                        </p>
+                      )}
+                    </div>
                   </Link>
                 </FadeInItem>
               ))}
             </CarouselRow>
             <FadeInItem delay={0.4} className="flex justify-start pt-4">
-              <Link href="/books" className="text-[#6b6b6b] hover:text-[#b83143] italic transition-colors text-[14px] md:text-[17px] font-medium flex items-center gap-1 group">
-                more <span className="text-[#b83143] not-italic">→</span>
+              <Link href="/books" className="btn-solid-red">
+                more →
               </Link>
             </FadeInItem>
           </div>
         </SectionContainer>
 
         {/* Florals Section */}
-        <SectionContainer id="florals" label="florals" heightClass="min-h-[85vh] pt-4 pb-20 md:pt-4 md:pb-40">
+        <SectionContainer id="florals" label="florals" heightClass="min-h-[85vh] py-[var(--sp-3xl)]">
           <div className="max-w-[950px] w-full mx-auto">
             <CarouselRow>
               {recentFlorals.map((imgUrl, idx) => (
-                <FadeInItem key={idx} delay={idx * 0.15} className="w-[240px] md:w-[320px] shrink-0 aspect-square bg-[#e8e6e2] rounded-sm overflow-hidden shadow-sm">
+                <FadeInItem key={idx} delay={idx * 0.15} className="w-[240px] md:w-[320px] shrink-0 aspect-square bg-[#e8e6e2] rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow-sm)]">
                   <img 
                     src={imgUrl} 
                     alt={`Floral art ${idx + 1}`} 
@@ -187,22 +193,22 @@ export default async function Home() {
               ))}
             </CarouselRow>
             <FadeInItem delay={0.4} className="flex justify-start pt-6">
-              <Link href="/florals" className="text-[#6b6b6b] hover:text-[#b83143] italic transition-colors text-[14px] md:text-[17px] flex items-center gap-1 group">
-                more <span className="text-[#b83143] not-italic">→</span>
+              <Link href="/florals" className="btn-solid-red">
+                more →
               </Link>
             </FadeInItem>
           </div>
         </SectionContainer>
 
         {/* Decorative Footer */}
-        <SectionContainer id="footer" label="" heightClass="min-h-[80vh] py-16 md:py-24">
-          <div className="max-w-[640px] w-full mx-auto flex flex-col items-center">
+        <SectionContainer id="footer" label="" heightClass="min-h-[80vh] py-[var(--sp-3xl)]">
+          <div className="max-w-[800px] w-full mx-auto flex flex-col items-center bg-[#2E2D2B] text-[#F0EDE8] rounded-[var(--radius-md)] py-[var(--sp-3xl)] px-[var(--sp-md)]">
             {/* Red Lotus Painting */}
             <FadeInItem className="w-full max-w-[280px] sm:max-w-[360px] md:max-w-[460px] lg:max-w-[500px] flex flex-col items-center mb-10">
-              <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden shadow-sm">
+              <div className="relative w-full aspect-[4/3] rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow-sm)]">
                 <img src="/red-lotus.png" alt="red lotus painting" className="w-full h-full object-cover" />
               </div>
-              <p className="mt-4 text-center text-[13px] md:text-[14px] text-[#6b6b6b] tracking-[0.04em] font-serif">
+              <p className="mt-4 text-center type-caption font-serif" style={{ color: '#9A9694' }}>
                 red lotus (1943) by 張大千
               </p>
             </FadeInItem>
@@ -210,16 +216,16 @@ export default async function Home() {
             {/* Quote + Paragraph */}
             <div className="space-y-12 w-full text-center">
               <FadeInItem delay={0.2} className="text-center w-full mx-auto px-2 md:max-w-[700px]">
-                <p className="italic text-[15px] md:text-[clamp(20px,2vw,24px)] text-[#b83143] tracking-[0.04em] leading-[1.8] lowercase">
+                <p className="italic text-[#F0EDE8] about-quote-text lowercase leading-[1.75]">
                   "i love the lotus, for it rises from the mud unstained, cleansed in rippling water, appealing, yet not seductive."
                 </p>
-                <p className="text-[13px] md:text-[14px] text-black tracking-[0.04em] leading-[2] lowercase mt-3 opacity-60">
+                <p className="type-caption lowercase mt-3" style={{ color: '#9A9694' }}>
                   — 周敦颐, on the love of the lotus, 1073
                 </p>
               </FadeInItem>
 
-              <FadeInItem delay={0.4} className="text-[14px] md:text-[clamp(16px,1.4vw,20px)] text-black leading-relaxed w-full mx-auto px-2 md:max-w-[950px] md:px-0">
-                <p className="lowercase text-center text-balance">
+              <FadeInItem delay={0.4} className="text-[#F0EDE8] about-quote-text w-full mx-auto px-2 md:max-w-[950px] md:px-0">
+                <p className="lowercase text-center text-balance italic">
                   I love the cultural meaning of the lotus as a symbol of the process. I've grown to appreciate the constraints and complexities of the mud for the beautiful bloom. This philosophy shapes how I approach design and everything else.
                 </p>
               </FadeInItem>

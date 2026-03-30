@@ -56,14 +56,15 @@ export default function CarouselRow({ children }: CarouselRowProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.3 } }}
             onClick={scrollLeftFn}
-            className="absolute -left-4 md:-left-10 top-1/2 -translate-y-[60%] z-10 p-2 cursor-pointer pointer-events-auto text-[#b83143] bg-transparent border-none appearance-none"
+            className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10 btn-icon-circular"
             aria-label="Scroll left"
           >
             <motion.div
-              animate={{ x: [0, -8, 0] }}
+              animate={{ x: [0, -4, 0] }}
               transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+              className="flex items-center justify-center w-full h-full"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
             </motion.div>
           </motion.button>
         )}
@@ -77,14 +78,15 @@ export default function CarouselRow({ children }: CarouselRowProps) {
             exit={{ opacity: 0, transition: { duration: 0.3 } }}
             viewport={{ once: true, amount: 0.5 }}
             onClick={scrollRightFn}
-            className="absolute -right-4 md:-right-10 top-1/2 -translate-y-[60%] z-10 p-2 cursor-pointer pointer-events-auto text-[#b83143] bg-transparent border-none appearance-none"
+            className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10 btn-icon-circular"
             aria-label="Scroll right"
           >
             <motion.div
-              animate={{ x: [0, 8, 0] }}
+              animate={{ x: [0, 4, 0] }}
               transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+              className="flex items-center justify-center w-full h-full"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
             </motion.div>
           </motion.button>
         )}
@@ -93,7 +95,7 @@ export default function CarouselRow({ children }: CarouselRowProps) {
       <div 
         ref={scrollRef}
         onScroll={handleScroll}
-        className="scroll-container hide-scrollbar overflow-x-auto flex flex-nowrap gap-8 md:gap-12 py-6"
+        className="scroll-container hide-scrollbar overflow-x-auto flex flex-nowrap gap-[var(--sp-md)] py-6"
       >
         {children}
       </div>

@@ -31,9 +31,9 @@ export default async function PostNavigation({ currentSlug, category }: PostNavi
         {prevPost && (
           <Link
             href={prevPost.category === "florals" ? "/florals" : `/${prevPost.category}/${prevPost.Slug}`}
-            className="flex items-center gap-1 group text-[#6b6b6b] hover:text-[#b83143] italic transition-colors text-[14px] md:text-[17px] font-medium w-fit"
+            className="btn-outline-navigation"
           >
-            <span className="text-[#b83143] not-italic transition-transform group-hover:-translate-x-1">←</span> previous
+            ← previous
           </Link>
         )}
       </div>
@@ -42,9 +42,9 @@ export default async function PostNavigation({ currentSlug, category }: PostNavi
         {nextPost && (
           <Link
             href={nextPost.category === "florals" ? "/florals" : `/${nextPost.category}/${nextPost.Slug}`}
-            className="flex items-center gap-1 group text-[#6b6b6b] hover:text-[#b83143] italic transition-colors text-[14px] md:text-[17px] font-medium w-fit"
+            className="btn-outline-navigation"
           >
-            next <span className="text-[#b83143] not-italic transition-transform group-hover:translate-x-1">→</span>
+            next →
           </Link>
         )}
       </div>

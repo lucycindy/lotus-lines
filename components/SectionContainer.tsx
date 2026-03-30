@@ -12,7 +12,7 @@ interface SectionContainerProps {
   heightClass?: string;
 }
 
-export default function SectionContainer({ id, label, children, heightClass = "min-h-screen py-16 md:py-24" }: SectionContainerProps) {
+export default function SectionContainer({ id, label, children, heightClass = "min-h-screen py-[var(--sp-3xl)]" }: SectionContainerProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -30,7 +30,7 @@ export default function SectionContainer({ id, label, children, heightClass = "m
   );
 
   const isPlainLabel = label === "about" || label === "";
-  const labelMargin = isPlainLabel ? "mb-12 md:mb-16" : "mb-10 md:mb-12";
+  const labelMargin = "mb-[var(--sp-lg)]";
 
   return (
     <section 
@@ -41,10 +41,10 @@ export default function SectionContainer({ id, label, children, heightClass = "m
       {/* Animated Local Label - Hidden on Plain Labels (About/Footer) */}
       {!isPlainLabel && (
         <FadeInItem delay={0} className={`flex justify-center w-full pointer-events-auto text-center ${labelMargin}`}>
-          <motion.div style={{ opacity: labelOpacity }}>
-            <span className="text-[14px] md:text-[clamp(1rem,1.15vw,1.15rem)] font-light lowercase">
-              <span className="text-[#6b6b6b]">lucy cindy /</span>{" "}
-              <Link href={`/${id}`} className="italic hover:text-[#b83143] transition-colors text-black">
+          <motion.div style={{ opacity: labelOpacity }} className="w-full border-b-[0.5px] border-[var(--grey-200)] pb-[var(--sp-sm)]">
+            <span className="type-caption lowercase">
+              <span>lucy cindy /</span>{" "}
+              <Link href={`/${id}`} className="italic hover:text-[#b83143] transition-colors text-[var(--grey-600)]">
                 {label}
               </Link>
             </span>

@@ -31,13 +31,13 @@ export default async function WebsitePage({
     if (!post) notFound();
 
     return (
-        <div className="min-h-screen bg-[#f0efec] pb-16 flex flex-col items-center">
+        <div className="min-h-screen bg-[#f0efec] pb-[var(--sp-3xl)] flex flex-col items-center">
             <Breadcrumb section="websites" sectionHref="/websites" title={post.Title || "untitled"} />
-            <div className="w-full max-w-[640px] px-10 mt-6">
+            <div className="w-full max-w-[640px] px-[var(--sp-xl)] mt-[var(--sp-md)]">
                 <BackButton href={`/websites#${post.Slug}`} />
             </div>
 
-            <article className="mx-auto mt-10 max-w-[640px] w-full flex flex-col items-start px-10 pb-0 md:pb-16">
+            <article className="mx-auto mt-[var(--sp-lg)] max-w-[640px] w-full flex flex-col items-start px-[var(--sp-xl)] pb-0 md:pb-[var(--sp-3xl)]">
                 {post.CoverImage ? (
                     <div className="relative aspect-[4/3] w-full max-h-[480px] overflow-hidden bg-[#e8e6e2]">
                         <Image
@@ -51,18 +51,18 @@ export default async function WebsitePage({
                     </div>
                 ) : null}
 
-                <h1 className="mt-8 text-left text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-[#b83143]">
+                <h1 className="mt-[var(--sp-xl)] text-left text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-[#b83143]">
                     {post.Title || "Untitled"}
                 </h1>
 
                 {post.Description ? (
-                    <p className="mt-4 text-left text-[15px] md:text-[clamp(1rem,1.2vw,1.3rem)] text-[#737373] italic">
+                    <p className="mt-[var(--sp-md)] text-left text-[15px] md:text-[clamp(1rem,1.2vw,1.3rem)] text-[#737373] italic">
                         {post.Description}
                     </p>
                 ) : null}
 
                 {post.Body ? (
-                    <div className="mx-auto mt-4 max-w-prose w-full text-black leading-relaxed">
+                    <div className="mx-auto mt-[var(--sp-md)] max-w-prose w-full text-black leading-relaxed">
                         <ReactMarkdown
                             remarkPlugins={[remarkGfm]}
                             components={{

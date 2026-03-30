@@ -8,10 +8,9 @@ export default function Sidebar() {
 
     return (
         <>
-            {/* Mobile Top Bar / Logo */}
-            <div className="md:hidden flex flex-col items-center pt-4 pb-6 bg-[#f0efec] relative z-[60]">
-                <Link href="/" className="block w-[110px] mx-auto text-center">
-                    <img src="/logo.png" alt="logo" className="w-full h-auto mx-auto" />
+            <div className="md:hidden flex flex-col items-center py-[var(--sp-xl)] bg-[#f0efec] relative z-[60]">
+                <Link href="/" className="type-display text-center">
+                    lucy cindy
                 </Link>
             </div>
 
@@ -26,23 +25,23 @@ export default function Sidebar() {
 
             {/* Slide-in Mobile Overlay & Desktop Sidebar */}
             <aside
-                className={`fixed md:sticky top-0 left-0 h-screen w-full md:w-[var(--sidebar-width)] bg-[#f0efec] z-50 flex flex-col p-8 pt-[20vh] md:p-[clamp(2rem,3vw,4rem)] transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+                className={`fixed md:sticky top-0 left-0 h-screen w-full md:w-[var(--sidebar-width)] bg-[#f0efec] z-50 flex flex-col p-[var(--sp-xl)] pt-[20vh] md:p-[var(--sp-xl)] transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
                     }`}
             >
                 <div className="flex flex-col h-full md:h-auto overflow-y-auto md:overflow-visible">
                     {/* Desktop Logo */}
                     <div className="hidden md:block mb-10">
-                        <Link href="/" className="block w-[clamp(7.5rem,11vw,11rem)] hover:opacity-80 transition-opacity">
-                            <img src="/logo.png" alt="logo" className="w-full h-auto" />
+                        <Link href="/" className="hover:text-[#b83143] transition-colors type-display">
+                            lucy cindy
                         </Link>
                     </div>
 
                     <nav className="flex flex-col gap-0 items-center md:items-start text-center md:text-left">
                         {/* Section: About */}
-                        <div className="w-full md:w-fit py-2 md:py-0 md:mb-6">
+                        <div className="w-full md:w-fit py-2 md:py-0 md:mb-[var(--sp-lg)]">
                             <Link
                                 href="/about"
-                                className="block text-[#000000] text-[clamp(1.1rem,1.2vw,1.3rem)] hover:text-[#b83143] transition-colors"
+                                className="type-caption hover:text-[#b83143] transition-colors"
                                 onClick={() => setIsOpen(false)}
                             >
                                 about
@@ -50,22 +49,21 @@ export default function Sidebar() {
                         </div>
 
                         {/* Rule */}
-                        <div className="w-16 md:w-full border-t border-[#d4d1cb] my-2" />
+                        <div className="w-[var(--sp-2xl)] md:w-full border-t border-[#d4d1cb] my-[var(--sp-md)]" />
 
-                        {/* Section: Work */}
-                        <div className="w-full md:w-fit py-2 md:pt-6 md:pb-6">
-                            <span className="block text-[#737373] text-[clamp(1.1rem,1.2vw,1.3rem)] mb-4">work</span>
-                            <div className="flex flex-col gap-3">
+                        <div className="w-full md:w-fit py-2 md:pt-[var(--sp-md)] md:pb-[var(--sp-lg)]">
+                            <span className="type-caption block mb-[var(--sp-md)]">work</span>
+                            <div className="flex flex-col gap-[var(--sp-sm)]">
                                 <Link
                                     href="/events"
-                                    className="italic text-[#000000] md:text-black text-[clamp(1rem,1.1vw,1.15rem)] hover:text-[#b83143] transition-colors"
+                                    className="type-caption italic hover:text-[#b83143] transition-colors"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     events
                                 </Link>
                                 <Link
                                     href="/websites"
-                                    className="italic text-[#000000] md:text-black text-[clamp(1rem,1.1vw,1.15rem)] hover:text-[#b83143] transition-colors"
+                                    className="type-caption italic hover:text-[#b83143] transition-colors"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     websites
@@ -74,29 +72,28 @@ export default function Sidebar() {
                         </div>
 
                         {/* Rule */}
-                        <div className="w-16 md:w-full border-t border-[#d4d1cb] my-2" />
+                        <div className="w-[var(--sp-2xl)] md:w-full border-t border-[#d4d1cb] my-[var(--sp-md)]" />
 
-                        {/* Section: Hobbies */}
-                        <div className="w-full md:w-fit py-2 md:pt-6">
-                            <span className="block text-[#737373] text-[clamp(1.1rem,1.2vw,1.3rem)] mb-4">hobbies</span>
-                            <div className="flex flex-col gap-3">
+                        <div className="w-full md:w-fit py-2 md:pt-[var(--sp-md)]">
+                            <span className="type-caption block mb-[var(--sp-md)]">hobbies</span>
+                            <div className="flex flex-col gap-[var(--sp-sm)]">
                                 <Link
                                     href="/writing"
-                                    className="italic text-[#000000] md:text-black text-[clamp(1rem,1.1vw,1.15rem)] hover:text-[#b83143] transition-colors"
+                                    className="type-caption italic hover:text-[#b83143] transition-colors"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     writing
                                 </Link>
                                 <Link
                                     href="/books"
-                                    className="italic text-[#000000] md:text-black text-[clamp(1rem,1.1vw,1.15rem)] hover:text-[#b83143] transition-colors"
+                                    className="type-caption italic hover:text-[#b83143] transition-colors"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     books
                                 </Link>
                                 <Link
                                     href="/florals"
-                                    className="italic text-[#000000] md:text-black text-[clamp(1rem,1.1vw,1.15rem)] hover:text-[#b83143] transition-colors"
+                                    className="type-caption italic hover:text-[#b83143] transition-colors"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     florals

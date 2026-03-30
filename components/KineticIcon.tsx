@@ -62,7 +62,7 @@ const KineticIcon: React.FC<KineticIconProps> = ({ type }) => {
           width: 28px;
           height: 28px;
           fill: none;
-          stroke: #1a1a1a;
+          stroke: currentColor;
           stroke-linecap: round;
           stroke-linejoin: round;
         }
@@ -86,13 +86,13 @@ const KineticIcon: React.FC<KineticIconProps> = ({ type }) => {
             strokeDashoffset="40"
             style={{ animation: "vine-loop 2.5s ease-out infinite" }}
           />
-          <circle cx="14" cy="2" r="1.5" fill="#1a1a1a" stroke="none" opacity="0" style={{ animation: "bud-loop 2.5s ease-out infinite" }} />
+          <circle cx="14" cy="2" r="1.5" fill="currentColor" stroke="none" opacity="0" style={{ animation: "bud-loop 2.5s ease-out infinite" }} />
         </svg>
       )}
 
       {type === "bloom" && (
         <svg viewBox="0 0 24 24" className="kinetic-svg">
-          <circle cx="12" cy="4" r="1.5" fill="#1a1a1a" stroke="none" style={{ animation: "drop-ink 1.5s ease-in infinite" }} />
+          <circle cx="12" cy="4" r="1.5" fill="currentColor" stroke="none" style={{ animation: "drop-ink 1.5s ease-in infinite" }} />
           <circle cx="12" cy="18" r="4" style={{ animation: "splash 1.5s ease-out infinite" }} />
         </svg>
       )}
@@ -134,7 +134,7 @@ const KineticIcon: React.FC<KineticIconProps> = ({ type }) => {
               }}
             />
           ))}
-          <circle cx="14" cy="14" r="1.5" fill="#1a1a1a" stroke="none" opacity="0" style={{ animation: "flower-center 1.5s ease-out infinite" }} />
+          <circle cx="14" cy="14" r="1.5" fill="currentColor" stroke="none" opacity="0" style={{ animation: "flower-center 1.5s ease-out infinite" }} />
         </svg>
       )}
 
