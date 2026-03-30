@@ -97,7 +97,7 @@ export default async function WritingPostPage({
         ) : null}
       </article>
 
-      <div className="w-full px-4 md:px-0">
+      <div className="w-full">
         <PostNavigation currentSlug={post.Slug} category="writing" />
       </div>
     </div>

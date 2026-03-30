@@ -29,9 +29,9 @@ export default async function WritingPage() {
             <div className="w-full">
               <Link
                 href={post.Slug ? `/writing/${encodeURIComponent(post.Slug)}` : "#"}
-                className="group flex flex-row items-center py-0 text-black gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
+                className="group flex flex-row items-center py-0 text-black gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
               >
-                <div className="w-[30%] md:w-[25%] aspect-[4/3] flex-shrink-0 overflow-hidden rounded-l-[var(--radius-md)]">
+                <div className="w-[30%] md:w-[25%] aspect-[4/3] flex-shrink-0">
                   {post.CoverImage ? (
                     <div className="relative w-full h-full">
                       <Image

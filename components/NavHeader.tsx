@@ -11,8 +11,8 @@ export default function NavHeader() {
 
   return (
     <header className="absolute top-0 left-0 w-full z-[60] pointer-events-none pr-[16px]">
-      <div className="absolute top-[16px] md:top-[8px] left-0 md:left-[12px] w-full md:w-[115px] flex justify-center md:block pointer-events-auto text-center">
-        <Link href="/" className="block w-[110px] md:w-[158px] hover:opacity-80 transition-opacity">
+      <div className="absolute top-[16px] md:top-[8px] left-0 md:left-[12px] w-full md:w-auto flex justify-center md:block pointer-events-auto text-center z-[100]">
+        <Link href="/" className="block w-[clamp(6rem,20vw,8rem)] md:w-[clamp(9rem,14vw,13rem)] hover:opacity-80 transition-opacity">
           <img src="/logo.png" alt="logo" className="w-full h-auto" />
         </Link>
       </div>

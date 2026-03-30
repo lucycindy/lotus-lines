@@ -15,7 +15,7 @@ interface SectionContainerProps {
   style?: React.CSSProperties;
 }
 
-export default function SectionContainer({ id, label, children, heightClass = "min-h-[100svh] pt-[var(--sp-3xl)] pb-[20vh]", fullBleed = false, className = "", style = {} }: SectionContainerProps) {
+export default function SectionContainer({ id, label, children, heightClass = "py-[var(--sp-3xl)]", fullBleed = false, className = "", style = {} }: SectionContainerProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 

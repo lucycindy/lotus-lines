@@ -33,7 +33,7 @@ export default function RootLayout({
         className="antialiased lowercase text-[clamp(1rem,1.2vw,1.25rem)] min-h-screen bg-[#f0efec]"
         suppressHydrationWarning
       >
-        <div className="min-h-screen w-full relative flex flex-col overflow-x-hidden min-w-0">
+        <div className="min-h-screen w-full relative flex flex-col min-w-0">
           <NavHeader />
 
 

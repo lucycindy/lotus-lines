@@ -30,11 +30,11 @@ export default async function EventsPage() {
             <div className="w-full">
               <Link
                 href={post.Slug ? `/events/${encodeURIComponent(post.Slug)}` : "#"}
-                className="group flex flex-col md:flex-row md:items-center py-0 text-black bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
+                className="group flex flex-col md:flex-row md:items-center py-0 text-black bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
               >
                 <div className="w-full md:w-[35%] shrink-0 flex justify-center">
                   {post.CoverImage ? (
-                    <div className="relative w-full aspect-[4/3] overflow-hidden rounded-t-[var(--radius-md)] md:rounded-t-none md:rounded-l-[var(--radius-md)]">
+                    <div className="relative w-full aspect-[4/3]">
                       <Image
                         src={post.CoverImage}
                         alt={post.Title || "Event cover"}
@@ -44,7 +44,7 @@ export default async function EventsPage() {
                       />
                     </div>
                   ) : (
-                    <div className="relative w-full aspect-[4/3] bg-[#e8e6e2] rounded-t-[var(--radius-md)] md:rounded-t-none md:rounded-l-[var(--radius-md)]" />
+                    <div className="relative w-full aspect-[4/3] bg-[#e8e6e2]" />
                   )}
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col justify-center items-start md:pl-[var(--sp-xl)] py-[var(--sp-md)] px-[var(--sp-sm)]">
