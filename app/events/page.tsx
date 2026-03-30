@@ -30,17 +30,17 @@ export default async function EventsPage() {
             <div className="w-full">
               <Link
                 href={post.Slug ? `/events/${encodeURIComponent(post.Slug)}` : "#"}
-                className="group flex flex-col md:flex-row md:items-center py-0 text-black bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 overflow-hidden"
+                className="group flex flex-col md:flex-row md:items-center py-0 text-black bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 overflow-hidden w-full"
               >
-                <div className="w-full md:w-[320px] shrink-0 flex justify-center">
+                <div className="w-full md:w-[40%] shrink-0 flex justify-center">
                   {post.CoverImage ? (
-                    <div className="relative w-full h-[280px] md:h-[144px] md:w-[216px] overflow-hidden bg-[#e8e6e2]">
+                    <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#e8e6e2]">
                       <Image
                         src={post.CoverImage}
                         alt={post.Title || "Event cover"}
                         fill
                         className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 216px"
+                        sizes="(max-width: 768px) 100vw, 40vw"
                       />
                     </div>
                   ) : null}

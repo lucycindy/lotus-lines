@@ -35,25 +35,25 @@ export default async function Home() {
   return (
     <div className="w-full flex flex-col">
       {/* About Section - Full Bleed */}
-      <SectionContainer id="about" label="about" heightClass="min-h-screen py-[var(--sp-3xl)]" fullBleed className="bg-[#2E2D2B] text-[#F0EDE8]">
+      <SectionContainer id="about" label="about" heightClass="min-h-screen py-[var(--sp-3xl)]" fullBleed className="bg-[#1A1917] text-[#F5F0EB]">
           <div className="w-full flex flex-col items-center">
             <FadeInItem delay={0.1}>
               <p className="text-center mb-12 whitespace-nowrap tracking-[0.1em]" style={{ 
                 fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
                 fontSize: 'var(--fs-body)',
-                color: '#F0EDE8'
+                color: '#F5F0EB'
               }}>
                 passionate about experiential, visual, and web design.
               </p>
             </FadeInItem>
 
-            <div className="flex flex-col items-center space-y-[var(--sp-md)] w-full text-[#F0EDE8]">
+            <div className="flex flex-col items-center space-y-[var(--sp-md)] w-full text-[#F5F0EB]">
               <ul className="space-y-[var(--sp-md)] w-full max-w-[360px] md:w-fit">
                 {aboutItems.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-[var(--sp-sm)] list-none pl-0">
                     <FadeInItem delay={0.2 + idx * 0.15} className="flex items-start gap-[var(--sp-sm)] w-full">
                       <KineticIcon type={item.type} />
-                      <span className="text-[var(--fs-body)] text-[#F0EDE8] whitespace-normal pt-[4px]">
+                      <span className="text-[var(--fs-body)] text-[#F5F0EB] whitespace-nowrap pt-[4px]">
                         {item.text}
                       </span>
                     </FadeInItem>
@@ -75,9 +75,9 @@ export default async function Home() {
                 <FadeInItem key={post.Slug} delay={idx * 0.15}>
                   <Link
                     href={`/events/${post.Slug}`}
-                    className="group flex flex-row items-center gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 overflow-hidden"
+                    className="group flex flex-row items-center gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 overflow-hidden w-full"
                   >
-                    <div className="w-44 sm:w-48 md:w-64 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2]">
+                    <div className="w-[40%] aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2]">
                       {post.CoverImage && (
                         <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                       )}
@@ -113,9 +113,9 @@ export default async function Home() {
                 <FadeInItem key={post.Slug} delay={idx * 0.15}>
                   <Link
                     href={`/writing/${post.Slug}`}
-                    className="group flex flex-row items-center gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 overflow-hidden"
+                    className="group flex flex-row items-center gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 overflow-hidden w-full"
                   >
-                    <div className="w-44 sm:w-48 md:w-64 aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2]">
+                    <div className="w-[30%] sm:w-[35%] aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2]">
                       {post.CoverImage && (
                         <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                       )}
@@ -148,8 +148,8 @@ export default async function Home() {
           <div className="w-full">
             <CarouselRow>
               {recentBooks.map((post, idx) => (
-                <FadeInItem key={post.Slug} delay={idx * 0.15} className="w-[160px] md:w-[200px] shrink-0 group py-6">
-                  <Link href={`/books/${post.Slug}`} className="block bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 overflow-hidden">
+                <FadeInItem key={post.Slug} delay={idx * 0.15} className="w-[85%] sm:w-[45%] md:w-[30%] shrink-0 group py-6">
+                  <Link href={`/books/${post.Slug}`} className="block w-full bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 overflow-hidden">
                     <div className="aspect-[2/3] w-full overflow-hidden bg-[#e8e6e2]">
                       {post.CoverImage && (
                         <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -182,7 +182,7 @@ export default async function Home() {
           <div className="w-full">
             <CarouselRow>
               {recentFlorals.map((imgUrl, idx) => (
-                <FadeInItem key={idx} delay={idx * 0.15} className="w-[240px] md:w-[320px] shrink-0 aspect-square bg-[#e8e6e2] rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow-sm)]">
+                <FadeInItem key={idx} delay={idx * 0.15} className="w-[85%] sm:w-[45%] md:w-[35%] shrink-0 aspect-square bg-[#e8e6e2] rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow-sm)]">
                   <img 
                     src={imgUrl} 
                     alt={`Floral art ${idx + 1}`} 
@@ -201,7 +201,7 @@ export default async function Home() {
       </div>
 
         {/* Decorative Footer - Full Bleed */}
-        <SectionContainer id="footer" label="" heightClass="min-h-[80vh]" fullBleed className="bg-[#2E2D2B] text-[#F0EDE8] py-[var(--sp-3xl)]">
+        <SectionContainer id="footer" label="" heightClass="min-h-[80vh]" fullBleed className="bg-[#1A1917] text-[#F5F0EB] py-[var(--sp-3xl)]">
           <div className="w-full flex flex-col items-center">
             {/* Red Lotus Painting */}
             <FadeInItem className="w-full max-w-[280px] sm:max-w-[360px] md:max-w-[460px] lg:max-w-[500px] flex flex-col items-center mb-10">
@@ -216,7 +216,7 @@ export default async function Home() {
             {/* Quote + Paragraph */}
             <div className="space-y-12 w-full text-center">
               <FadeInItem delay={0.2} className="text-center w-full mx-auto px-2 md:max-w-[700px]">
-                <p className="italic text-[#F0EDE8] about-quote-text lowercase leading-[1.75]">
+                <p className="italic text-[#F5F0EB] about-quote-text lowercase leading-[1.75]">
                   "i love the lotus, for it rises from the mud unstained, cleansed in rippling water, appealing, yet not seductive."
                 </p>
                 <p className="type-caption lowercase mt-3" style={{ color: '#C4C0BC' }}>
@@ -224,10 +224,16 @@ export default async function Home() {
                 </p>
               </FadeInItem>
 
-              <FadeInItem delay={0.4} className="text-[#F0EDE8] about-quote-text w-full mx-auto px-2 md:max-w-[950px] md:px-0">
-                <p className="lowercase text-center text-balance italic">
+              <FadeInItem delay={0.4} className="w-full mx-auto px-2 md:max-w-[950px] md:px-0 flex flex-col items-center">
+                <p className="text-[#F5F0EB] lowercase text-center text-balance about-quote-text">
                   I love the cultural meaning of the lotus as a symbol of the process. I've grown to appreciate the constraints and complexities of the mud for the beautiful bloom. This philosophy shapes how I approach design and everything else.
                 </p>
+                <a 
+                  href="mailto:lucycindygeng@gmail.com"
+                  className="mt-[var(--sp-2xl)] inline-flex px-6 py-2.5 rounded-[var(--radius-sm)] border-[1.5px] border-[#9A9A9A] bg-transparent text-[#F5F0EB] hover:border-[#F5F0EB] hover:bg-[#F5F0EB] hover:text-[#1A1917] transition-all duration-300 type-caption font-medium uppercase tracking-[0.05em]"
+                >
+                  get in touch
+                </a>
               </FadeInItem>
             </div>
           </div>

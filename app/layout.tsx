@@ -35,7 +35,7 @@ export default function RootLayout({
 
             {/* Main Content Area */}
             <div className="flex-1 flex flex-col min-h-screen relative min-w-0">
-              <main className="flex-1 w-full min-w-0">
+              <main className="flex-1 w-full min-w-0 px-[var(--sp-md)] md:px-0">
                 {children}
               </main>
             </div>

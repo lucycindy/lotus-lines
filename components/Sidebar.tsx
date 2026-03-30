@@ -9,7 +9,7 @@ export default function Sidebar() {
     return (
         <>
             <div className="md:hidden flex flex-col items-center py-[var(--sp-xl)] bg-[#f0efec] relative z-[60]">
-                <Link href="/" className="block w-32 hover:opacity-80 transition-opacity">
+                <Link href="/" className="block w-[clamp(6rem,20vw,8rem)] hover:opacity-80 transition-opacity">
                     <img src="/logo.png" alt="logo" className="w-full h-auto" />
                 </Link>
             </div>
@@ -17,7 +17,7 @@ export default function Sidebar() {
             {/* Mobile Fixed Hamburger Button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="md:hidden fixed top-[3.5rem] right-4 z-[70] text-[#b83143] text-2xl focus:outline-none transition-colors hover:opacity-80"
+                className="md:hidden fixed top-[3.5rem] right-[var(--sp-md)] z-[70] text-[#b83143] text-[clamp(1.5rem,5vw,2rem)] focus:outline-none transition-colors hover:opacity-80"
                 aria-label={isOpen ? "Close menu" : "Open menu"}
             >
                 {isOpen ? "✕" : "☰"}

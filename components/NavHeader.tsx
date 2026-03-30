@@ -10,7 +10,7 @@ export default function NavHeader() {
   if (!isHome) return null;
 
   return (
-    <header className="absolute top-0 left-0 w-full z-[60] pointer-events-none">
+    <header className="absolute top-0 left-0 w-full z-[60] pointer-events-none pr-[16px]">
       <div className="absolute top-[16px] md:top-[8px] left-0 md:left-[12px] w-full md:w-[115px] flex justify-center md:block pointer-events-auto text-center">
         <Link href="/" className="block w-[110px] md:w-[158px] hover:opacity-80 transition-opacity">
           <img src="/logo.png" alt="logo" className="w-full h-auto" />

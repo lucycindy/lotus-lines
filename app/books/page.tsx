@@ -29,9 +29,9 @@ export default async function BooksPage() {
                     <div className="w-full">
                         <Link
                             href={post.Slug ? `/books/${encodeURIComponent(post.Slug)}` : "#"}
-                            className="group flex items-center gap-[var(--sp-md)] py-0 text-black bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 overflow-hidden"
+                            className="group flex items-center gap-[var(--sp-md)] py-0 text-black bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 overflow-hidden w-full"
                         >
-                            <div className="relative h-[144px] w-[96px] shrink-0 overflow-hidden bg-[#e8e6e2]">
+                            <div className="relative aspect-[2/3] w-[25%] shrink-0 overflow-hidden bg-[#e8e6e2]">
                                 {post.CoverImage ? (
                                     <Image
                                         src={post.CoverImage}

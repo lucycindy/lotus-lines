@@ -53,7 +53,7 @@ export default async function AboutPage() {
                         {items.map((item, idx) => (
                             <li key={idx} className="flex items-start gap-[var(--sp-sm)] list-none pl-0">
                                 <KineticIcon type={item.type} />
-                                <span className="text-black text-[clamp(1rem,1.1vw,1.15rem)]">
+                                <span className="text-black text-[clamp(1rem,1.1vw,1.15rem)] whitespace-nowrap">
                                     {item.text}
                                 </span>
                             </li>

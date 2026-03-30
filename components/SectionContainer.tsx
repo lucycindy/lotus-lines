@@ -43,7 +43,7 @@ export default function SectionContainer({ id, label, children, heightClass = "m
       {/* Animated Local Label - Hidden on Plain Labels (About/Footer) */}
       {!isPlainLabel && (
         <FadeInItem delay={0} className={`flex justify-center w-full pointer-events-auto text-center ${labelMargin}`}>
-          <motion.div style={{ opacity: labelOpacity }} className="w-full border-b-[0.5px] border-[var(--grey-200)] pb-[var(--sp-sm)]">
+          <motion.div style={{ opacity: labelOpacity }} className="w-full pb-[var(--sp-sm)]">
             <span className="type-caption lowercase">
               <span>lucy cindy /</span>{" "}
               <Link href={`/${id}`} className="italic hover:text-[#b83143] transition-colors text-[var(--grey-600)]">

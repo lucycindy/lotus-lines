@@ -29,9 +29,9 @@ export default async function WritingPage() {
             <div className="w-full">
               <Link
                 href={post.Slug ? `/writing/${encodeURIComponent(post.Slug)}` : "#"}
-                className="group flex flex-row items-center py-0 text-black gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 overflow-hidden"
+                className="group flex flex-row items-center py-0 text-black gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 overflow-hidden w-full"
               >
-                <div className="w-32 sm:w-40 md:w-64 aspect-[4/3] flex-shrink-0 overflow-hidden bg-[#e8e6e2]">
+                <div className="w-[30%] md:w-[35%] aspect-[4/3] flex-shrink-0 overflow-hidden bg-[#e8e6e2]">
                   {post.CoverImage ? (
                     <div className="relative w-full h-full">
                       <Image
@@ -39,7 +39,7 @@ export default async function WritingPage() {
                         alt={post.Title || "Writing cover"}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 768px) 128px, 256px"
+                        sizes="(max-width: 768px) 30vw, 35vw"
                       />
                     </div>
                   ) : null}

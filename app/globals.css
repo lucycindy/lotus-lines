@@ -68,7 +68,7 @@ body {
   max-width: var(--max-w-content);
   margin: 0 auto;
   padding: 0 var(--page-margin);
-  width: 100%;
+  width: 90%;
   box-sizing: border-box;
 }
 
