@@ -34,13 +34,13 @@ export default async function EventPage({
   if (!post) notFound();
 
   return (
-    <div className="min-h-screen bg-[#f0efec] flex flex-col items-center pb-16">
+    <div className="min-h-screen content-wrapper pb-16">
       <Breadcrumb section="events" sectionHref="/events" title={post.Title || "untitled"} />
-      <div className="w-full max-w-[650px] px-6 md:px-8 mt-6">
+      <div className="w-full mt-6">
         <BackButton href={`/events#${post.Slug}`} />
       </div>
 
-      <article className="mx-auto mt-6 md:mt-10 max-w-[650px] w-full flex flex-col items-start px-6 md:px-8 pb-0 md:pb-16">
+      <article className="mt-6 md:mt-10 w-full flex flex-col items-start pb-0 md:pb-16">
         {post.Gallery && post.Gallery.length > 0 ? (
           <div className="w-full">
             <div className="grid grid-cols-2 gap-3" data-gallery="event">

@@ -34,11 +34,9 @@ export default async function Home() {
 
   return (
     <div className="w-full flex flex-col">
-      <div className="w-full flex flex-col">
-        
-        {/* About Section */}
-        <SectionContainer id="about" label="about" heightClass="min-h-screen py-[var(--sp-3xl)]">
-          <div className="max-w-[700px] w-full mx-auto flex flex-col items-center bg-[#2E2D2B] text-[#F0EDE8] rounded-[var(--radius-md)] py-[var(--sp-3xl)] px-[var(--sp-md)]">
+      {/* About Section - Full Bleed */}
+      <SectionContainer id="about" label="about" heightClass="min-h-screen py-[var(--sp-3xl)]" fullBleed className="bg-[#2E2D2B] text-[#F0EDE8]">
+          <div className="w-full flex flex-col items-center">
             <FadeInItem delay={0.1}>
               <p className="text-center mb-12 whitespace-nowrap tracking-[0.1em]" style={{ 
                 fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
@@ -68,9 +66,10 @@ export default async function Home() {
           </div>
         </SectionContainer>
 
+      <div className="w-full flex flex-col content-wrapper">
         {/* Events Section */}
         <SectionContainer id="events" label="events" heightClass="min-h-screen py-[var(--sp-3xl)]">
-          <div className="max-w-[850px] w-full mx-auto space-y-[var(--sp-md)]">
+          <div className="w-full space-y-[var(--sp-md)]">
             <div className="space-y-[var(--sp-md)]">
               {recentEvents.map((post, idx) => (
                 <FadeInItem key={post.Slug} delay={idx * 0.15}>
@@ -108,7 +107,7 @@ export default async function Home() {
 
         {/* Writing Section */}
         <SectionContainer id="writing" label="writing">
-          <div className="max-w-[850px] w-full mx-auto space-y-[var(--sp-md)]">
+          <div className="w-full space-y-[var(--sp-md)]">
             <div className="space-y-[var(--sp-md)]">
               {recentWriting.map((post, idx) => (
                 <FadeInItem key={post.Slug} delay={idx * 0.15}>
@@ -146,7 +145,7 @@ export default async function Home() {
 
         {/* Books Section */}
         <SectionContainer id="books" label="books" heightClass="min-h-[85vh] py-[var(--sp-3xl)]">
-          <div className="max-w-[900px] w-full mx-auto">
+          <div className="w-full">
             <CarouselRow>
               {recentBooks.map((post, idx) => (
                 <FadeInItem key={post.Slug} delay={idx * 0.15} className="w-[160px] md:w-[200px] shrink-0 group py-6">
@@ -180,7 +179,7 @@ export default async function Home() {
 
         {/* Florals Section */}
         <SectionContainer id="florals" label="florals" heightClass="min-h-[85vh] py-[var(--sp-3xl)]">
-          <div className="max-w-[950px] w-full mx-auto">
+          <div className="w-full">
             <CarouselRow>
               {recentFlorals.map((imgUrl, idx) => (
                 <FadeInItem key={idx} delay={idx * 0.15} className="w-[240px] md:w-[320px] shrink-0 aspect-square bg-[#e8e6e2] rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow-sm)]">
@@ -199,10 +198,11 @@ export default async function Home() {
             </FadeInItem>
           </div>
         </SectionContainer>
+      </div>
 
-        {/* Decorative Footer */}
-        <SectionContainer id="footer" label="" heightClass="min-h-[80vh] py-[var(--sp-3xl)]">
-          <div className="max-w-[800px] w-full mx-auto flex flex-col items-center bg-[#2E2D2B] text-[#F0EDE8] rounded-[var(--radius-md)] py-[var(--sp-3xl)] px-[var(--sp-md)]">
+        {/* Decorative Footer - Full Bleed */}
+        <SectionContainer id="footer" label="" heightClass="min-h-[80vh]" fullBleed className="bg-[#2E2D2B] text-[#F0EDE8] py-[var(--sp-3xl)]">
+          <div className="w-full flex flex-col items-center">
             {/* Red Lotus Painting */}
             <FadeInItem className="w-full max-w-[280px] sm:max-w-[360px] md:max-w-[460px] lg:max-w-[500px] flex flex-col items-center mb-10">
               <div className="relative w-full aspect-[4/3] rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow-sm)]">
@@ -232,7 +232,6 @@ export default async function Home() {
             </div>
           </div>
         </SectionContainer>
-      </div>
     </div>
   );
 }

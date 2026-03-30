@@ -31,13 +31,13 @@ export default async function WebsitePage({
     if (!post) notFound();
 
     return (
-        <div className="min-h-screen bg-[#f0efec] pb-[var(--sp-3xl)] flex flex-col items-center">
+        <div className="min-h-screen content-wrapper pb-[var(--sp-3xl)]">
             <Breadcrumb section="websites" sectionHref="/websites" title={post.Title || "untitled"} />
-            <div className="w-full max-w-[640px] px-[var(--sp-xl)] mt-[var(--sp-md)]">
+            <div className="w-full mt-[var(--sp-md)]">
                 <BackButton href={`/websites#${post.Slug}`} />
             </div>
 
-            <article className="mx-auto mt-[var(--sp-lg)] max-w-[640px] w-full flex flex-col items-start px-[var(--sp-xl)] pb-0 md:pb-[var(--sp-3xl)]">
+            <article className="mt-[var(--sp-lg)] w-full flex flex-col items-start pb-0 md:pb-[var(--sp-3xl)]">
                 {post.CoverImage ? (
                     <div className="relative aspect-[4/3] w-full max-h-[480px] overflow-hidden bg-[#e8e6e2]">
                         <Image

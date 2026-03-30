@@ -10,9 +10,11 @@ interface SectionContainerProps {
   label: string;
   children: ReactNode;
   heightClass?: string;
+  fullBleed?: boolean;
+  className?: string;
 }
 
-export default function SectionContainer({ id, label, children, heightClass = "min-h-screen py-[var(--sp-3xl)]" }: SectionContainerProps) {
+export default function SectionContainer({ id, label, children, heightClass = "min-h-screen py-[var(--sp-3xl)]", fullBleed = false, className = "" }: SectionContainerProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -36,7 +38,7 @@ export default function SectionContainer({ id, label, children, heightClass = "m
     <section 
       id={id} 
       ref={sectionRef}
-      className={`${heightClass} relative flex flex-col items-center justify-center px-6 md:px-12 w-full`}
+      className={`${heightClass} relative flex flex-col items-center justify-center w-full ${fullBleed ? "px-0" : "px-6 md:px-12"} ${className}`}
     >
       {/* Animated Local Label - Hidden on Plain Labels (About/Footer) */}
       {!isPlainLabel && (
@@ -55,7 +57,7 @@ export default function SectionContainer({ id, label, children, heightClass = "m
       {/* Content wrapper */}
       <div
         ref={contentRef}
-        className="w-full relative pointer-events-auto flex flex-col items-center"
+        className={`w-full relative pointer-events-auto flex flex-col items-center ${fullBleed ? "full-bleed-inner px-[var(--page-margin)]" : ""}`}
       >
         {children}
       </div>

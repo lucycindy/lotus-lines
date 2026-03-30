@@ -58,10 +58,30 @@ body {
   color: var(--grey-800);
   background-color: var(--grey-50);
   line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  animation: fadeIn 0.4s ease-in;
+}
+
+/* Centered content wrapper */
+.content-wrapper {
   max-width: var(--max-w-content);
   margin: 0 auto;
   padding: 0 var(--page-margin);
-  animation: fadeIn 0.4s ease-in;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Full-bleed section foundations */
+.full-bleed-section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.full-bleed-inner {
+  max-width: var(--max-w-content);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @keyframes fadeIn {

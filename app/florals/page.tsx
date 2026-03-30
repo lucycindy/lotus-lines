@@ -11,9 +11,9 @@ export default async function FloralsPage() {
   const images = await getFloralGallery();
 
   return (
-    <div className="min-h-screen bg-[#f0efec] px-[var(--sp-md)] pb-[var(--sp-3xl)]">
+    <div className="min-h-screen content-wrapper pb-[var(--sp-3xl)]">
       <Breadcrumb section="florals" />
-      <div className="mx-auto max-w-5xl mt-[var(--sp-md)]">
+      <div className="w-full mt-[var(--sp-md)]">
         <BackButton href="/#florals" />
       </div>
       <h1 className="mt-[var(--sp-xl)] text-center text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-[#b83143]">
@@ -24,7 +24,7 @@ export default async function FloralsPage() {
       </p>
 
       {images.length > 0 ? (
-        <div className="mx-auto mt-[var(--sp-2xl)] max-w-5xl columns-1 sm:columns-2 md:columns-3 gap-[var(--sp-md)]" data-gallery="florals">
+        <div className="w-full mt-[var(--sp-2xl)] columns-1 sm:columns-2 md:columns-3 gap-[var(--sp-md)]" data-gallery="florals">
           {images.map((src, i) => (
             <div
               key={i}

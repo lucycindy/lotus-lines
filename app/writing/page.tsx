@@ -11,9 +11,9 @@ export default async function WritingPage() {
   const posts = await getWritingPosts();
 
   return (
-    <div className="min-h-screen bg-[#f0efec] px-[var(--sp-md)] pb-[var(--sp-3xl)] flex flex-col items-center">
+    <div className="min-h-screen content-wrapper pb-[var(--sp-3xl)]">
       <Breadcrumb section="writing" />
-      <div className="w-full max-w-[800px] mt-[var(--sp-md)]">
+      <div className="w-full mt-[var(--sp-md)]">
         <BackButton href="/#writing" />
       </div>
       <h1 className="mt-[var(--sp-xl)] text-center text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-[#b83143]">
@@ -26,7 +26,7 @@ export default async function WritingPage() {
       <ul className="mt-[var(--sp-2xl)] w-full space-y-[var(--sp-md)]">
         {posts.map((post, index) => (
           <li key={post.Slug || index} id={post.Slug || undefined}>
-            <div className="mx-auto max-w-[800px]">
+            <div className="w-full">
               <Link
                 href={post.Slug ? `/writing/${encodeURIComponent(post.Slug)}` : "#"}
                 className="group flex flex-row items-center py-0 text-black gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 overflow-hidden"
