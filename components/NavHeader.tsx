@@ -11,9 +11,9 @@ export default function NavHeader() {
 
   return (
     <header className="absolute top-0 left-0 w-full z-[60] pointer-events-none">
-      <div className="absolute top-[var(--sp-xl)] left-[var(--sp-md)] w-full md:w-auto flex justify-center md:block pointer-events-auto text-center">
-        <Link href="/" className="block hover:text-[#b83143] transition-colors type-display">
-          lucy cindy
+      <div className="absolute top-[16px] md:top-[8px] left-0 md:left-[12px] w-full md:w-[115px] flex justify-center md:block pointer-events-auto text-center">
+        <Link href="/" className="block w-[110px] md:w-[158px] hover:opacity-80 transition-opacity">
+          <img src="/logo.png" alt="logo" className="w-full h-auto" />
         </Link>
       </div>
 

@@ -10,7 +10,7 @@ interface KineticIconProps {
 
 const KineticIcon: React.FC<KineticIconProps> = ({ type }) => {
   return (
-    <div className="w-[32px] h-[32px] flex items-center justify-center overflow-hidden">
+    <div className="w-[32px] h-[32px] flex items-center justify-center shrink-0">
       <style jsx>{`
         @keyframes draw { to { stroke-dashoffset: 0; } }
         @keyframes appear { to { opacity: 1; } }
@@ -65,6 +65,7 @@ const KineticIcon: React.FC<KineticIconProps> = ({ type }) => {
           stroke: currentColor;
           stroke-linecap: round;
           stroke-linejoin: round;
+          flex-shrink: 0;
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -79,7 +80,7 @@ const KineticIcon: React.FC<KineticIconProps> = ({ type }) => {
       `}</style>
 
       {type === "vine" && (
-        <svg viewBox="0 0 28 28" className="kinetic-svg" style={{ strokeWidth: "1px" }}>
+        <svg viewBox="0 0 28 28" width="28" height="28" className="kinetic-svg" style={{ strokeWidth: "1px" }}>
           <path
             d="M14 26 C 14 26, 8 13, 14 2"
             strokeDasharray="40"
@@ -91,14 +92,14 @@ const KineticIcon: React.FC<KineticIconProps> = ({ type }) => {
       )}
 
       {type === "bloom" && (
-        <svg viewBox="0 0 24 24" className="kinetic-svg">
+        <svg viewBox="0 0 24 24" width="24" height="24" className="kinetic-svg">
           <circle cx="12" cy="4" r="1.5" fill="currentColor" stroke="none" style={{ animation: "drop-ink 1.5s ease-in infinite" }} />
           <circle cx="12" cy="18" r="4" style={{ animation: "splash 1.5s ease-out infinite" }} />
         </svg>
       )}
 
       {type === "book" && (
-        <svg viewBox="0 0 28 28" className="kinetic-svg" style={{ strokeWidth: "0.9px" }}>
+        <svg viewBox="0 0 28 28" width="28" height="28" className="kinetic-svg" style={{ strokeWidth: "0.9px" }}>
           <line x1="14" y1="24" x2="14" y2="4" />
           <line
             x1="14" y1="24" x2="14" y2="4"
@@ -120,7 +121,7 @@ const KineticIcon: React.FC<KineticIconProps> = ({ type }) => {
       )}
 
       {type === "flower" && (
-        <svg viewBox="0 0 28 28" className="kinetic-svg" style={{ strokeWidth: "0.9px" }}>
+        <svg viewBox="0 0 28 28" width="28" height="28" className="kinetic-svg" style={{ strokeWidth: "0.9px" }}>
           {[0, 72, 144, 216, 288].map((rot, i) => (
             <line
               key={i}
@@ -139,7 +140,7 @@ const KineticIcon: React.FC<KineticIconProps> = ({ type }) => {
       )}
 
       {type === "brackets" && (
-        <svg viewBox="0 0 24 24" className="kinetic-svg">
+        <svg viewBox="0 0 24 24" width="24" height="24" className="kinetic-svg">
           <path d="M8 8L4 12L8 16" strokeDasharray="20" strokeDashoffset="20" style={{ animation: "draw 0.5s ease-out forwards" }} />
           <path d="M16 8L20 12L16 16" strokeDasharray="20" strokeDashoffset="20" style={{ animation: "draw 0.5s ease-out 0.2s forwards" }} />
           <line x1="12" y1="8" x2="12" y2="16" style={{ animation: "cursor-blink 1s step-end infinite" }} />

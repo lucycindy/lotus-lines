@@ -40,8 +40,8 @@ export default async function Home() {
             <FadeInItem delay={0.1}>
               <p className="text-center mb-12 whitespace-nowrap tracking-[0.1em]" style={{ 
                 fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-                fontSize: '11px',
-                color: '#9A9694'
+                fontSize: 'var(--fs-body)',
+                color: '#F0EDE8'
               }}>
                 passionate about experiential, visual, and web design.
               </p>
@@ -50,10 +50,10 @@ export default async function Home() {
             <div className="flex flex-col items-center space-y-[var(--sp-md)] w-full text-[#F0EDE8]">
               <ul className="space-y-[var(--sp-md)] w-full max-w-[360px] md:w-fit">
                 {aboutItems.map((item, idx) => (
-                  <li key={idx}>
-                    <FadeInItem delay={0.2 + idx * 0.15} className="flex items-center space-x-[var(--sp-md)]">
+                  <li key={idx} className="flex items-start gap-[var(--sp-sm)] list-none pl-0">
+                    <FadeInItem delay={0.2 + idx * 0.15} className="flex items-start gap-[var(--sp-sm)] w-full">
                       <KineticIcon type={item.type} />
-                      <span className="text-[15px] md:text-[clamp(1.1rem,1.4vw,1.4rem)] whitespace-nowrap">
+                      <span className="text-[var(--fs-body)] text-[#F0EDE8] whitespace-normal pt-[4px]">
                         {item.text}
                       </span>
                     </FadeInItem>
@@ -208,7 +208,7 @@ export default async function Home() {
               <div className="relative w-full aspect-[4/3] rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow-sm)]">
                 <img src="/red-lotus.png" alt="red lotus painting" className="w-full h-full object-cover" />
               </div>
-              <p className="mt-4 text-center type-caption font-serif" style={{ color: '#9A9694' }}>
+              <p className="mt-4 text-center type-caption font-serif" style={{ color: '#C4C0BC' }}>
                 red lotus (1943) by 張大千
               </p>
             </FadeInItem>
@@ -219,7 +219,7 @@ export default async function Home() {
                 <p className="italic text-[#F0EDE8] about-quote-text lowercase leading-[1.75]">
                   "i love the lotus, for it rises from the mud unstained, cleansed in rippling water, appealing, yet not seductive."
                 </p>
-                <p className="type-caption lowercase mt-3" style={{ color: '#9A9694' }}>
+                <p className="type-caption lowercase mt-3" style={{ color: '#C4C0BC' }}>
                   — 周敦颐, on the love of the lotus, 1073
                 </p>
               </FadeInItem>

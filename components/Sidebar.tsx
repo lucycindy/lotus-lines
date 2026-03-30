@@ -9,8 +9,8 @@ export default function Sidebar() {
     return (
         <>
             <div className="md:hidden flex flex-col items-center py-[var(--sp-xl)] bg-[#f0efec] relative z-[60]">
-                <Link href="/" className="type-display text-center">
-                    lucy cindy
+                <Link href="/" className="block w-32 hover:opacity-80 transition-opacity">
+                    <img src="/logo.png" alt="logo" className="w-full h-auto" />
                 </Link>
             </div>
 
@@ -31,8 +31,8 @@ export default function Sidebar() {
                 <div className="flex flex-col h-full md:h-auto overflow-y-auto md:overflow-visible">
                     {/* Desktop Logo */}
                     <div className="hidden md:block mb-10">
-                        <Link href="/" className="hover:text-[#b83143] transition-colors type-display">
-                            lucy cindy
+                        <Link href="/" className="block w-[clamp(9rem,14vw,13rem)] hover:opacity-80 transition-opacity">
+                            <img src="/logo.png" alt="logo" className="w-full h-auto" />
                         </Link>
                     </div>
 

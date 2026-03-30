@@ -36,7 +36,7 @@ export default async function AboutPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-[#f0efec] px-6 pb-20 flex flex-col items-center relative overflow-hidden">
+        <div className="min-h-screen bg-[#f0efec] px-6 pb-20 flex flex-col items-center relative">
       <Breadcrumb section="about" />
             {/* Main Content Container */}
             <div className="w-full max-w-[640px] space-y-12 relative z-10 flex flex-col items-center">
@@ -51,7 +51,7 @@ export default async function AboutPage() {
                 <div className="flex flex-col items-center space-y-6 w-full">
                     <ul className="space-y-6 w-fit">
                         {items.map((item, idx) => (
-                            <li key={idx} className="flex items-center space-x-4">
+                            <li key={idx} className="flex items-start gap-[var(--sp-sm)] list-none pl-0">
                                 <KineticIcon type={item.type} />
                                 <span className="text-black text-[clamp(1rem,1.1vw,1.15rem)]">
                                     {item.text}
