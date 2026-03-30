@@ -39,7 +39,7 @@ export default async function AboutPage() {
         <div className="min-h-screen bg-[#f0efec] px-6 pb-20 flex flex-col items-center relative">
       <Breadcrumb section="about" />
             {/* Main Content Container */}
-            <div className="w-full max-w-[640px] space-y-12 relative z-10 flex flex-col items-center">
+            <div className="w-full max-w-[600px] space-y-12 relative z-10 flex flex-col items-center">
                 {/* Section 1: Headline */}
                 <div className="text-center w-full">
                     <p className="text-[#b83143] text-[15px] md:text-[clamp(1rem,1.1vw,1.15rem)] leading-relaxed">

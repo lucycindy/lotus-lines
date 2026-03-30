@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   description: "Events, writing, books, florals",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 import NavHeader from "@/components/NavHeader";
 
 export default function RootLayout({
@@ -35,7 +42,7 @@ export default function RootLayout({
 
             {/* Main Content Area */}
             <div className="flex-1 flex flex-col min-h-screen relative min-w-0">
-              <main className="flex-1 w-full min-w-0 px-[var(--sp-md)] md:px-0">
+              <main className="flex-1 w-full min-w-0">
                 {children}
               </main>
             </div>

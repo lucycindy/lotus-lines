@@ -29,9 +29,9 @@ export default async function BooksPage() {
                     <div className="w-full">
                         <Link
                             href={post.Slug ? `/books/${encodeURIComponent(post.Slug)}` : "#"}
-                            className="group flex items-center gap-[var(--sp-md)] py-0 text-black bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 overflow-hidden w-full"
+                            className="group flex items-center gap-[var(--sp-md)] py-0 text-black bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
                         >
-                            <div className="relative aspect-[2/3] w-[25%] shrink-0 overflow-hidden bg-[#e8e6e2]">
+                            <div className="relative aspect-[2/3] w-[25%] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-l-[var(--radius-md)]">
                                 {post.CoverImage ? (
                                     <Image
                                         src={post.CoverImage}
@@ -47,13 +47,13 @@ export default async function BooksPage() {
                                 )}
                             </div>
                             <div className="flex items-center min-w-0 flex-1 py-[var(--sp-md)] px-[var(--sp-sm)]">
-                                <div className="min-w-0 w-full">
-                                    <h2 className="text-[15px] md:text-[clamp(1rem,1.2vw,1.3rem)] font-medium text-black group-hover:text-[#b83143] transition-colors">
+                                <div className="min-w-0 w-full pr-[var(--sp-md)]">
+                                    <h2 className="text-[var(--fs-body-lg)] font-medium text-black group-hover:text-[#b83143] transition-colors">
                                         {post.Title || "Untitled"}
                                     </h2>
                                     {post.Description ? (
                                         <div className="flex items-center mt-[var(--sp-xs)]">
-                                            <p className="line-clamp-1 text-[15px] md:text-[clamp(0.9rem,1.1vw,1.15rem)] text-[#737373] italic">
+                                            <p className="text-[15px] md:text-[clamp(0.9rem,1.1vw,1.15rem)] text-[#737373] italic">
                                                 {post.Description}
                                             </p>
                                         </div>
