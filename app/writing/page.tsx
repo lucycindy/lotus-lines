@@ -31,7 +31,7 @@ export default async function WritingPage() {
                 href={post.Slug ? `/writing/${encodeURIComponent(post.Slug)}` : "#"}
                 className="group flex flex-row items-center py-0 text-black gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
               >
-                <div className="w-[30%] md:w-[35%] aspect-[4/3] flex-shrink-0 overflow-hidden bg-[#e8e6e2] rounded-l-[var(--radius-md)]">
+                <div className="w-[30%] md:w-[25%] aspect-[4/3] flex-shrink-0 overflow-hidden bg-[#e8e6e2] rounded-l-[var(--radius-md)]">
                   {post.CoverImage ? (
                     <div className="relative w-full h-full">
                       <Image
@@ -39,14 +39,14 @@ export default async function WritingPage() {
                         alt={post.Title || "Writing cover"}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 768px) 30vw, 35vw"
+                        sizes="(max-width: 768px) 30vw, 25vw"
                       />
                     </div>
                   ) : null}
                 </div>
 
 
-                <div className="flex min-w-0 flex-1 items-center md:pl-[var(--sp-xl)] py-[var(--sp-md)] px-[var(--sp-sm)]">
+                <div className="flex min-w-0 flex-1 flex-col justify-center items-start md:pl-[var(--sp-xl)] py-[var(--sp-md)] px-[var(--sp-sm)]">
                   <div className="min-w-0 w-full pr-[var(--sp-md)]">
                     <h2 className="text-[var(--fs-body-lg)] font-medium text-black group-hover:text-[#b83143] transition-colors">
                       {post.Title || "Untitled"}
