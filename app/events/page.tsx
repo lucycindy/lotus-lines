@@ -34,7 +34,7 @@ export default async function EventsPage() {
               >
                 <div className="w-full md:w-[35%] shrink-0 flex justify-center">
                   {post.CoverImage ? (
-                    <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#e8e6e2] rounded-t-[var(--radius-md)] md:rounded-t-none md:rounded-l-[var(--radius-md)]">
+                    <div className="relative w-full aspect-[4/3] overflow-hidden rounded-t-[var(--radius-md)] md:rounded-t-none md:rounded-l-[var(--radius-md)]">
                       <Image
                         src={post.CoverImage}
                         alt={post.Title || "Event cover"}
@@ -43,11 +43,13 @@ export default async function EventsPage() {
                         sizes="(max-width: 768px) 100vw, 35vw"
                       />
                     </div>
-                  ) : null}
+                  ) : (
+                    <div className="relative w-full aspect-[4/3] bg-[#e8e6e2] rounded-t-[var(--radius-md)] md:rounded-t-none md:rounded-l-[var(--radius-md)]" />
+                  )}
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col justify-center items-start md:pl-[var(--sp-xl)] py-[var(--sp-md)] px-[var(--sp-sm)]">
                   <div className="min-w-0 w-full pr-[var(--sp-md)]">
-                    <h2 className="text-[var(--fs-body-lg)] font-medium text-black group-hover:text-[#b83143] transition-colors">
+                    <h2 className="text-[var(--fs-body-lg)] font-medium text-black group-hover:text-[#b83143] transition-colors line-clamp-1">
                       {post.Title || "Untitled"}
                     </h2>
                     {post.Description ? (

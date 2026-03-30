@@ -25,7 +25,7 @@ export default async function PostNavigation({ currentSlug, category }: PostNavi
   if (!nextPost && !prevPost) return null;
 
   return (
-    <div className="w-full max-w-[650px] mx-auto mt-4 md:mt-8 pb-16 pt-0 px-6 md:px-8 flex justify-between items-center">
+    <div className="w-full mt-4 md:mt-8 pb-16 pt-0 flex justify-between items-center text-left">
 
       <div className="flex-1">
         {prevPost && (

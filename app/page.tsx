@@ -35,7 +35,14 @@ export default async function Home() {
   return (
     <div className="w-full flex flex-col">
       {/* About Section - Full Bleed */}
-      <SectionContainer id="about" label="about" heightClass="min-h-screen py-[var(--sp-3xl)]" fullBleed className="bg-[#2E2D2B] text-[#F0EDE8]">
+      <SectionContainer 
+        id="about" 
+        label="about" 
+        heightClass="min-h-[100svh]" 
+        fullBleed 
+        className="bg-[#2E2D2B] text-[#F0EDE8]"
+        style={{ paddingTop: 'calc(10vh + var(--sp-3xl))', marginTop: '-10vh', paddingBottom: '20vh' }}
+      >
           <div className="w-full flex flex-col items-center">
             <FadeInItem delay={0.1}>
               <p className="text-center mb-12 tracking-[0.1em]" style={{ 
@@ -53,7 +60,7 @@ export default async function Home() {
                   <li key={idx} className="flex items-start gap-[var(--sp-sm)] list-none pl-0">
                     <FadeInItem delay={0.2 + idx * 0.15} className="flex flex-row items-start gap-[var(--sp-sm)] w-full">
                       <KineticIcon type={item.type} />
-                      <span className="flex-1 text-[13px] min-[400px]:text-[var(--fs-body)] text-[#F0EDE8] whitespace-normal pt-[4px] pr-2">
+                      <span className="flex-1 text-[16px] text-[#F0EDE8] whitespace-normal pt-[4px] pr-2">
                         {item.text}
                       </span>
                     </FadeInItem>
@@ -68,7 +75,7 @@ export default async function Home() {
 
       <div className="w-full flex flex-col content-wrapper">
         {/* Events Section */}
-        <SectionContainer id="events" label="events" heightClass="min-h-screen py-[var(--sp-3xl)]">
+        <SectionContainer id="events" label="events">
           <div className="w-full space-y-[var(--sp-md)]">
             <div className="space-y-[var(--sp-md)]">
               {recentEvents.map((post, idx) => (
@@ -77,13 +84,15 @@ export default async function Home() {
                     href={`/events/${post.Slug}`}
                     className="group flex flex-row items-center gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
                   >
-                    <div className="w-[35%] md:w-[25%] aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-l-[var(--radius-md)]">
-                      {post.CoverImage && (
+                    <div className="w-[35%] md:w-[25%] aspect-[4/3] shrink-0 overflow-hidden rounded-l-[var(--radius-md)]">
+                      {post.CoverImage ? (
                         <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                      ) : (
+                        <div className="w-full h-full bg-[#e8e6e2]" />
                       )}
                     </div>
                     <div className="flex-1 min-w-0 flex flex-col justify-center py-[var(--sp-md)] px-[var(--sp-sm)] pr-[var(--sp-md)]">
-                      <h3 className="text-[var(--fs-body-lg)] group-hover:text-[#b83143] transition-colors leading-snug">
+                      <h3 className="text-[var(--fs-body-lg)] group-hover:text-[#b83143] transition-colors leading-snug line-clamp-1">
                         {post.Title}
                       </h3>
 
@@ -115,13 +124,15 @@ export default async function Home() {
                     href={`/writing/${post.Slug}`}
                     className="group flex flex-row items-center gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
                   >
-                    <div className="w-[30%] md:w-[25%] aspect-[4/3] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-l-[var(--radius-md)]">
-                      {post.CoverImage && (
+                    <div className="w-[30%] md:w-[25%] aspect-[4/3] shrink-0 overflow-hidden rounded-l-[var(--radius-md)]">
+                      {post.CoverImage ? (
                         <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                      ) : (
+                        <div className="w-full h-full bg-[#e8e6e2]" />
                       )}
                     </div>
                     <div className="flex-1 min-w-0 flex flex-col justify-center py-[var(--sp-md)] px-[var(--sp-sm)] pr-[var(--sp-md)]">
-                      <h3 className="text-[var(--fs-body-lg)] group-hover:text-[#b83143] transition-colors leading-snug">
+                      <h3 className="text-[var(--fs-body-lg)] group-hover:text-[#b83143] transition-colors leading-snug line-clamp-1">
                         {post.Title}
                       </h3>
 
@@ -144,19 +155,21 @@ export default async function Home() {
         </SectionContainer>
 
         {/* Books Section */}
-        <SectionContainer id="books" label="books" heightClass="min-h-[85vh] py-[var(--sp-3xl)]">
+        <SectionContainer id="books" label="books" heightClass="min-h-[85vh] pt-[var(--sp-3xl)] pb-[20vh]">
           <div className="w-full">
             <CarouselRow>
               {recentBooks.map((post, idx) => (
                 <FadeInItem key={post.Slug} delay={idx * 0.15} className="w-[85%] sm:w-[45%] md:w-[45%] shrink-0 group py-6 flex flex-col h-full">
                   <Link href={`/books/${post.Slug}`} className="flex flex-col h-full w-full bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200">
-                    <div className="aspect-[2/3] w-full shrink-0 overflow-hidden bg-[#e8e6e2] rounded-t-[var(--radius-md)]">
-                      {post.CoverImage && (
+                    <div className="aspect-[2/3] w-full shrink-0 overflow-hidden rounded-t-[var(--radius-md)]">
+                      {post.CoverImage ? (
                         <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                      ) : (
+                        <div className="w-full h-full bg-[#e8e6e2]" />
                       )}
                     </div>
                     <div className="flex flex-col flex-1 py-[var(--sp-md)] px-[var(--sp-md)]">
-                      <h3 className="text-[var(--fs-body-lg)] group-hover:text-[#b83143] transition-colors">
+                      <h3 className="text-[var(--fs-body-lg)] group-hover:text-[#b83143] transition-colors line-clamp-1">
                         {post.Title}
                       </h3>
                       {post.Description && (
@@ -180,16 +193,16 @@ export default async function Home() {
       </div>
 
         {/* Florals Section - Bleed Width */}
-        <div className="w-full max-w-[680px] mx-auto">
-          <SectionContainer id="florals" label="florals" heightClass="min-h-[85vh] py-[var(--sp-3xl)]" fullBleed>
+        <div className="w-full max-w-[510px] mx-auto">
+          <SectionContainer id="florals" label="florals" heightClass="pt-[var(--sp-2xl)] pb-[20vh]" fullBleed>
             <div className="w-full">
               <CarouselRow>
               {recentFlorals.map((imgUrl, idx) => (
-                <FadeInItem key={idx} delay={idx * 0.15} className="w-[85%] sm:w-[90%] shrink-0 rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow-md)]">
+                <FadeInItem key={idx} delay={idx * 0.15} className="w-[85%] sm:w-[90%] shrink-0 rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow-md)] aspect-square bg-transparent">
                   <img 
                     src={imgUrl} 
                     alt={`Floral art ${idx + 1}`} 
-                    className="w-full h-auto block transition-transform duration-500 hover:scale-[1.02]"
+                    className="w-full h-full object-cover block transition-transform duration-500 hover:scale-[1.02]"
                   />
                 </FadeInItem>
               ))}
@@ -204,7 +217,14 @@ export default async function Home() {
         </div>
 
         {/* Decorative Footer - Full Bleed */}
-        <SectionContainer id="footer" label="" heightClass="min-h-[80vh]" fullBleed className="bg-[#2E2D2B] text-[#F0EDE8] py-[var(--sp-3xl)]">
+      <SectionContainer 
+        id="footer" 
+        label="" 
+        heightClass="min-h-[80vh]" 
+        fullBleed 
+        className="bg-[#2E2D2B] text-[#F0EDE8]"
+        style={{ paddingTop: 'var(--sp-3xl)', paddingBottom: 'calc(20vh + var(--sp-3xl))', marginBottom: '-20vh' }}
+      >
           <div className="w-full flex flex-col items-center">
             {/* Red Lotus Painting */}
             <FadeInItem className="w-full max-w-[280px] sm:max-w-[360px] md:max-w-[460px] lg:max-w-[500px] flex flex-col items-center mb-10">

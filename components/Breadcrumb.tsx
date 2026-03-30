@@ -8,23 +8,23 @@ interface BreadcrumbProps {
 
 export default function Breadcrumb({ section, sectionHref, title }: BreadcrumbProps) {
   return (
-    <div className="w-full text-center pt-8 pb-2 px-4">
-      <p className="type-caption lowercase text-[var(--grey-600)]">
-        <Link href="/" className="hover:text-[#b83143] transition-colors">
+    <div className="w-full text-center pt-8 pb-2 px-4 flex justify-center">
+      <p className="type-caption lowercase text-[var(--grey-600)] flex items-center justify-center max-w-full">
+        <Link href="/" className="hover:text-[#b83143] transition-colors shrink-0">
           lucy cindy
         </Link>
-        <span className="mx-1.5">/</span>
+        <span className="mx-1.5 shrink-0">/</span>
         {sectionHref ? (
-          <Link href={sectionHref} className="hover:text-[#b83143] transition-colors">
+          <Link href={sectionHref} className="hover:text-[#b83143] transition-colors shrink-0">
             {section}
           </Link>
         ) : (
-          <span>{section}</span>
+          <span className="shrink-0">{section}</span>
         )}
         {title && (
           <>
-            <span className="mx-1.5">/</span>
-            <span>{title}</span>
+            <span className="mx-1.5 shrink-0">/</span>
+            <span className="line-clamp-1 text-left break-all md:break-normal max-w-[150px] sm:max-w-none">{title}</span>
           </>
         )}
       </p>

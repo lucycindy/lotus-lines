@@ -31,7 +31,7 @@ export default async function WritingPage() {
                 href={post.Slug ? `/writing/${encodeURIComponent(post.Slug)}` : "#"}
                 className="group flex flex-row items-center py-0 text-black gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
               >
-                <div className="w-[30%] md:w-[25%] aspect-[4/3] flex-shrink-0 overflow-hidden bg-[#e8e6e2] rounded-l-[var(--radius-md)]">
+                <div className="w-[30%] md:w-[25%] aspect-[4/3] flex-shrink-0 overflow-hidden rounded-l-[var(--radius-md)]">
                   {post.CoverImage ? (
                     <div className="relative w-full h-full">
                       <Image
@@ -42,13 +42,15 @@ export default async function WritingPage() {
                         sizes="(max-width: 768px) 30vw, 25vw"
                       />
                     </div>
-                  ) : null}
+                  ) : (
+                    <div className="w-full h-full bg-[#e8e6e2]" />
+                  )}
                 </div>
 
 
                 <div className="flex min-w-0 flex-1 flex-col justify-center items-start md:pl-[var(--sp-xl)] py-[var(--sp-md)] px-[var(--sp-sm)]">
                   <div className="min-w-0 w-full pr-[var(--sp-md)]">
-                    <h2 className="text-[var(--fs-body-lg)] font-medium text-black group-hover:text-[#b83143] transition-colors">
+                    <h2 className="text-[var(--fs-body-lg)] font-medium text-black group-hover:text-[#b83143] transition-colors line-clamp-1">
                       {post.Title || "Untitled"}
                     </h2>
                     {post.Description ? (

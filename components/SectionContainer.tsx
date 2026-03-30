@@ -12,9 +12,10 @@ interface SectionContainerProps {
   heightClass?: string;
   fullBleed?: boolean;
   className?: string;
+  style?: React.CSSProperties;
 }
 
-export default function SectionContainer({ id, label, children, heightClass = "min-h-screen py-[var(--sp-3xl)]", fullBleed = false, className = "" }: SectionContainerProps) {
+export default function SectionContainer({ id, label, children, heightClass = "min-h-[100svh] pt-[var(--sp-3xl)] pb-[20vh]", fullBleed = false, className = "", style = {} }: SectionContainerProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -39,6 +40,7 @@ export default function SectionContainer({ id, label, children, heightClass = "m
       id={id} 
       ref={sectionRef}
       className={`${heightClass} relative flex flex-col items-center justify-center w-full ${fullBleed ? "px-0" : "px-6 md:px-12"} ${className}`}
+      style={style}
     >
       {/* Animated Local Label - Hidden on Plain Labels (About/Footer) */}
       {!isPlainLabel && (

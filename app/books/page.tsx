@@ -31,7 +31,7 @@ export default async function BooksPage() {
                             href={post.Slug ? `/books/${encodeURIComponent(post.Slug)}` : "#"}
                             className="group flex items-center gap-[var(--sp-md)] py-0 text-black bg-white rounded-[var(--radius-md)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
                         >
-                            <div className="relative aspect-[2/3] w-[25%] shrink-0 overflow-hidden bg-[#e8e6e2] rounded-l-[var(--radius-md)]">
+                            <div className="relative aspect-[2/3] w-[25%] shrink-0 overflow-hidden rounded-l-[var(--radius-md)]">
                                 {post.CoverImage ? (
                                     <Image
                                         src={post.CoverImage}
@@ -41,14 +41,14 @@ export default async function BooksPage() {
                                         sizes="96px"
                                     />
                                 ) : (
-                                    <div className="flex h-full w-full items-center justify-center text-[10px] text-black/60">
+                                    <div className="flex bg-[#e8e6e2] h-full w-full items-center justify-center text-[10px] text-black/60">
                                         no cover
                                     </div>
                                 )}
                             </div>
                             <div className="flex items-center min-w-0 flex-1 py-[var(--sp-md)] px-[var(--sp-sm)]">
                                 <div className="min-w-0 w-full pr-[var(--sp-md)]">
-                                    <h2 className="text-[var(--fs-body-lg)] font-medium text-black group-hover:text-[#b83143] transition-colors">
+                                    <h2 className="text-[var(--fs-body-lg)] font-medium text-black group-hover:text-[#b83143] transition-colors line-clamp-1">
                                         {post.Title || "Untitled"}
                                     </h2>
                                     {post.Description ? (
