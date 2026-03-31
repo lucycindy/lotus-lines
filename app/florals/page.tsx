@@ -19,7 +19,7 @@ export default async function FloralsPage() {
       <h1 className="mt-[var(--sp-xl)] text-center text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-[#b83143]">
         florals
       </h1>
-      <p className="mt-[var(--sp-xs)] text-center text-[13px] md:text-[clamp(0.85rem,1vw,1rem)] text-[#737373] font-normal normal-case tracking-normal">
+      <p className="mt-[var(--sp-xs)] text-center text-[var(--fs-caption)] text-[#737373] font-normal normal-case tracking-normal">
         new design hobby
       </p>
 
