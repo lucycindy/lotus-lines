@@ -50,12 +50,12 @@ export default async function EventsPage() {
 
                 <div className="flex min-w-0 flex-1 flex-col justify-center items-start md:pl-[var(--sp-xl)] py-[var(--sp-md)] px-[var(--sp-sm)]">
                   <div className="min-w-0 w-full pr-[var(--sp-md)]">
-                    <h2 className="text-[var(--fs-body-lg)] font-medium text-black group-hover:text-[#b83143] transition-colors line-clamp-1">
+                    <h2 className="text-[var(--fs-body)] md:text-[var(--fs-body-lg)] font-medium text-black group-hover:text-[#b83143] transition-colors line-clamp-1">
                       {post.Title || "Untitled"}
                     </h2>
                     {post.Description ? (
                       <div className="flex items-center mt-[var(--sp-xs)]">
-                        <p className="text-[var(--fs-body)] text-[#737373] italic line-clamp-1">
+                        <p className="text-[var(--fs-caption)] md:text-[var(--fs-body)] text-[#737373] italic line-clamp-1">
                           {post.Description}
                         </p>
                       </div>

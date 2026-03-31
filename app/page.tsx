@@ -39,7 +39,7 @@ export default async function Home() {
         id="about" 
         label="about" 
         fullBleed 
-        className="bg-[#F7F6F4] text-[#3D3B37] animate-cascade !pt-[clamp(5.5rem,12vw,8rem)]"
+        className="bg-[#F7F6F4] text-[#3D3B37] animate-cascade !pt-[8rem] sm:!pt-[clamp(5.5rem,12vw,8rem)]"
         style={{ animationDelay: '0ms' }}
       >
           <div className="w-full flex flex-col items-center">
