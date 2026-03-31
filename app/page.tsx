@@ -246,7 +246,7 @@ export default async function Home() {
               </FadeInItem>
 
               <FadeInItem delay={0.4} className="w-full mx-auto px-2 md:max-w-[560px] md:px-0 flex flex-col items-center">
-                <p className="text-[#3D3B37] lowercase text-center about-quote-text footer-paragraph">
+                <p className="text-[#3D3B37] lowercase text-center about-quote-text footer-paragraph text-[var(--fs-caption)]">
                   I love the cultural meaning of the lotus as a symbol of the process. I've grown to appreciate the constraints and complexities of the mud for the beautiful bloom. This philosophy shapes how I approach design and everything else.
                 </p>
               </FadeInItem>
