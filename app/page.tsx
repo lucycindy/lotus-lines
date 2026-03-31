@@ -93,7 +93,7 @@ export default async function Home() {
                       </h3>
 
                       {post.Description && (
-                        <p className="mt-[var(--sp-xs)] text-[#6b6b6b] italic font-light">
+                        <p className="mt-[var(--sp-xs)] text-[#6b6b6b] italic font-light line-clamp-1">
                           {post.Description}
                         </p>
                       )}
@@ -133,7 +133,7 @@ export default async function Home() {
                       </h3>
 
                       {post.Description && (
-                        <p className="mt-[var(--sp-xs)] text-[#6b6b6b] italic font-light">
+                        <p className="mt-[var(--sp-xs)] text-[#6b6b6b] italic font-light line-clamp-1">
                           {post.Description}
                         </p>
                       )}
@@ -155,8 +155,8 @@ export default async function Home() {
           <div className="w-full">
             <CarouselRow>
               {recentBooks.map((post, idx) => (
-                <FadeInItem key={post.Slug} delay={idx * 0.15} className="w-[60%] sm:w-[50%] md:w-[45%] shrink-0 group py-6 flex flex-col h-full">
-                  <Link href={`/books/${post.Slug}`} className="flex flex-col h-full w-full bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200">
+                <FadeInItem key={post.Slug} delay={idx * 0.15} className="w-[60%] sm:w-[50%] md:w-[45%] shrink-0 group py-6 flex flex-col self-stretch">
+                  <Link href={`/books/${post.Slug}`} className="flex flex-col flex-1 w-full bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200">
                     <div className="aspect-[2/3] w-full shrink-0">
                       {post.CoverImage ? (
                         <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -169,7 +169,7 @@ export default async function Home() {
                         {post.Title}
                       </h3>
                       {post.Description && (
-                        <p className="mt-[var(--sp-xs)] text-[#6b6b6b] italic">
+                        <p className="mt-[var(--sp-xs)] text-[#6b6b6b] italic line-clamp-1">
                           {post.Description}
                         </p>
                       )}

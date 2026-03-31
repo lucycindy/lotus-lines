@@ -30,23 +30,24 @@ export default async function EventsPage() {
             <div className="w-full">
               <Link
                 href={post.Slug ? `/events/${encodeURIComponent(post.Slug)}` : "#"}
-                className="group flex flex-col md:flex-row md:items-center py-0 text-black bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
+                className="group flex flex-row items-center py-0 text-black gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
               >
-                <div className="w-full md:w-[35%] shrink-0 flex justify-center">
+                <div className="w-[30%] md:w-[25%] aspect-[4/3] flex-shrink-0">
                   {post.CoverImage ? (
-                    <div className="relative w-full aspect-[4/3]">
+                    <div className="relative w-full h-full">
                       <Image
                         src={post.CoverImage}
                         alt={post.Title || "Event cover"}
                         fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 35vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 30vw, 25vw"
                       />
                     </div>
                   ) : (
-                    <div className="relative w-full aspect-[4/3] bg-[#e8e6e2]" />
+                    <div className="w-full h-full bg-[#e8e6e2]" />
                   )}
                 </div>
+
                 <div className="flex min-w-0 flex-1 flex-col justify-center items-start md:pl-[var(--sp-xl)] py-[var(--sp-md)] px-[var(--sp-sm)]">
                   <div className="min-w-0 w-full pr-[var(--sp-md)]">
                     <h2 className="text-[var(--fs-body-lg)] font-medium text-black group-hover:text-[#b83143] transition-colors line-clamp-1">
@@ -54,7 +55,7 @@ export default async function EventsPage() {
                     </h2>
                     {post.Description ? (
                       <div className="flex items-center mt-[var(--sp-xs)]">
-                        <p className="text-[15px] md:text-[clamp(0.9rem,1.1vw,1.15rem)] text-[#737373] italic">
+                        <p className="text-[15px] md:text-[clamp(0.9rem,1.1vw,1.15rem)] text-[#737373] italic line-clamp-1">
                           {post.Description}
                         </p>
                       </div>
@@ -66,6 +67,7 @@ export default async function EventsPage() {
           </li>
         ))}
       </ul>
+
     </div>
   );
 }

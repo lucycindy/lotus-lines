@@ -55,7 +55,7 @@ export default async function WritingPage() {
                     </h2>
                     {post.Description ? (
                       <div className="flex items-center mt-[var(--sp-xs)]">
-                        <p className="text-[15px] md:text-[clamp(0.9rem,1.1vw,1.15rem)] text-[#737373] italic">
+                        <p className="text-[15px] md:text-[clamp(0.9rem,1.1vw,1.15rem)] text-[#737373] italic line-clamp-1">
                           {post.Description}
                         </p>
                       </div>
