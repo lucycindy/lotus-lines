@@ -80,7 +80,7 @@ export default async function Home() {
                     href={`/events/${post.Slug}`}
                     className="group flex flex-row items-center gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
                   >
-                    <div className="w-[40%] md:w-[30%] aspect-[4/3] shrink-0">
+                    <div className="w-[48%] md:w-[38%] aspect-[4/3] shrink-0">
                       {post.CoverImage ? (
                         <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                       ) : (
@@ -120,7 +120,7 @@ export default async function Home() {
                     href={`/writing/${post.Slug}`}
                     className="group flex flex-row items-center gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
                   >
-                    <div className="w-[40%] md:w-[30%] aspect-[4/3] shrink-0">
+                    <div className="w-[48%] md:w-[38%] aspect-[4/3] shrink-0">
                       {post.CoverImage ? (
                         <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                       ) : (
@@ -194,7 +194,7 @@ export default async function Home() {
             <div className="w-full">
               <CarouselRow>
               {recentFlorals.map((imgUrl, idx) => (
-                <FadeInItem key={idx} delay={idx * 0.15} className="w-[44%] sm:w-[38%] md:w-[30%] shrink-0 rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow-md)] aspect-square bg-transparent transform-gpu isolate">
+                <FadeInItem key={idx} delay={idx * 0.15} className="w-[60%] sm:w-[50%] md:w-[45%] shrink-0 rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow-md)] aspect-square bg-transparent transform-gpu isolate">
                   <img 
                     src={imgUrl} 
                     alt={`Floral art ${idx + 1}`} 
