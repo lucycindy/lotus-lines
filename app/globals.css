@@ -209,6 +209,21 @@ p {
   line-height: 1.75;
 }
 
+/* Footer paragraph - ~3 lines on desktop, ~5 lines on mobile */
+.footer-paragraph {
+  max-width: 560px;
+}
+
+@media (max-width: 640px) {
+  .footer-paragraph {
+    max-width: 320px;
+  }
+  /* SVG icon list - prevent wrapping on mobile */
+  .about-icon-text {
+    font-size: 14px;
+  }
+}
+
 ol {
   list-style-type: decimal !important;
   counter-reset: list-item !important;

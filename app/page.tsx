@@ -39,7 +39,7 @@ export default async function Home() {
         id="about" 
         label="about" 
         fullBleed 
-        className="bg-[#F7F6F4] text-[#3D3B37] animate-cascade"
+        className="bg-[#F7F6F4] text-[#3D3B37] animate-cascade !pt-[clamp(5.5rem,12vw,8rem)]"
         style={{ animationDelay: '0ms' }}
       >
           <div className="w-full flex flex-col items-center">
@@ -53,12 +53,12 @@ export default async function Home() {
             </FadeInItem>
 
             <div className="flex flex-col items-center space-y-[var(--sp-md)] w-full text-[#3D3B37]">
-              <ul className="space-y-[var(--sp-md)] w-full max-w-[480px] sm:max-w-none md:w-fit">
+              <ul className="space-y-[var(--sp-md)] w-full max-w-[540px] sm:max-w-none md:w-fit">
                 {aboutItems.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-[var(--sp-sm)] list-none pl-0">
                     <FadeInItem delay={0.2 + idx * 0.15} className="flex flex-row items-start gap-[var(--sp-sm)] w-full">
                       <KineticIcon type={item.type} />
-                      <span className="flex-1 text-[16px] text-[#3D3B37] whitespace-normal pt-[4px] pr-2">
+                      <span className="flex-1 about-icon-text text-[16px] text-[#3D3B37] whitespace-normal pt-[4px] pr-2">
                         {item.text}
                       </span>
                     </FadeInItem>
@@ -103,7 +103,7 @@ export default async function Home() {
               ))}
             </div>
             <FadeInItem delay={0.4} className="flex justify-start">
-              <Link href="/events" className="btn-solid-red">
+              <Link href="/events" className="btn-outline-navigation">
                 more →
               </Link>
             </FadeInItem>
@@ -143,7 +143,7 @@ export default async function Home() {
               ))}
             </div>
             <FadeInItem delay={0.4} className="flex justify-start">
-              <Link href="/writing" className="btn-solid-red">
+              <Link href="/writing" className="btn-outline-navigation">
                 more →
               </Link>
             </FadeInItem>
@@ -179,7 +179,7 @@ export default async function Home() {
               ))}
             </CarouselRow>
             <FadeInItem delay={0.4} className="flex justify-start pt-4">
-              <Link href="/books" className="btn-solid-red">
+              <Link href="/books" className="btn-outline-navigation">
                 more →
               </Link>
             </FadeInItem>
@@ -189,12 +189,12 @@ export default async function Home() {
       </div>
 
         {/* Florals Section - Bleed Width */}
-        <div className="w-full max-w-[380px] mx-auto">
+        <div className="w-full">
           <SectionContainer id="florals" label="florals" fullBleed className="animate-cascade" style={{ animationDelay: '600ms' }}>
             <div className="w-full">
               <CarouselRow>
               {recentFlorals.map((imgUrl, idx) => (
-                <FadeInItem key={idx} delay={idx * 0.15} className="w-[85%] sm:w-[90%] shrink-0 rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow-md)] aspect-square bg-transparent transform-gpu isolate">
+                <FadeInItem key={idx} delay={idx * 0.15} className="w-[30%] sm:w-[28%] md:w-[22%] shrink-0 rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow-md)] aspect-square bg-transparent transform-gpu isolate">
                   <img 
                     src={imgUrl} 
                     alt={`Floral art ${idx + 1}`} 
@@ -204,13 +204,16 @@ export default async function Home() {
               ))}
             </CarouselRow>
             <FadeInItem delay={0.4} className="flex justify-start pt-6 w-full max-w-[600px] mx-auto px-[var(--page-margin)]">
-              <Link href="/florals" className="btn-solid-red">
+              <Link href="/florals" className="btn-outline-navigation">
                 more →
               </Link>
             </FadeInItem>
           </div>
         </SectionContainer>
         </div>
+
+        {/* Footer spacing spacer */}
+        <div className="w-full" style={{ height: 'clamp(1.15rem, 2.3vw, 2.3rem)' }} />
 
         {/* Decorative Footer - Full Bleed */}
       <SectionContainer 
@@ -234,7 +237,7 @@ export default async function Home() {
             {/* Quote + Paragraph */}
             <div className="space-y-12 w-full text-center">
               <FadeInItem delay={0.2} className="text-center w-full mx-auto px-2 md:max-w-[700px]">
-                <p className="italic text-[#3D3B37] about-quote-text lowercase leading-[1.75]">
+                <p className="italic text-[#3D3B37] about-quote-text lowercase leading-[1.75]" style={{ textWrap: 'balance' } as React.CSSProperties}>
                   "i love the lotus, for it rises from the mud unstained, cleansed in rippling water, appealing, yet not seductive."
                 </p>
                 <p className="type-caption lowercase mt-3" style={{ color: '#7A7670' }}>
@@ -242,8 +245,8 @@ export default async function Home() {
                 </p>
               </FadeInItem>
 
-              <FadeInItem delay={0.4} className="w-full mx-auto px-2 md:max-w-[950px] md:px-0 flex flex-col items-center">
-                <p className="text-[#3D3B37] lowercase text-center text-balance about-quote-text">
+              <FadeInItem delay={0.4} className="w-full mx-auto px-2 md:max-w-[560px] md:px-0 flex flex-col items-center">
+                <p className="text-[#3D3B37] lowercase text-center about-quote-text footer-paragraph">
                   I love the cultural meaning of the lotus as a symbol of the process. I've grown to appreciate the constraints and complexities of the mud for the beautiful bloom. This philosophy shapes how I approach design and everything else.
                 </p>
               </FadeInItem>
