@@ -80,7 +80,7 @@ export default async function Home() {
                     href={`/events/${post.Slug}`}
                     className="group flex flex-row items-center gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
                   >
-                    <div className="w-[48%] md:w-[38%] aspect-[4/3] shrink-0">
+                    <div className="w-[30%] self-stretch shrink-0 md:w-[38%] md:aspect-[4/3] md:self-auto">
                       {post.CoverImage ? (
                         <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                       ) : (
@@ -88,12 +88,12 @@ export default async function Home() {
                       )}
                     </div>
                     <div className="flex-1 min-w-0 flex flex-col justify-center py-[var(--sp-md)] px-[var(--sp-sm)] pr-[var(--sp-md)]">
-                      <h3 className="text-[14px] md:text-[16px] group-hover:text-[#b83143] transition-colors leading-snug line-clamp-1">
+                      <h3 className="text-[12px] md:text-[16px] group-hover:text-[#b83143] transition-colors leading-snug line-clamp-1">
                         {post.Title}
                       </h3>
 
                       {post.Description && (
-                        <p className="mt-[var(--sp-xs)] text-[12px] md:text-[14px] text-[#6b6b6b] italic font-light line-clamp-1">
+                        <p className="mt-[var(--sp-xs)] text-[10px] md:text-[14px] text-[#6b6b6b] italic font-light line-clamp-1">
                           {post.Description}
                         </p>
                       )}
@@ -120,7 +120,7 @@ export default async function Home() {
                     href={`/writing/${post.Slug}`}
                     className="group flex flex-row items-center gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
                   >
-                    <div className="w-[48%] md:w-[38%] aspect-[4/3] shrink-0">
+                    <div className="w-[30%] self-stretch shrink-0 md:w-[38%] md:aspect-[4/3] md:self-auto">
                       {post.CoverImage ? (
                         <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                       ) : (
@@ -128,12 +128,12 @@ export default async function Home() {
                       )}
                     </div>
                     <div className="flex-1 min-w-0 flex flex-col justify-center py-[var(--sp-md)] px-[var(--sp-sm)] pr-[var(--sp-md)]">
-                      <h3 className="text-[14px] md:text-[16px] group-hover:text-[#b83143] transition-colors leading-snug line-clamp-1">
+                      <h3 className="text-[12px] md:text-[16px] group-hover:text-[#b83143] transition-colors leading-snug line-clamp-1">
                         {post.Title}
                       </h3>
 
                       {post.Description && (
-                        <p className="mt-[var(--sp-xs)] text-[12px] md:text-[14px] text-[#6b6b6b] italic font-light line-clamp-1">
+                        <p className="mt-[var(--sp-xs)] text-[10px] md:text-[14px] text-[#6b6b6b] italic font-light line-clamp-1">
                           {post.Description}
                         </p>
                       )}
@@ -165,11 +165,11 @@ export default async function Home() {
                       )}
                     </div>
                     <div className="flex flex-col flex-1 py-[var(--sp-md)] px-[var(--sp-md)]">
-                      <h3 className="text-[14px] md:text-[16px] group-hover:text-[#b83143] transition-colors line-clamp-1">
+                      <h3 className="text-[12px] md:text-[16px] group-hover:text-[#b83143] transition-colors line-clamp-1">
                         {post.Title}
                       </h3>
                       {post.Description && (
-                        <p className="mt-[var(--sp-xs)] text-[12px] md:text-[14px] text-[#6b6b6b] italic line-clamp-1">
+                        <p className="mt-[var(--sp-xs)] text-[10px] md:text-[14px] text-[#6b6b6b] italic line-clamp-1">
                           {post.Description}
                         </p>
                       )}
