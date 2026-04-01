@@ -252,6 +252,8 @@ p {
   .mail-btn-wrapper {
     top: 12px !important;
   }
+  /* Footer last paragraph — desktop only */
+  .footer-body-text { font-size: 15px; }
 }
 
 ol {

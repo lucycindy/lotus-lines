@@ -164,7 +164,7 @@ export default async function Home() {
                         <div className="w-full h-full bg-[#e8e6e2]" />
                       )}
                     </div>
-                    <div className="hidden md:flex flex-col flex-1 py-[var(--sp-md)] px-[var(--sp-md)]">
+                    <div className="hidden flex-col flex-1 py-[var(--sp-md)] px-[var(--sp-md)]">
                       <h3 className="hp-card-title md:text-[16px] group-hover:text-[#b83143] transition-colors line-clamp-1">
                         {post.Title}
                       </h3>
