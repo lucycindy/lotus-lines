@@ -19,7 +19,7 @@ export default async function BooksPage() {
         <h1 className="mt-[var(--sp-xl)] text-center text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-[#b83143]">
             books
         </h1>
-        <p className="mt-[var(--sp-xs)] text-center text-[var(--fs-caption)] text-[#737373]">
+        <p className="mt-[var(--sp-xs)] text-center text-[12px] text-[#737373]">
             curated 2026 reading list
         </p>
 
@@ -48,12 +48,12 @@ export default async function BooksPage() {
                             </div>
                             <div className="flex items-center min-w-0 flex-1 py-[var(--sp-md)] px-[var(--sp-sm)]">
                                 <div className="min-w-0 w-full pr-[var(--sp-md)]">
-                                    <h2 className="text-[var(--fs-body)] md:text-[var(--fs-body-lg)] font-medium text-black group-hover:text-[#b83143] transition-colors line-clamp-1">
+                                    <h2 className="text-[15px] md:text-[17px] font-medium text-black group-hover:text-[#b83143] transition-colors line-clamp-1">
                                         {post.Title || "Untitled"}
                                     </h2>
                                     {post.Description ? (
                                         <div className="flex items-center mt-[var(--sp-xs)]">
-                                            <p className="text-[var(--fs-caption)] md:text-[var(--fs-body)] text-[#737373] italic">
+                                            <p className="text-[12px] md:text-[15px] text-[#737373] italic">
                                                 {post.Description}
                                             </p>
                                         </div>

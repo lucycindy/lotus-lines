@@ -10,12 +10,12 @@ export default function Breadcrumb({ section, sectionHref, title }: BreadcrumbPr
   return (
     <div className="w-full text-center pt-8 pb-2 px-4 flex justify-center">
       <p className="type-caption lowercase text-[var(--grey-600)] flex items-center justify-center max-w-full">
-        <Link href="/" className="hover:text-[#b83143] transition-colors shrink-0">
+        <Link href="/" className="text-[#3D3B37] hover:text-[#b83143] transition-colors shrink-0">
           lucy cindy
         </Link>
         <span className="mx-1.5 shrink-0">/</span>
         {sectionHref ? (
-          <Link href={sectionHref} className="hover:text-[#b83143] transition-colors shrink-0">
+          <Link href={sectionHref} className="text-[#3D3B37] hover:text-[#b83143] transition-colors shrink-0">
             {section}
           </Link>
         ) : (
