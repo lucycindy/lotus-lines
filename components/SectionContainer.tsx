@@ -48,7 +48,7 @@ export default function SectionContainer({ id, label, children, heightClass = "p
           <motion.div style={{ opacity: labelOpacity }} className="w-full pb-[var(--sp-sm)]">
             <span className="type-caption lowercase">
               <span>lucy cindy /</span>{" "}
-              <Link href={`/${id}`} className="italic hover:text-[#b83143] transition-colors text-[var(--grey-600)]">
+              <Link href={`/${id}`} className="text-[#3D3B37] hover:text-[#b83143] transition-colors">
                 {label}
               </Link>
             </span>
