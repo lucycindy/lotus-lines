@@ -11,7 +11,7 @@ export default async function EventsPage() {
   const posts = await getEventPosts();
 
   return (
-    <div className="min-h-screen content-wrapper pb-[var(--sp-3xl)]">
+    <div className="min-h-screen content-wrapper pb-[var(--sp-3xl)] md:pb-[8rem]">
       <Breadcrumb section="events" />
       <div className="w-full mt-[var(--sp-md)]">
         <BackButton href="/#events" />

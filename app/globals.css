@@ -232,6 +232,16 @@ p {
   }
 }
 
+@media (min-width: 768px) {
+  .btn-icon-circular {
+    width: 42px !important;
+    height: 42px !important;
+  }
+  .mail-btn-wrapper {
+    top: 12px !important;
+  }
+}
+
 ol {
   list-style-type: decimal !important;
   counter-reset: list-item !important;
