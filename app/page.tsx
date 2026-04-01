@@ -43,7 +43,7 @@ export default async function Home() {
         style={{ animationDelay: '0ms' }}
       >
           <div className="w-full flex flex-col items-center">
-            <FadeInItem delay={0.1}>
+            <FadeInItem delay={0.1} className="md:mt-[2.5rem] md:ml-[12%]">
               <p className="text-center mb-12 tracking-[0.1em]" style={{ 
                 fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
                 fontSize: 'var(--fs-body)'
