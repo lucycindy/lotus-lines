@@ -19,7 +19,7 @@ export default async function BooksPage() {
         <h1 className="mt-[var(--sp-xl)] text-center text-[clamp(1.5rem,2.5vw,2rem)] font-medium text-[#b83143]">
             books
         </h1>
-        <p className="mt-[var(--sp-xs)] text-center text-[10px] text-[#737373]">
+        <p className="mt-[var(--sp-xs)] text-center text-[8px] md:text-[10px] text-[#737373]">
             curated 2026 reading list
         </p>
 
@@ -31,7 +31,7 @@ export default async function BooksPage() {
                             href={post.Slug ? `/books/${encodeURIComponent(post.Slug)}` : "#"}
                             className="group flex items-center gap-[var(--sp-md)] py-0 text-black bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
                         >
-                            <div className="relative aspect-[2/3] w-[25%] shrink-0">
+                            <div className="relative aspect-[2/3] w-[21%] md:w-[25%] shrink-0">
                                 {post.CoverImage ? (
                                     <Image
                                         src={post.CoverImage}
@@ -48,12 +48,12 @@ export default async function BooksPage() {
                             </div>
                             <div className="flex items-center min-w-0 flex-1 py-[var(--sp-md)] px-[var(--sp-sm)]">
                                 <div className="min-w-0 w-full pr-[var(--sp-md)]">
-                                    <h2 className="text-[13px] md:text-[15px] font-medium text-black group-hover:text-[#b83143] transition-colors line-clamp-1">
+                                    <h2 className="text-[11px] md:text-[15px] font-medium text-black group-hover:text-[#b83143] transition-colors line-clamp-1">
                                         {post.Title || "Untitled"}
                                     </h2>
                                     {post.Description ? (
                                         <div className="flex items-center mt-[var(--sp-xs)]">
-                                            <p className="text-[10px] md:text-[13px] text-[#737373] italic">
+                                            <p className="text-[8px] md:text-[13px] text-[#737373] italic">
                                                 {post.Description}
                                             </p>
                                         </div>
