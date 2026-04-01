@@ -240,6 +240,8 @@ p {
   /* Homepage card typography — mobile only */
   .hp-card-title { font-size: 16px; }
   .hp-card-desc  { font-size: 14px; }
+  /* Footer last paragraph — mobile only */
+  .footer-body-text { font-size: 14px; }
 }
 
 @media (min-width: 768px) {

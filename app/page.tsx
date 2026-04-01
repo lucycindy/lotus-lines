@@ -164,7 +164,7 @@ export default async function Home() {
                         <div className="w-full h-full bg-[#e8e6e2]" />
                       )}
                     </div>
-                    <div className="flex flex-col flex-1 py-[var(--sp-md)] px-[var(--sp-md)]">
+                    <div className="hidden md:flex flex-col flex-1 py-[var(--sp-md)] px-[var(--sp-md)]">
                       <h3 className="hp-card-title md:text-[16px] group-hover:text-[#b83143] transition-colors line-clamp-1">
                         {post.Title}
                       </h3>
@@ -246,7 +246,7 @@ export default async function Home() {
               </FadeInItem>
 
               <FadeInItem delay={0.4} className="w-full mx-auto px-2 md:max-w-[560px] md:px-0 flex flex-col items-center">
-                <p className="text-[#3D3B37] lowercase text-center about-quote-text footer-paragraph text-[10px] md:text-[12px]">
+                <p className="footer-body-text text-[#3D3B37] lowercase text-center about-quote-text footer-paragraph md:text-[12px]">
                   I love the cultural meaning of the lotus as a symbol of the process. I've grown to appreciate the constraints and complexities of the mud for the beautiful bloom. This philosophy shapes how I approach design and everything else.
                 </p>
               </FadeInItem>

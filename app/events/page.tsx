@@ -21,7 +21,7 @@ export default async function EventsPage() {
         events
       </h1>
       <p className="section-subheading mt-[var(--sp-xs)] text-center text-[#737373]">
-        coordination & assistance for weddings / corporate
+        coordination & assistance        mainly weddings + corporate / social     
       </p>
 
       <ul className="mt-[var(--sp-2xl)] w-full space-y-[var(--sp-md)]">
