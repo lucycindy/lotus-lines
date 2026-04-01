@@ -242,6 +242,8 @@ p {
   .hp-card-desc  { font-size: 14px; }
   /* Footer last paragraph — mobile only */
   .footer-body-text { font-size: 14px; }
+  /* Footer quote — mobile only */
+  .footer-quote-text { font-size: 15.5px; text-wrap: unset !important; }
 }
 
 @media (min-width: 768px) {

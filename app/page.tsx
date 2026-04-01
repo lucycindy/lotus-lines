@@ -237,7 +237,7 @@ export default async function Home() {
             {/* Quote + Paragraph */}
             <div className="space-y-12 w-full text-center">
               <FadeInItem delay={0.2} className="text-center w-full mx-auto px-2 md:max-w-[700px]">
-                <p className="italic text-[#3D3B37] about-quote-text lowercase leading-[1.75]" style={{ textWrap: 'balance' } as React.CSSProperties}>
+                <p className="footer-quote-text italic text-[#3D3B37] about-quote-text lowercase leading-[1.75]" style={{ textWrap: 'balance' } as React.CSSProperties}>
                   "i love the lotus, for it rises from the mud unstained, cleansed in rippling water, appealing, yet not seductive."
                 </p>
                 <p className="type-caption lowercase mt-3" style={{ color: '#7A7670' }}>
