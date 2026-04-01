@@ -231,15 +231,15 @@ p {
     right: 8px !important;
   }
   /* Section page typography — mobile only */
-  .section-subheading { font-size: 14px; }
-  .section-card-title  { font-size: 14px; }
-  .section-card-desc   { font-size: 12px; }
-  .books-card-title    { font-size: 12px; }
-  .books-card-desc     { font-size: 12px; }
-  .florals-subheading  { font-size: 14px; }
+  .section-subheading { font-size: 18px; }
+  .section-card-title  { font-size: 16px; }
+  .section-card-desc   { font-size: 14px; }
+  .books-card-title    { font-size: 16px; }
+  .books-card-desc     { font-size: 14px; }
+  .florals-subheading  { font-size: 16px; }
   /* Homepage card typography — mobile only */
-  .hp-card-title { font-size: 14px; }
-  .hp-card-desc  { font-size: 12px; }
+  .hp-card-title { font-size: 16px; }
+  .hp-card-desc  { font-size: 14px; }
 }
 
 @media (min-width: 768px) {
