@@ -230,16 +230,16 @@ p {
     top: 6px !important;
     right: 8px !important;
   }
-  /* Section page typography — mobile only, -1px from original */
-  .section-subheading { font-size: 7px; }
-  .section-card-title  { font-size: 10px; }
-  .section-card-desc   { font-size: 7px; }
-  .books-card-title    { font-size: 10px; }
-  .books-card-desc     { font-size: 7px; }
-  .florals-subheading  { font-size: 8px; }
-  /* Homepage card typography — mobile only, -1px from original */
-  .hp-card-title { font-size: 11px; }
-  .hp-card-desc  { font-size: 9px; }
+  /* Section page typography — mobile only */
+  .section-subheading { font-size: 14px; }
+  .section-card-title  { font-size: 14px; }
+  .section-card-desc   { font-size: 12px; }
+  .books-card-title    { font-size: 12px; }
+  .books-card-desc     { font-size: 12px; }
+  .florals-subheading  { font-size: 14px; }
+  /* Homepage card typography — mobile only */
+  .hp-card-title { font-size: 14px; }
+  .hp-card-desc  { font-size: 12px; }
 }
 
 @media (min-width: 768px) {
