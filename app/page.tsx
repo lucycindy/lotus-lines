@@ -88,12 +88,12 @@ export default async function Home() {
                       )}
                     </div>
                     <div className="flex-1 min-w-0 flex flex-col justify-center py-[var(--sp-md)] px-[var(--sp-sm)] pr-[var(--sp-md)]">
-                      <h3 className="text-[10px] md:text-[16px] group-hover:text-[#b83143] transition-colors leading-snug line-clamp-1">
+                      <h3 className="hp-card-title md:text-[16px] group-hover:text-[#b83143] transition-colors leading-snug line-clamp-1">
                         {post.Title}
                       </h3>
 
                       {post.Description && (
-                        <p className="mt-[var(--sp-xs)] text-[8px] md:text-[14px] text-[#6b6b6b] italic font-light line-clamp-1">
+                        <p className="hp-card-desc mt-[var(--sp-xs)] md:text-[14px] text-[#6b6b6b] italic font-light line-clamp-1">
                           {post.Description}
                         </p>
                       )}
@@ -128,12 +128,12 @@ export default async function Home() {
                       )}
                     </div>
                     <div className="flex-1 min-w-0 flex flex-col justify-center py-[var(--sp-md)] px-[var(--sp-sm)] pr-[var(--sp-md)]">
-                      <h3 className="text-[10px] md:text-[16px] group-hover:text-[#b83143] transition-colors leading-snug line-clamp-1">
+                      <h3 className="hp-card-title md:text-[16px] group-hover:text-[#b83143] transition-colors leading-snug line-clamp-1">
                         {post.Title}
                       </h3>
 
                       {post.Description && (
-                        <p className="mt-[var(--sp-xs)] text-[8px] md:text-[14px] text-[#6b6b6b] italic font-light line-clamp-1">
+                        <p className="hp-card-desc mt-[var(--sp-xs)] md:text-[14px] text-[#6b6b6b] italic font-light line-clamp-1">
                           {post.Description}
                         </p>
                       )}
@@ -165,11 +165,11 @@ export default async function Home() {
                       )}
                     </div>
                     <div className="flex flex-col flex-1 py-[var(--sp-md)] px-[var(--sp-md)]">
-                      <h3 className="text-[10px] md:text-[16px] group-hover:text-[#b83143] transition-colors line-clamp-1">
+                      <h3 className="hp-card-title md:text-[16px] group-hover:text-[#b83143] transition-colors line-clamp-1">
                         {post.Title}
                       </h3>
                       {post.Description && (
-                        <p className="mt-[var(--sp-xs)] text-[8px] md:text-[14px] text-[#6b6b6b] italic line-clamp-1">
+                        <p className="hp-card-desc mt-[var(--sp-xs)] md:text-[14px] text-[#6b6b6b] italic line-clamp-1">
                           {post.Description}
                         </p>
                       )}

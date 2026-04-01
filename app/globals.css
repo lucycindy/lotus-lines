@@ -214,14 +214,6 @@ p {
   max-width: 560px;
 }
 
-/* Section page typography — class selectors (0,1,0) beat base h2/p element selectors (0,0,1) */
-.section-subheading { font-size: 10px; }
-.section-card-title  { font-size: 15px; }
-.section-card-desc   { font-size: 13px; }
-.books-card-title    { font-size: 13px; }
-.books-card-desc     { font-size: 11px; }
-.florals-subheading  { font-size: 11px; }
-
 @media (max-width: 640px) {
   .footer-paragraph {
     max-width: 320px;
@@ -238,13 +230,16 @@ p {
     top: 6px !important;
     right: 8px !important;
   }
-  /* Section page typography mobile overrides */
-  .section-subheading { font-size: 6px; }
-  .section-card-title  { font-size: 9px; }
-  .section-card-desc   { font-size: 6px; }
-  .books-card-title    { font-size: 9px; }
-  .books-card-desc     { font-size: 6px; }
-  .florals-subheading  { font-size: 7px; }
+  /* Section page typography — mobile only, -1px from original */
+  .section-subheading { font-size: 7px; }
+  .section-card-title  { font-size: 10px; }
+  .section-card-desc   { font-size: 7px; }
+  .books-card-title    { font-size: 10px; }
+  .books-card-desc     { font-size: 7px; }
+  .florals-subheading  { font-size: 8px; }
+  /* Homepage card typography — mobile only, -1px from original */
+  .hp-card-title { font-size: 11px; }
+  .hp-card-desc  { font-size: 9px; }
 }
 
 @media (min-width: 768px) {
