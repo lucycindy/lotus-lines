@@ -11,7 +11,7 @@ export default async function BooksPage() {
   const posts = await getBookPosts();
 
   return (
-    <div className="min-h-screen content-wrapper pb-[var(--sp-3xl)]">
+    <div className="min-h-screen content-wrapper pb-[var(--sp-3xl)] md:pb-[8rem]">
         <Breadcrumb section="books" />
         <div className="w-full mt-[var(--sp-md)]">
             <BackButton href="/#books" />
@@ -31,7 +31,7 @@ export default async function BooksPage() {
                             href={post.Slug ? `/books/${encodeURIComponent(post.Slug)}` : "#"}
                             className="group flex items-center gap-[var(--sp-md)] py-0 text-black bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
                         >
-                            <div className="relative aspect-[2/3] w-[21%] md:w-[25%] shrink-0">
+                            <div className="relative aspect-[2/3] w-[21%] md:w-[21%] shrink-0">
                                 {post.CoverImage ? (
                                     <Image
                                         src={post.CoverImage}
@@ -48,12 +48,12 @@ export default async function BooksPage() {
                             </div>
                             <div className="flex items-center min-w-0 flex-1 py-[var(--sp-md)] px-[var(--sp-sm)]">
                                 <div className="min-w-0 w-full pr-[var(--sp-md)]">
-                                    <h2 className="text-[11px] md:text-[15px] font-medium text-black group-hover:text-[#b83143] transition-colors line-clamp-1">
+                                    <h2 className="text-[11px] md:text-[13px] font-medium text-black group-hover:text-[#b83143] transition-colors line-clamp-1">
                                         {post.Title || "Untitled"}
                                     </h2>
                                     {post.Description ? (
                                         <div className="flex items-center mt-[var(--sp-xs)]">
-                                            <p className="text-[8px] md:text-[13px] text-[#737373] italic">
+                                            <p className="text-[8px] md:text-[11px] text-[#737373] italic">
                                                 {post.Description}
                                             </p>
                                         </div>
