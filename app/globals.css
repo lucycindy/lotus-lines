@@ -222,6 +222,14 @@ p {
   .about-icon-text {
     font-size: 13.5px;
   }
+  .btn-icon-circular {
+    width: 37px !important;
+    height: 37px !important;
+  }
+  .mail-btn-wrapper {
+    top: 6px !important;
+    right: 8px !important;
+  }
 }
 
 ol {

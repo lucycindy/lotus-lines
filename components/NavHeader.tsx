@@ -18,7 +18,7 @@ export default function NavHeader() {
       </div>
 
 
-      <div className="absolute top-[var(--sp-xl)] right-[var(--sp-md)] pointer-events-auto">
+      <div className="mail-btn-wrapper absolute top-[var(--sp-xl)] right-[var(--sp-md)] pointer-events-auto">
         <a
           href="mailto:lucycindygeng@gmail.com"
           className="btn-icon-circular"

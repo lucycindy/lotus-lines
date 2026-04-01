@@ -39,7 +39,7 @@ export default async function Home() {
         id="about" 
         label="about" 
         fullBleed 
-        className="bg-[#F7F6F4] text-[#3D3B37] animate-cascade !pt-[8rem] sm:!pt-[clamp(5.5rem,12vw,8rem)] !pb-[3.5rem] sm:!pb-[var(--sp-3xl)]"
+        className="bg-[#F7F6F4] text-[#3D3B37] animate-cascade !pt-[9.2rem] sm:!pt-[clamp(5.5rem,12vw,8rem)] !pb-[3.5rem] sm:!pb-[var(--sp-3xl)]"
         style={{ animationDelay: '0ms' }}
       >
           <div className="w-full flex flex-col items-center">
@@ -78,7 +78,7 @@ export default async function Home() {
                 <FadeInItem key={post.Slug} delay={idx * 0.15}>
                   <Link
                     href={`/events/${post.Slug}`}
-                    className="group flex flex-row items-center gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
+                    className="group flex flex-row items-center gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full h-[68px] sm:h-auto"
                   >
                     <div className="w-[30%] self-stretch shrink-0 md:w-[38%] md:aspect-[4/3] md:self-auto">
                       {post.CoverImage ? (
@@ -88,12 +88,12 @@ export default async function Home() {
                       )}
                     </div>
                     <div className="flex-1 min-w-0 flex flex-col justify-center py-[var(--sp-md)] px-[var(--sp-sm)] pr-[var(--sp-md)]">
-                      <h3 className="text-[12px] md:text-[16px] group-hover:text-[#b83143] transition-colors leading-snug line-clamp-1">
+                      <h3 className="text-[10px] md:text-[16px] group-hover:text-[#b83143] transition-colors leading-snug line-clamp-1">
                         {post.Title}
                       </h3>
 
                       {post.Description && (
-                        <p className="mt-[var(--sp-xs)] text-[10px] md:text-[14px] text-[#6b6b6b] italic font-light line-clamp-1">
+                        <p className="mt-[var(--sp-xs)] text-[8px] md:text-[14px] text-[#6b6b6b] italic font-light line-clamp-1">
                           {post.Description}
                         </p>
                       )}
@@ -128,12 +128,12 @@ export default async function Home() {
                       )}
                     </div>
                     <div className="flex-1 min-w-0 flex flex-col justify-center py-[var(--sp-md)] px-[var(--sp-sm)] pr-[var(--sp-md)]">
-                      <h3 className="text-[12px] md:text-[16px] group-hover:text-[#b83143] transition-colors leading-snug line-clamp-1">
+                      <h3 className="text-[10px] md:text-[16px] group-hover:text-[#b83143] transition-colors leading-snug line-clamp-1">
                         {post.Title}
                       </h3>
 
                       {post.Description && (
-                        <p className="mt-[var(--sp-xs)] text-[10px] md:text-[14px] text-[#6b6b6b] italic font-light line-clamp-1">
+                        <p className="mt-[var(--sp-xs)] text-[8px] md:text-[14px] text-[#6b6b6b] italic font-light line-clamp-1">
                           {post.Description}
                         </p>
                       )}
@@ -155,7 +155,7 @@ export default async function Home() {
           <div className="w-full">
             <CarouselRow>
               {recentBooks.map((post, idx) => (
-                <FadeInItem key={post.Slug} delay={idx * 0.15} className="w-[60%] sm:w-[50%] md:w-[45%] shrink-0 group py-6 flex flex-col self-stretch">
+                <FadeInItem key={post.Slug} delay={idx * 0.15} className="w-[51%] sm:w-[50%] md:w-[45%] shrink-0 group py-6 flex flex-col self-stretch">
                   <Link href={`/books/${post.Slug}`} className="flex flex-col flex-1 w-full bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200">
                     <div className="aspect-[2/3] w-full shrink-0">
                       {post.CoverImage ? (
@@ -165,11 +165,11 @@ export default async function Home() {
                       )}
                     </div>
                     <div className="flex flex-col flex-1 py-[var(--sp-md)] px-[var(--sp-md)]">
-                      <h3 className="text-[12px] md:text-[16px] group-hover:text-[#b83143] transition-colors line-clamp-1">
+                      <h3 className="text-[10px] md:text-[16px] group-hover:text-[#b83143] transition-colors line-clamp-1">
                         {post.Title}
                       </h3>
                       {post.Description && (
-                        <p className="mt-[var(--sp-xs)] text-[10px] md:text-[14px] text-[#6b6b6b] italic line-clamp-1">
+                        <p className="mt-[var(--sp-xs)] text-[8px] md:text-[14px] text-[#6b6b6b] italic line-clamp-1">
                           {post.Description}
                         </p>
                       )}
