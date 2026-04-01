@@ -191,7 +191,7 @@ export default async function Home() {
         {/* Florals Section - Bleed Width */}
         <div className="w-full">
           <SectionContainer id="florals" label="florals" fullBleed className="animate-cascade" style={{ animationDelay: '600ms' }}>
-            <div className="w-full">
+            <div className="w-full -mt-6">
               <CarouselRow>
               {recentFlorals.map((imgUrl, idx) => (
                 <FadeInItem key={idx} delay={idx * 0.15} className="w-[60%] sm:w-[50%] md:w-[45%] shrink-0 rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow-md)] aspect-square bg-transparent transform-gpu isolate">
@@ -203,7 +203,7 @@ export default async function Home() {
                 </FadeInItem>
               ))}
             </CarouselRow>
-            <FadeInItem delay={0.4} className="flex justify-start pt-6 w-full max-w-[600px] mx-auto px-[var(--page-margin)]">
+            <FadeInItem delay={0.4} className="flex justify-start w-full max-w-[600px] mx-auto px-[var(--page-margin)]">
               <Link href="/florals" className="btn-outline-navigation">
                 more →
               </Link>
