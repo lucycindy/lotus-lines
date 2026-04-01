@@ -152,14 +152,14 @@ export default async function Home() {
 
         {/* Books Section */}
         <SectionContainer id="books" label="books" className="animate-cascade" style={{ animationDelay: '450ms' }}>
-          <div className="w-full -mt-6 md:mt-0">
+          <div className="w-full -mt-6 md:-mt-6">
             <CarouselRow>
               {recentBooks.map((post, idx) => (
-                <FadeInItem key={post.Slug} delay={idx * 0.15} className="w-[51%] sm:w-[50%] md:w-[45%] shrink-0 group py-0 md:py-6 flex flex-col self-stretch">
+                <FadeInItem key={post.Slug} delay={idx * 0.15} className="w-[51%] sm:w-[50%] md:w-[45%] shrink-0 group py-0 flex flex-col self-stretch">
                   <Link href={`/books/${post.Slug}`} className="flex flex-col flex-1 w-full bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200">
                     <div className="aspect-[2/3] w-full shrink-0">
                       {post.CoverImage ? (
-                        <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 pointer-events-none" />
+                        <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 md:scale-[1.1] md:group-hover:scale-[1.15] pointer-events-none" />
                       ) : (
                         <div className="w-full h-full bg-[#e8e6e2]" />
                       )}
@@ -178,7 +178,7 @@ export default async function Home() {
                 </FadeInItem>
               ))}
             </CarouselRow>
-            <FadeInItem delay={0.4} className="flex justify-start md:pt-4">
+            <FadeInItem delay={0.4} className="flex justify-start">
               <Link href="/books" className="btn-outline-navigation">
                 more →
               </Link>
