@@ -12,7 +12,7 @@ export default function NavHeader() {
   return (
     <header className="absolute top-0 left-0 w-full z-[60] pointer-events-none pr-[16px]">
       <div className="absolute top-[16px] md:top-[8px] left-0 md:left-[12px] w-full md:w-auto flex justify-center md:block pointer-events-auto text-center z-[100]">
-        <Link href="/" className="block w-[clamp(6.16rem,20.6vw,8.25rem)] md:w-[clamp(7.57rem,11.77vw,10.945rem)] hover:opacity-80 transition-opacity">
+        <Link href="/" className="block w-[clamp(6.776rem,22.66vw,9.075rem)] md:w-[clamp(7.57rem,11.77vw,10.945rem)] hover:opacity-80 transition-opacity">
           <img src="/logo.png" alt="logo" className="w-full h-auto" />
         </Link>
       </div>
