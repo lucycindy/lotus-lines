@@ -159,7 +159,7 @@ export default async function Home() {
                   <Link href={`/books/${post.Slug}`} className="flex flex-col flex-1 w-full bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200">
                     <div className="aspect-[2/3] w-full shrink-0">
                       {post.CoverImage ? (
-                        <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 md:scale-[1.05] md:group-hover:scale-[1.1] pointer-events-none" />
+                        <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 md:scale-[1.2] md:group-hover:scale-[1.25] pointer-events-none" />
                       ) : (
                         <div className="w-full h-full bg-[#e8e6e2]" />
                       )}
