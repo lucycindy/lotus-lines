@@ -30,7 +30,7 @@ export default function MasonryGallery({ images }: { images: string[] }) {
   }, []);
 
   return (
-    <div className="w-full mt-[var(--sp-2xl)] columns-2 md:columns-3 gap-[var(--sp-md)]">
+    <div className="w-full mt-[var(--sp-2xl)] columns-1 md:columns-3 gap-[var(--sp-md)]">
       {images.map((src, i) => (
         <div
           key={i}

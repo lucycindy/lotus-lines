@@ -229,6 +229,7 @@ p {
   .mail-btn-wrapper {
     top: 6px !important;
     right: 8px !important;
+    margin-right: 8px !important;
   }
   /* Section page typography — mobile only */
   .section-subheading { font-size: 13px; }
@@ -244,6 +245,8 @@ p {
   .footer-body-text { font-size: 14px; }
   /* Footer quote — mobile only */
   .footer-quote-text { font-size: 15.5px; text-wrap: unset !important; }
+  /* Masonry gallery — reduce stagger on mobile (single column, user scrolls naturally) */
+  .masonry-item { transition-delay: calc(var(--i, 0) * 50ms); }
 }
 
 @media (min-width: 768px) {
