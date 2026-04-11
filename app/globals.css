@@ -94,6 +94,10 @@ body {
   }
 }
 
+.page-wrapper {
+  animation: fadeIn 0.4s ease forwards;
+}
+
 h1 {
   font-size: var(--fs-h1);
   font-weight: 600;

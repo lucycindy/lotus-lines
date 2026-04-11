@@ -16,7 +16,7 @@ export const viewport = {
 };
 
 import NavHeader from "@/components/NavHeader";
-import PageTransition from "@/components/PageTransition";
+import AnimatedPage from "@/components/AnimatedPage";
 
 export default function RootLayout({
   children,
@@ -44,7 +44,7 @@ export default function RootLayout({
             {/* Main Content Area */}
             <div className="flex-1 flex flex-col min-h-screen relative min-w-0">
               <main className="flex-1 w-full min-w-0">
-                <PageTransition>{children}</PageTransition>
+                <AnimatedPage>{children}</AnimatedPage>
               </main>
             </div>
           </div>
