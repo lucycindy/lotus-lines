@@ -1,8 +1,7 @@
-import Link from "next/link";
-import Image from "next/image";
 import { getFloralGallery } from "@/lib/notion";
 import BackButton from "@/components/BackButton";
 import Breadcrumb from "@/components/Breadcrumb";
+import MasonryGallery from "@/components/MasonryGallery";
 
 export const revalidate = 30;
 
@@ -24,24 +23,7 @@ export default async function FloralsPage() {
       </p>
 
       {images.length > 0 ? (
-        <div className="w-full mt-[var(--sp-2xl)] columns-1 sm:columns-2 md:columns-3 gap-[var(--sp-md)]" data-gallery="florals">
-          {images.map((src, i) => (
-            <div
-              key={i}
-              id={i.toString()}
-              className="mb-[var(--sp-md)] break-inside-avoid overflow-hidden bg-[#e8e6e2] rounded-[var(--radius-lg)] shadow-[var(--shadow-sm)]"
-            >
-              <Image
-                src={src}
-                alt={`floral arrangement ${i + 1}`}
-                width={600}
-                height={800}
-                className="w-full h-auto object-cover"
-                unoptimized
-              />
-            </div>
-          ))}
-        </div>
+        <MasonryGallery images={images} />
       ) : (
         <p className="mt-[var(--sp-2xl)] text-center text-[clamp(0.9rem,1.1vw,1.15rem)] text-black/60">
           no arrangements yet
