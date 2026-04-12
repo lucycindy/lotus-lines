@@ -73,6 +73,7 @@ export default async function Home() {
         {/* Events Section */}
         <SectionContainer id="events" label="events" fullBleed className="animate-cascade" style={{ animationDelay: '150ms' }}>
           <div className="w-full space-y-[var(--sp-md)]">
+            <div className="px-6 md:px-12">
             <div className="space-y-[var(--sp-md)]">
               {recentEvents.map((post, idx) => (
                 <FadeInItem key={post.Slug} delay={idx * 0.15}>
@@ -102,6 +103,7 @@ export default async function Home() {
                 </FadeInItem>
               ))}
             </div>
+            </div>
             <FadeInItem delay={0.4} className="flex justify-start w-full max-w-[600px] mx-auto px-[var(--page-margin)]">
               <Link href="/events" className="btn-outline-navigation">
                 more →
@@ -113,6 +115,7 @@ export default async function Home() {
         {/* Writing Section */}
         <SectionContainer id="writing" label="writing" fullBleed className="animate-cascade" style={{ animationDelay: '300ms' }}>
           <div className="w-full space-y-[var(--sp-md)]">
+            <div className="px-6 md:px-12">
             <div className="space-y-[var(--sp-md)]">
               {recentWriting.map((post, idx) => (
                 <FadeInItem key={post.Slug} delay={idx * 0.15}>
@@ -142,6 +145,7 @@ export default async function Home() {
                 </FadeInItem>
               ))}
             </div>
+            </div>
             <FadeInItem delay={0.4} className="flex justify-start w-full max-w-[600px] mx-auto px-[var(--page-margin)]">
               <Link href="/writing" className="btn-outline-navigation">
                 more →
@@ -156,6 +160,7 @@ export default async function Home() {
         <div className="w-full">
         <SectionContainer id="books" label="books" fullBleed className="animate-cascade" style={{ animationDelay: '450ms' }}>
           <div className="w-full -mt-6 md:-mt-6">
+            <div className="px-6 md:px-12">
             <CarouselRow>
               {recentBooks.map((post, idx) => (
                 <FadeInItem key={post.Slug} delay={idx * 0.15} className="w-[51%] sm:w-[50%] md:w-[45%] shrink-0 group py-0 flex flex-col self-stretch">
@@ -181,6 +186,7 @@ export default async function Home() {
                 </FadeInItem>
               ))}
             </CarouselRow>
+            </div>
             <FadeInItem delay={0.4} className="flex justify-start w-full max-w-[600px] mx-auto px-[var(--page-margin)]">
               <Link href="/books" className="btn-outline-navigation">
                 more →
