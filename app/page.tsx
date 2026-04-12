@@ -69,9 +69,9 @@ export default async function Home() {
           </div>
         </SectionContainer>
 
-      <div className="w-full flex flex-col content-wrapper">
+      <div className="w-full flex flex-col">
         {/* Events Section */}
-        <SectionContainer id="events" label="events" className="animate-cascade" style={{ animationDelay: '150ms' }}>
+        <SectionContainer id="events" label="events" fullBleed className="animate-cascade" style={{ animationDelay: '150ms' }}>
           <div className="w-full space-y-[var(--sp-md)]">
             <div className="space-y-[var(--sp-md)]">
               {recentEvents.map((post, idx) => (
@@ -102,7 +102,7 @@ export default async function Home() {
                 </FadeInItem>
               ))}
             </div>
-            <FadeInItem delay={0.4} className="flex justify-start">
+            <FadeInItem delay={0.4} className="flex justify-start w-full max-w-[600px] mx-auto px-[var(--page-margin)]">
               <Link href="/events" className="btn-outline-navigation">
                 more →
               </Link>
@@ -111,7 +111,7 @@ export default async function Home() {
         </SectionContainer>
 
         {/* Writing Section */}
-        <SectionContainer id="writing" label="writing" className="animate-cascade" style={{ animationDelay: '300ms' }}>
+        <SectionContainer id="writing" label="writing" fullBleed className="animate-cascade" style={{ animationDelay: '300ms' }}>
           <div className="w-full space-y-[var(--sp-md)]">
             <div className="space-y-[var(--sp-md)]">
               {recentWriting.map((post, idx) => (
@@ -142,7 +142,7 @@ export default async function Home() {
                 </FadeInItem>
               ))}
             </div>
-            <FadeInItem delay={0.4} className="flex justify-start">
+            <FadeInItem delay={0.4} className="flex justify-start w-full max-w-[600px] mx-auto px-[var(--page-margin)]">
               <Link href="/writing" className="btn-outline-navigation">
                 more →
               </Link>
@@ -150,8 +150,11 @@ export default async function Home() {
           </div>
         </SectionContainer>
 
+      </div>
+
         {/* Books Section */}
-        <SectionContainer id="books" label="books" className="animate-cascade" style={{ animationDelay: '450ms' }}>
+        <div className="w-full">
+        <SectionContainer id="books" label="books" fullBleed className="animate-cascade" style={{ animationDelay: '450ms' }}>
           <div className="w-full -mt-6 md:-mt-6">
             <CarouselRow>
               {recentBooks.map((post, idx) => (
@@ -178,15 +181,14 @@ export default async function Home() {
                 </FadeInItem>
               ))}
             </CarouselRow>
-            <FadeInItem delay={0.4} className="flex justify-start">
+            <FadeInItem delay={0.4} className="flex justify-start w-full max-w-[600px] mx-auto px-[var(--page-margin)]">
               <Link href="/books" className="btn-outline-navigation">
                 more →
               </Link>
             </FadeInItem>
           </div>
         </SectionContainer>
-
-      </div>
+        </div>
 
         {/* Florals Section - Bleed Width */}
         <div className="w-full">
