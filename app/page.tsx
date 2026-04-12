@@ -162,7 +162,7 @@ export default async function Home() {
           <div className="w-full -mt-6 md:-mt-6">
             <CarouselRow>
               {recentBooks.map((post, idx) => (
-                <FadeInItem key={post.Slug} delay={idx * 0.15} className="w-[51%] sm:w-[50%] md:w-[45%] shrink-0 group py-0 flex flex-col self-stretch">
+                <FadeInItem key={post.Slug} delay={idx * 0.15} className="w-[44%] sm:w-[43%] md:w-[38%] shrink-0 group py-0 flex flex-col self-stretch">
                   <Link href={`/books/${post.Slug}`} className="flex flex-col flex-1 w-full bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200">
                     <div className="aspect-[2/3] w-full shrink-0">
                       {post.CoverImage ? (
@@ -200,7 +200,7 @@ export default async function Home() {
             <div className="w-full -mt-6">
               <CarouselRow>
               {recentFlorals.map((imgUrl, idx) => (
-                <FadeInItem key={idx} delay={idx * 0.15} className="w-[60%] sm:w-[50%] md:w-[45%] shrink-0 rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow-md)] aspect-square bg-transparent transform-gpu isolate">
+                <FadeInItem key={idx} delay={idx * 0.15} className="w-[67%] sm:w-[57%] md:w-[52%] shrink-0 rounded-[var(--radius-lg)] overflow-hidden shadow-[var(--shadow-md)] aspect-square bg-transparent transform-gpu isolate">
                   <img 
                     src={imgUrl} 
                     alt={`Floral art ${idx + 1}`} 
