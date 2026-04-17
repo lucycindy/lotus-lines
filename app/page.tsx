@@ -73,15 +73,15 @@ export default async function Home() {
         {/* Events Section */}
         <SectionContainer id="events" label="events" fullBleed className="animate-cascade" style={{ animationDelay: '150ms' }}>
           <div className="w-full space-y-[var(--sp-md)]">
-            <div className="px-6 md:px-12">
+            <div className="px-3 md:px-8">
             <div className="space-y-[var(--sp-md)]">
               {recentEvents.map((post, idx) => (
                 <FadeInItem key={post.Slug} delay={idx * 0.15}>
                   <Link
                     href={`/events/${post.Slug}`}
-                    className="group flex flex-row items-center gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full h-[68px] sm:h-auto"
+                    className="group flex flex-row items-center gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full h-[84px] sm:h-auto"
                   >
-                    <div className="w-[30%] self-stretch shrink-0 md:w-[38%] md:aspect-[4/3] md:self-auto">
+                    <div className="w-[30%] self-stretch shrink-0 md:w-[40%] md:aspect-[4/3] md:self-auto">
                       {post.CoverImage ? (
                         <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                       ) : (
@@ -89,12 +89,12 @@ export default async function Home() {
                       )}
                     </div>
                     <div className="flex-1 min-w-0 flex flex-col justify-center py-[var(--sp-md)] px-[var(--sp-sm)] pr-[var(--sp-md)]">
-                      <h3 className="hp-card-title md:text-[16px] group-hover:text-[#b83143] transition-colors leading-snug line-clamp-1">
+                      <h3 className="hp-card-title md:text-[17px] group-hover:text-[#b83143] transition-colors leading-snug line-clamp-1">
                         {post.Title}
                       </h3>
 
                       {post.Description && (
-                        <p className="hp-card-desc mt-[var(--sp-xs)] md:text-[14px] text-[#6b6b6b] italic font-light line-clamp-1">
+                        <p className="hp-card-desc mt-[var(--sp-xs)] md:text-[15px] text-[#6b6b6b] italic font-light line-clamp-1">
                           {post.Description}
                         </p>
                       )}
@@ -104,7 +104,7 @@ export default async function Home() {
               ))}
             </div>
             </div>
-            <FadeInItem delay={0.4} className="flex justify-start px-6 md:px-12">
+            <FadeInItem delay={0.4} className="flex justify-start px-3 md:px-8">
               <Link href="/events" className="btn-outline-navigation">
                 more →
               </Link>
@@ -115,7 +115,7 @@ export default async function Home() {
         {/* Writing Section */}
         <SectionContainer id="writing" label="writing" fullBleed className="animate-cascade" style={{ animationDelay: '300ms' }}>
           <div className="w-full space-y-[var(--sp-md)]">
-            <div className="px-6 md:px-12">
+            <div className="px-3 md:px-8">
             <div className="space-y-[var(--sp-md)]">
               {recentWriting.map((post, idx) => (
                 <FadeInItem key={post.Slug} delay={idx * 0.15}>
@@ -123,7 +123,7 @@ export default async function Home() {
                     href={`/writing/${post.Slug}`}
                     className="group flex flex-row items-center gap-[var(--sp-md)] bg-white rounded-[var(--radius-md)] overflow-hidden shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-all duration-200 w-full"
                   >
-                    <div className="w-[30%] self-stretch shrink-0 md:w-[38%] md:aspect-[4/3] md:self-auto">
+                    <div className="w-[30%] self-stretch shrink-0 md:w-[40%] md:aspect-[4/3] md:self-auto">
                       {post.CoverImage ? (
                         <img src={post.CoverImage} alt={post.Title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                       ) : (
@@ -131,12 +131,12 @@ export default async function Home() {
                       )}
                     </div>
                     <div className="flex-1 min-w-0 flex flex-col justify-center py-[var(--sp-md)] px-[var(--sp-sm)] pr-[var(--sp-md)]">
-                      <h3 className="hp-card-title md:text-[16px] group-hover:text-[#b83143] transition-colors leading-snug line-clamp-1">
+                      <h3 className="hp-card-title md:text-[17px] group-hover:text-[#b83143] transition-colors leading-snug line-clamp-1">
                         {post.Title}
                       </h3>
 
                       {post.Description && (
-                        <p className="hp-card-desc mt-[var(--sp-xs)] md:text-[14px] text-[#6b6b6b] italic font-light line-clamp-1">
+                        <p className="hp-card-desc mt-[var(--sp-xs)] md:text-[15px] text-[#6b6b6b] italic font-light line-clamp-1">
                           {post.Description}
                         </p>
                       )}
@@ -146,7 +146,7 @@ export default async function Home() {
               ))}
             </div>
             </div>
-            <FadeInItem delay={0.4} className="flex justify-start px-6 md:px-12">
+            <FadeInItem delay={0.4} className="flex justify-start px-3 md:px-8">
               <Link href="/writing" className="btn-outline-navigation">
                 more →
               </Link>
