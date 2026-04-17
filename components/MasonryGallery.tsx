@@ -30,12 +30,12 @@ export default function MasonryGallery({ images }: { images: string[] }) {
   }, []);
 
   return (
-    <div className="w-full mt-[var(--sp-2xl)] columns-1 md:columns-3 gap-[var(--sp-md)]">
+    <div className="w-full mt-[var(--sp-2xl)] columns-1 md:columns-none md:grid md:grid-cols-3 gap-[var(--sp-md)]">
       {images.map((src, i) => (
         <div
           key={i}
           ref={(el) => { itemRefs.current[i] = el; }}
-          className="masonry-item mb-[var(--sp-md)] break-inside-avoid overflow-hidden bg-[#e8e6e2] rounded-[var(--radius-lg)] shadow-[var(--shadow-sm)]"
+          className="masonry-item mb-[var(--sp-md)] md:mb-0 break-inside-avoid md:break-inside-auto overflow-hidden bg-[#e8e6e2] rounded-[var(--radius-lg)] shadow-[var(--shadow-sm)]"
           style={{ "--i": i } as React.CSSProperties}
         >
           <Image
