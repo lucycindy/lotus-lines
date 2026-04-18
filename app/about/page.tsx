@@ -23,7 +23,7 @@ export default async function AboutPage() {
         },
         {
             type: "book" as const,
-            text: "reading across disciplines to find the nuance",
+            text: "reading across disciplines to see the nuance",
         },
         {
             type: "flower" as const,

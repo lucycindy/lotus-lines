@@ -27,7 +27,7 @@ export default async function Home() {
   const aboutItems = [
     { type: "vine" as const, text: "designing weddings that feel intentional" },
     { type: "bloom" as const, text: "writing about wellbeing through a personal lens" },
-    { type: "book" as const, text: "reading across disciplines to find the nuance" },
+    { type: "book" as const, text: "reading across disciplines to see the nuance" },
     { type: "flower" as const, text: "arranging florals with meticulous care" },
     { type: "brackets" as const, text: "creating custom wedding sites" },
   ];

@@ -15,12 +15,12 @@ const KineticIcon: React.FC<KineticIconProps> = ({ type }) => {
         @keyframes draw { to { stroke-dashoffset: 0; } }
         @keyframes appear { to { opacity: 1; } }
         
-        /* Heart Looping */
-        @keyframes vine-loop {
-          0% { stroke-dashoffset: 50; }
+        /* Ring Looping */
+        @keyframes ring-loop {
+          0% { stroke-dashoffset: 60; }
           45% { stroke-dashoffset: 0; }
           80% { stroke-dashoffset: 0; }
-          80.1%, 100% { stroke-dashoffset: 50; }
+          80.1%, 100% { stroke-dashoffset: 60; }
         }
         /* Book Fanning (Breathing Motion) */
         @keyframes book-page-left {
@@ -75,11 +75,15 @@ const KineticIcon: React.FC<KineticIconProps> = ({ type }) => {
 
       {type === "vine" && (
         <svg viewBox="0 0 28 28" width="28" height="28" className="kinetic-svg" style={{ strokeWidth: "1px" }}>
+          <circle 
+            cx="14" cy="14" r="9" 
+            strokeDasharray="60" strokeDashoffset="60"
+            style={{ animation: "ring-loop 2.5s ease-out infinite" }}
+          />
           <path
-            d="M 14 23 L 6 12 A 6.3 6.3 0 0 1 14 8 A 6.3 6.3 0 0 1 22 12 Z"
-            strokeDasharray="50"
-            strokeDashoffset="50"
-            style={{ animation: "vine-loop 2.5s ease-out infinite" }}
+            d="M 5 14 A 9 2.5 0 0 0 23 14"
+            strokeDasharray="60" strokeDashoffset="60"
+            style={{ animation: "ring-loop 2.5s ease-out infinite" }}
           />
         </svg>
       )}
