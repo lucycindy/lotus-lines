@@ -25,7 +25,7 @@ export default async function Home() {
   const recentFlorals = floralGallery.slice(0, 8);
 
   const aboutItems = [
-    { type: "vine" as const, text: "designing weddings that feel intentionally personal" },
+    { type: "vine" as const, text: "designing weddings that feel intentional" },
     { type: "bloom" as const, text: "writing about wellbeing through a personal lens" },
     { type: "book" as const, text: "reading across disciplines to find the nuance" },
     { type: "flower" as const, text: "arranging florals with meticulous care" },

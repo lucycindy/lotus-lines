@@ -15,7 +15,7 @@ export default async function AboutPage() {
     const items = [
         {
             type: "vine" as const,
-            text: "designing weddings that feel intentionally personal",
+            text: "designing weddings that feel intentional",
         },
         {
             type: "bloom" as const,
