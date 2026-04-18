@@ -19,7 +19,7 @@ export default async function FloralsPage() {
         florals
       </h1>
       <p className="florals-subheading mt-[var(--sp-xs)] text-center text-[#737373] font-normal normal-case tracking-normal">
-        new design hobby
+        new creative hobby
       </p>
 
       {images.length > 0 ? (

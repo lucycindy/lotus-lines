@@ -20,7 +20,7 @@ export default async function WritingPage() {
         writing
       </h1>
       <p className="section-subheading mt-[var(--sp-xs)] text-center text-[#737373]">
-        psychology + wellbeing through a personal lens
+        honest reflections, practical learnings
       </p>
 
       <ul className="mt-[var(--sp-2xl)] w-full space-y-[var(--sp-md)]">
