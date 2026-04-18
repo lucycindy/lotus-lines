@@ -25,11 +25,11 @@ export default async function Home() {
   const recentFlorals = floralGallery.slice(0, 8);
 
   const aboutItems = [
-    { type: "vine" as const, text: "planning weddings across ottawa & toronto" },
-    { type: "bloom" as const, text: "writing about psychology through a personal lens" },
-    { type: "book" as const, text: "reading what broadens my mindset" },
-    { type: "flower" as const, text: "experimenting with floral arrangements" },
-    { type: "brackets" as const, text: "building custom wedding websites" },
+    { type: "vine" as const, text: "designing weddings that feel intentionally personal" },
+    { type: "bloom" as const, text: "writing about wellbeing through a personal lens" },
+    { type: "book" as const, text: "reading across disciplines to find the nuance" },
+    { type: "flower" as const, text: "arranging florals with meticulous care" },
+    { type: "brackets" as const, text: "creating custom wedding sites" },
   ];
 
   return (
@@ -48,7 +48,7 @@ export default async function Home() {
                 fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
                 fontSize: 'var(--fs-body)'
               }}>
-                passionate about experiential, visual, and web design.
+                building a life around craft, connection, and curiosity.
               </p>
             </FadeInItem>
 

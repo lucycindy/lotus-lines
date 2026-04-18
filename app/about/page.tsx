@@ -15,23 +15,23 @@ export default async function AboutPage() {
     const items = [
         {
             type: "vine" as const,
-            text: "planning weddings across ottawa & toronto",
+            text: "designing weddings that feel intentionally personal",
         },
         {
             type: "bloom" as const,
-            text: "writing about psychology through a personal lens",
+            text: "writing about wellbeing through a personal lens",
         },
         {
             type: "book" as const,
-            text: "reading what broadens my mindset",
+            text: "reading across disciplines to find the nuance",
         },
         {
             type: "flower" as const,
-            text: "experimenting with floral arrangements",
+            text: "arranging florals with meticulous care",
         },
         {
             type: "brackets" as const,
-            text: "building custom wedding websites",
+            text: "creating custom wedding sites",
         },
     ];
 
@@ -43,7 +43,7 @@ export default async function AboutPage() {
                 {/* Section 1: Headline */}
                 <div className="text-center w-full">
                     <p className="text-[#b83143] text-[15px] md:text-[clamp(1rem,1.1vw,1.15rem)] leading-relaxed">
-                        passionate about experiential, visual, and web design.
+                        building a life around craft, connection, and curiosity.
                     </p>
                 </div>
 
