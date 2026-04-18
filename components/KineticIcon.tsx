@@ -15,12 +15,12 @@ const KineticIcon: React.FC<KineticIconProps> = ({ type }) => {
         @keyframes draw { to { stroke-dashoffset: 0; } }
         @keyframes appear { to { opacity: 1; } }
         
-        /* Ring Looping */
-        @keyframes ring-loop {
-          0% { stroke-dashoffset: 60; }
+        /* Sparkle Looping */
+        @keyframes sparkle-loop {
+          0% { stroke-dashoffset: 100; }
           45% { stroke-dashoffset: 0; }
           80% { stroke-dashoffset: 0; }
-          80.1%, 100% { stroke-dashoffset: 60; }
+          80.1%, 100% { stroke-dashoffset: 100; }
         }
         /* Book Fanning (Breathing Motion) */
         @keyframes book-page-left {
@@ -75,10 +75,23 @@ const KineticIcon: React.FC<KineticIconProps> = ({ type }) => {
 
       {type === "vine" && (
         <svg viewBox="0 0 28 28" width="28" height="28" className="kinetic-svg" style={{ strokeWidth: "1px" }}>
-          <circle 
-            cx="14" cy="14" r="9" 
-            strokeDasharray="60" strokeDashoffset="60"
-            style={{ animation: "ring-loop 2.5s ease-out infinite" }}
+          {/* Ring Band */}
+          <path
+            d="M 14 10 A 7 7 0 1 0 14 24 A 7 7 0 1 0 13.9 10"
+            pathLength="100" strokeDasharray="100" strokeDashoffset="100"
+            style={{ animation: "sparkle-loop 2.5s ease-out infinite" }}
+          />
+          {/* Diamond Rhombus Outline */}
+          <path
+            d="M 14 4 L 10 7 L 14 10 L 18 7 Z"
+            pathLength="100" strokeDasharray="100" strokeDashoffset="100"
+            style={{ animation: "sparkle-loop 2.5s ease-out infinite" }}
+          />
+          {/* Diamond Horiztonal Facet Line */}
+          <path
+            d="M 10 7 L 18 7"
+            pathLength="100" strokeDasharray="100" strokeDashoffset="100"
+            style={{ animation: "sparkle-loop 2.5s ease-out infinite" }}
           />
         </svg>
       )}
