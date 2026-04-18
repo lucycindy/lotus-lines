@@ -80,11 +80,6 @@ const KineticIcon: React.FC<KineticIconProps> = ({ type }) => {
             strokeDasharray="60" strokeDashoffset="60"
             style={{ animation: "ring-loop 2.5s ease-out infinite" }}
           />
-          <path
-            d="M 5 14 A 9 2.5 0 0 0 23 14"
-            strokeDasharray="60" strokeDashoffset="60"
-            style={{ animation: "ring-loop 2.5s ease-out infinite" }}
-          />
         </svg>
       )}
 
