@@ -47,7 +47,7 @@ export default async function EventPage({
               {post.Gallery.slice(0, 4).map((url: string, idx: number) => (
                 <div
                   key={idx}
-                  className="relative aspect-[4/3] overflow-hidden bg-[#e8e6e2]"
+                  className="relative aspect-[4/3] overflow-hidden bg-[#e8e6e2] rounded-[var(--radius-lg)]"
                 >
                   <Image
                     src={url}
@@ -63,7 +63,7 @@ export default async function EventPage({
             </div>
           </div>
         ) : post.CoverImage ? (
-          <div className="relative aspect-[4/3] w-full max-h-[480px] overflow-hidden bg-[#e8e6e2]">
+          <div className="relative aspect-[4/3] w-full max-h-[480px] overflow-hidden bg-[#e8e6e2] rounded-[var(--radius-lg)]">
             <Image
               src={post.CoverImage}
               alt={post.Title || "Event cover"}

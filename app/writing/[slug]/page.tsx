@@ -43,7 +43,7 @@ export default async function WritingPostPage({
       <article className="mt-6 md:mt-10 w-full flex flex-col items-start pb-0 md:pb-16">
         {post.CoverImage ? (
           <div className="w-full">
-            <div className="relative aspect-[4/3] w-full max-h-[480px] overflow-hidden bg-[#e8e6e2]">
+            <div className="relative aspect-[4/3] w-full max-h-[480px] overflow-hidden bg-[#e8e6e2] rounded-[var(--radius-lg)]">
 
               <Image
                 src={post.CoverImage}
@@ -76,7 +76,7 @@ export default async function WritingPostPage({
 
 
         {post.Body ? (
-          <div className="mt-4 prose prose-stone prose-lg max-w-none prose-headings:font-medium prose-headings:text-black prose-p:text-black prose-p:leading-relaxed prose-li:text-black prose-img:rounded-sm">
+          <div className="mt-4 prose prose-stone prose-lg max-w-none prose-headings:font-medium prose-headings:text-black prose-p:text-black prose-p:leading-relaxed prose-li:text-black prose-img:rounded-[var(--radius-lg)]">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeRaw]}

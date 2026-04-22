@@ -41,7 +41,7 @@ export default async function BookPage({
 
       <article className="mt-6 md:mt-10 w-full flex flex-col items-start pb-0 md:pb-16">
         {post.CoverImage ? (
-          <div className="relative aspect-[2/3] w-full max-w-[240px] max-h-[480px] overflow-hidden bg-[#e8e6e2]">
+          <div className="relative aspect-[2/3] w-full max-w-[240px] max-h-[480px] overflow-hidden bg-[#e8e6e2] rounded-[var(--radius-lg)]">
             <Image
               src={post.CoverImage}
               alt={post.Title || "Book cover"}
